@@ -13,6 +13,8 @@
 		082F003F2458F1E30014C0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082F003D2458F1E30014C0CB /* Main.storyboard */; };
 		082F00412458F1E50014C0CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 082F00402458F1E50014C0CB /* Assets.xcassets */; };
 		082F00442458F1E50014C0CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082F00422458F1E50014C0CB /* LaunchScreen.storyboard */; };
+		08743C39246F6216004932DE /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08743C38246F6216004932DE /* EditorViewController.swift */; };
+		08743C3B246F6620004932DE /* PlayfieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08743C3A246F6620004932DE /* PlayfieldViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		082F00402458F1E50014C0CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		082F00432458F1E50014C0CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		082F00452458F1E50014C0CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08743C38246F6216004932DE /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
+		08743C3A246F6620004932DE /* PlayfieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayfieldViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				082F00392458F1E30014C0CB /* SceneDelegate.swift */,
 				082F003B2458F1E30014C0CB /* ViewController.swift */,
 				082F003D2458F1E30014C0CB /* Main.storyboard */,
+				08743C3A246F6620004932DE /* PlayfieldViewController.swift */,
+				08743C38246F6216004932DE /* EditorViewController.swift */,
 				082F00402458F1E50014C0CB /* Assets.xcassets */,
 				082F00422458F1E50014C0CB /* LaunchScreen.storyboard */,
 				082F00452458F1E50014C0CB /* Info.plist */,
@@ -141,6 +147,8 @@
 				082F003C2458F1E30014C0CB /* ViewController.swift in Sources */,
 				082F00382458F1E30014C0CB /* AppDelegate.swift in Sources */,
 				082F003A2458F1E30014C0CB /* SceneDelegate.swift in Sources */,
+				08743C3B246F6620004932DE /* PlayfieldViewController.swift in Sources */,
+				08743C39246F6216004932DE /* EditorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
