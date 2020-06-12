@@ -12,6 +12,11 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    
+    @IBOutlet var buttons: [UIButton]!
+    
+    
+    
     var selectedImage = UIImage()
     var pickerController = UIImagePickerController()
 
@@ -31,13 +36,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
    
     
     @IBAction func cameraButton(_ sender: Any) {
-        pickerController.sourceType = .camera
+        
+        if pickerController.sourceType == .camera  {
+       pickerController.sourceType = .camera
         present(pickerController, animated: true, completion: nil)
-      
+            } else {
+     let actionController: UIAlertController = UIAlertController(title: "Camera is not available",message: "On the simulator the camera is not available.", preferredStyle: .alert)
+      let cancelAction: UIAlertAction = UIAlertAction(title: "OK", style: .cancel) { action -> Void  in
+        }
+       actionController.addAction(cancelAction)
+    self.present(actionController, animated: true, completion: nil)
+    }
     }
     
-    
-    @IBAction func libraryButton(_ sender: Any) {
+ @IBAction func libraryButton(_ sender: Any) {
         pickerController.sourceType = .photoLibrary
        present(pickerController, animated: true, completion: nil)
    
@@ -45,6 +57,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+     
+        
         pickerController.delegate = self
     }
     
@@ -68,5 +83,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
 }
+
 
 

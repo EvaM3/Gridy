@@ -15,6 +15,7 @@
 		082F00442458F1E50014C0CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082F00422458F1E50014C0CB /* LaunchScreen.storyboard */; };
 		08743C39246F6216004932DE /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08743C38246F6216004932DE /* EditorViewController.swift */; };
 		08743C3B246F6620004932DE /* PlayfieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08743C3A246F6620004932DE /* PlayfieldViewController.swift */; };
+		0897D1CB2492EC9700DEC0C0 /* timeburner in Resources */ = {isa = PBXBuildFile; fileRef = 0897D1CA2492EC9600DEC0C0 /* timeburner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		082F00452458F1E50014C0CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08743C38246F6216004932DE /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		08743C3A246F6620004932DE /* PlayfieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayfieldViewController.swift; sourceTree = "<group>"; };
+		0897D1CA2492EC9600DEC0C0 /* timeburner */ = {isa = PBXFileReference; lastKnownFileType = folder; path = timeburner; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		082F00362458F1E30014C0CB /* Gridy */ = {
 			isa = PBXGroup;
 			children = (
+				0897D1C92492EC5D00DEC0C0 /* Fonts */,
 				082F00372458F1E30014C0CB /* AppDelegate.swift */,
 				082F00392458F1E30014C0CB /* SceneDelegate.swift */,
 				082F003B2458F1E30014C0CB /* ViewController.swift */,
@@ -71,6 +74,14 @@
 				082F00452458F1E50014C0CB /* Info.plist */,
 			);
 			path = Gridy;
+			sourceTree = "<group>";
+		};
+		0897D1C92492EC5D00DEC0C0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0897D1CA2492EC9600DEC0C0 /* timeburner */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +145,7 @@
 				082F00442458F1E50014C0CB /* LaunchScreen.storyboard in Resources */,
 				082F00412458F1E50014C0CB /* Assets.xcassets in Resources */,
 				082F003F2458F1E30014C0CB /* Main.storyboard in Resources */,
+				0897D1CB2492EC9700DEC0C0 /* timeburner in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
