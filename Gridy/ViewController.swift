@@ -14,6 +14,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     @IBOutlet var buttons: [UIButton]!
+ 
+    
     
     
     
@@ -58,7 +60,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         
-     
+    
+        
         
         pickerController.delegate = self
     }

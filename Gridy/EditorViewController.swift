@@ -17,6 +17,11 @@ class EditorViewController: UIViewController, UIScrollViewDelegate, UIGestureRec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+   /*     let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = imageView.bounds
+        imageView.addSubview(blurView) */
     
         imageView.isUserInteractionEnabled = true
         imageView.isMultipleTouchEnabled = true
