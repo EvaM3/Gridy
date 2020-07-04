@@ -14,7 +14,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     @IBOutlet var buttons: [UIButton]!
- 
+    
+    
+    class Roundedbutton : UIButton {
+      required init?(coder aDecoder: NSCoder) {
+          super.init(coder: aDecoder)
+        layer.borderWidth = 1.0
+        layer.cornerRadius = 5.0
+        clipsToBounds = true
+      }
+    }
     
     
     

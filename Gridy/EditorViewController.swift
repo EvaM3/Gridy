@@ -38,8 +38,7 @@ class EditorViewController: UIViewController, UIScrollViewDelegate, UIGestureRec
                gestureRecognizer.delegate = self
                imageView.addGestureRecognizer(gestureRecognizer)
 
-        
-     self.navigationController?.isNavigationBarHidden = true
+ 
 
 //           scrollV=UIScrollView()
 //          scrollV.frame = CGRect(x:0,y:0,width:0,height:0)
