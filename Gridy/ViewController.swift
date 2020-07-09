@@ -13,18 +13,10 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
-    @IBOutlet var buttons: [UIButton]!
     
-    
-    class Roundedbutton : UIButton {
-      required init?(coder aDecoder: NSCoder) {
-          super.init(coder: aDecoder)
-        layer.borderWidth = 1.0
-        layer.cornerRadius = 5.0
-        clipsToBounds = true
-      }
-    }
-    
+    @IBOutlet var RoundedButton: [UIButton]!
+
+
     
     
     
@@ -34,7 +26,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let pickedImages: [UIImage] = [UIImage(named: "tiger")!,UIImage(named: "stonehenge")!,UIImage(named: "books")!,UIImage(named: "church")!,UIImage(named: "machu-picchu")!]
     
     @IBAction func pickButton(_ sender: Any) {
-        
+
         if let selectedImage = pickedImages.randomElement() {
             self.selectedImage = UIImage(named: "stonehenge")!
         }
@@ -47,6 +39,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
    
     
     @IBAction func cameraButton(_ sender: Any) {
+
         
         if pickerController.sourceType == .camera  {
        pickerController.sourceType = .camera

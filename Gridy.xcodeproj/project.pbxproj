@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0823544C24B06A3B00F99604 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0823544B24B06A3B00F99604 /* RoundedButton.swift */; };
 		082F00382458F1E30014C0CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F00372458F1E30014C0CB /* AppDelegate.swift */; };
 		082F003A2458F1E30014C0CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F00392458F1E30014C0CB /* SceneDelegate.swift */; };
 		082F003C2458F1E30014C0CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F003B2458F1E30014C0CB /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0823544B24B06A3B00F99604 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		082F00342458F1E30014C0CB /* Gridy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gridy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		082F00372458F1E30014C0CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		082F00392458F1E30014C0CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				082F00372458F1E30014C0CB /* AppDelegate.swift */,
 				082F00392458F1E30014C0CB /* SceneDelegate.swift */,
 				082F003B2458F1E30014C0CB /* ViewController.swift */,
+				0823544B24B06A3B00F99604 /* RoundedButton.swift */,
 				082F003D2458F1E30014C0CB /* Main.storyboard */,
 				08743C3A246F6620004932DE /* PlayfieldViewController.swift */,
 				08743C38246F6216004932DE /* EditorViewController.swift */,
@@ -161,6 +164,7 @@
 				082F003A2458F1E30014C0CB /* SceneDelegate.swift in Sources */,
 				08743C3B246F6620004932DE /* PlayfieldViewController.swift in Sources */,
 				08743C39246F6216004932DE /* EditorViewController.swift in Sources */,
+				0823544C24B06A3B00F99604 /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
