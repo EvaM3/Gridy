@@ -14,7 +14,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     
-    @IBOutlet var RoundedButton: [UIButton]!
+
    
 
 
