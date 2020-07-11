@@ -55,17 +55,18 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="hzN-c1-aKm">
                                         <rect key="frame" x="0.0" y="198" width="320" height="282"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-140" translatesAutoresizingMaskIntoConstraints="NO" id="2lx-f3-sBu" userLabel="Picking Stack View">
-                                                <rect key="frame" x="85" y="0.0" width="150" height="40.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-85" translatesAutoresizingMaskIntoConstraints="NO" id="2lx-f3-sBu" userLabel="Picking Stack View">
+                                                <rect key="frame" x="97.5" y="0.0" width="125" height="40.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNd-Qz-5dS" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNd-Qz-5dS" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="100"/>
                                                         <color key="backgroundColor" name="sand"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="BNd-Qz-5dS" secondAttribute="height" multiplier="1:1" id="BUm-XK-ZV2"/>
-                                                            <constraint firstAttribute="width" constant="150" id="e7h-oW-WQ0"/>
+                                                            <constraint firstAttribute="height" constant="100" id="6Ec-eo-4Id"/>
+                                                            <constraint firstAttribute="width" secondItem="BNd-Qz-5dS" secondAttribute="height" multiplier="1:0.8" id="BUm-XK-ZV2"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="15"/>
                                                         <state key="normal" title="Pick">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -75,7 +76,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gridy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2i-SH-gFO">
-                                                        <rect key="frame" x="0.0" y="10" width="150" height="30.5"/>
+                                                        <rect key="frame" x="0.0" y="15" width="125" height="25.5"/>
                                                         <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="32"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
