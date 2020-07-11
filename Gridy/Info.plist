@@ -4,10 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string></string>
+		<string>timeburnernormal.ttf</string>
 	</array>
-	<key>timeburner.ttf</key>
-	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We need access to your photos for this game</string>
 	<key>NSCameraUsageDescription</key>

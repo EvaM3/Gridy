@@ -65,7 +65,7 @@
                                                             <constraint firstAttribute="width" secondItem="BNd-Qz-5dS" secondAttribute="height" multiplier="1:1" id="BUm-XK-ZV2"/>
                                                             <constraint firstAttribute="width" constant="150" id="e7h-oW-WQ0"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <state key="normal" title="Pick">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>

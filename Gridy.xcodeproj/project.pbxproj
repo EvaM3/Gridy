@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080785AB24B99DE800EF9CBD /* timeburnernormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 080785AA24B99DAA00EF9CBD /* timeburnernormal.ttf */; };
 		0823544C24B06A3B00F99604 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0823544B24B06A3B00F99604 /* RoundedButton.swift */; };
 		082F00382458F1E30014C0CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F00372458F1E30014C0CB /* AppDelegate.swift */; };
 		082F003A2458F1E30014C0CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F00392458F1E30014C0CB /* SceneDelegate.swift */; };
-		082F003C2458F1E30014C0CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F003B2458F1E30014C0CB /* ViewController.swift */; };
+		082F003C2458F1E30014C0CB /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F003B2458F1E30014C0CB /* IntroViewController.swift */; };
 		082F003F2458F1E30014C0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082F003D2458F1E30014C0CB /* Main.storyboard */; };
 		082F00412458F1E50014C0CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 082F00402458F1E50014C0CB /* Assets.xcassets */; };
 		082F00442458F1E50014C0CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082F00422458F1E50014C0CB /* LaunchScreen.storyboard */; };
 		08743C39246F6216004932DE /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08743C38246F6216004932DE /* EditorViewController.swift */; };
 		08743C3B246F6620004932DE /* PlayfieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08743C3A246F6620004932DE /* PlayfieldViewController.swift */; };
-		0897D1CB2492EC9700DEC0C0 /* timeburner in Resources */ = {isa = PBXBuildFile; fileRef = 0897D1CA2492EC9600DEC0C0 /* timeburner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		080785AA24B99DAA00EF9CBD /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
 		0823544B24B06A3B00F99604 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		082F00342458F1E30014C0CB /* Gridy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gridy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		082F00372458F1E30014C0CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		082F00392458F1E30014C0CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		082F003B2458F1E30014C0CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		082F003B2458F1E30014C0CB /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		082F003E2458F1E30014C0CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		082F00402458F1E50014C0CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		082F00432458F1E50014C0CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		082F00452458F1E50014C0CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08743C38246F6216004932DE /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		08743C3A246F6620004932DE /* PlayfieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayfieldViewController.swift; sourceTree = "<group>"; };
-		0897D1CA2492EC9600DEC0C0 /* timeburner */ = {isa = PBXFileReference; lastKnownFileType = folder; path = timeburner; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 				0897D1C92492EC5D00DEC0C0 /* Fonts */,
 				082F00372458F1E30014C0CB /* AppDelegate.swift */,
 				082F00392458F1E30014C0CB /* SceneDelegate.swift */,
-				082F003B2458F1E30014C0CB /* ViewController.swift */,
+				082F003B2458F1E30014C0CB /* IntroViewController.swift */,
 				0823544B24B06A3B00F99604 /* RoundedButton.swift */,
 				082F003D2458F1E30014C0CB /* Main.storyboard */,
 				08743C3A246F6620004932DE /* PlayfieldViewController.swift */,
@@ -82,7 +82,7 @@
 		0897D1C92492EC5D00DEC0C0 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				0897D1CA2492EC9600DEC0C0 /* timeburner */,
+				080785AA24B99DAA00EF9CBD /* timeburnernormal.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -146,9 +146,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				082F00442458F1E50014C0CB /* LaunchScreen.storyboard in Resources */,
+				080785AB24B99DE800EF9CBD /* timeburnernormal.ttf in Resources */,
 				082F00412458F1E50014C0CB /* Assets.xcassets in Resources */,
 				082F003F2458F1E30014C0CB /* Main.storyboard in Resources */,
-				0897D1CB2492EC9700DEC0C0 /* timeburner in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				082F003C2458F1E30014C0CB /* ViewController.swift in Sources */,
+				082F003C2458F1E30014C0CB /* IntroViewController.swift in Sources */,
 				082F00382458F1E30014C0CB /* AppDelegate.swift in Sources */,
 				082F003A2458F1E30014C0CB /* SceneDelegate.swift in Sources */,
 				08743C3B246F6620004932DE /* PlayfieldViewController.swift in Sources */,
