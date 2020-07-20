@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 
 
@@ -17,6 +18,17 @@ class EditorViewController: UIViewController, UIScrollViewDelegate, UIGestureRec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
+        
+    imageView.image = selectedImage
+    
+    
+        
+        
+    func segueToApp(sender: AnyObject) -> Void {
+        self.performSegue(withIdentifier: "loginSuccess", sender: self)
+
+    }
         
    /*     let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
         let blurView = UIVisualEffectView(effect: blurEffect)
@@ -39,16 +51,7 @@ class EditorViewController: UIViewController, UIScrollViewDelegate, UIGestureRec
                imageView.addGestureRecognizer(gestureRecognizer)
 
  
-
-//           scrollV=UIScrollView()
-//          scrollV.frame = CGRect(x:0,y:0,width:0,height:0)
-//           scrollV.minimumZoomScale=1
-//           scrollV.maximumZoomScale=6
-//           scrollV.bounces=false
-//           scrollV.delegate=self;
-//           self.view.addSubview(scrollV)
-//
-        imageView.image = selectedImage
+    
 
   
     }

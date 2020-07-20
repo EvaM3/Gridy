@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     
@@ -24,11 +24,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var selectedImage = UIImage()
     var pickerController = UIImagePickerController()
 
-    let pickedImages: [UIImage] = [UIImage(named: "tiger")!,UIImage(named: "stonehenge")!,UIImage(named: "books")!,UIImage(named: "church")!,UIImage(named: "machu-picchu")!]
+    
+    func segueToApp(sender: AnyObject) -> Void {
+        self.performSegue(withIdentifier: "loginSuccess", sender: self)
+
+    }
+        let pickedImages: [UIImage] = [UIImage(named: "tiger")!,UIImage(named: "stonehenge")!,UIImage(named: "books")!,UIImage(named: "church")!,UIImage(named: "machu-picchu")!]
     
     @IBAction func pickButton(_ sender: Any) {
 
-        if let selectedImage = pickedImages.randomElement() {
+        if let _ = pickedImages.randomElement() {
             self.selectedImage = UIImage(named: "stonehenge")!
         }
         
@@ -62,8 +67,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    
         
         
         pickerController.delegate = self
