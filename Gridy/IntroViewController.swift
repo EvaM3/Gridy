@@ -33,14 +33,23 @@ class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBAction func pickButton(_ sender: Any) {
 
-        if let _ = pickedImages.randomElement() {
-            self.selectedImage = UIImage(named: "stonehenge")!
-        }
-        
+        if let _ = pickedImages.randomElement()  {
+        self.selectedImage = UIImage(named: "stonehenge")!
+    
+    pickerController.delegate = self
+               pickerController.dismiss(animated: true, completion: nil)
+               performSegue(withIdentifier: "showEditorView", sender: nil)
+    
 
-      
+            
         
-        
+    
+            
+    
+    
+        }
+
+    
     }
    
     
