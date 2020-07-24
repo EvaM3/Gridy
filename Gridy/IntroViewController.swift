@@ -26,7 +26,7 @@ class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
     
     func segueToApp(sender: AnyObject) -> Void {
-        self.performSegue(withIdentifier: "loginSuccess", sender: self)
+        self.performSegue(withIdentifier: "showEditorView", sender: self)
 
     }
         let pickedImages: [UIImage] = [UIImage(named: "tiger")!,UIImage(named: "stonehenge")!,UIImage(named: "books")!,UIImage(named: "church")!,UIImage(named: "machu-picchu")!]

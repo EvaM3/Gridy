@@ -77,7 +77,6 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="pickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uvy-yj-G1e"/>
-                                                            <segue destination="r95-WL-fCp" kind="show" identifier="showEditorView" id="rPh-al-Liz"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gridy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2i-SH-gFO">
@@ -169,6 +168,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ggt-Mg-3ij"/>
+                    <connections>
+                        <segue destination="r95-WL-fCp" kind="show" identifier="showEditorView" id="Xcz-zC-i69"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,10 +191,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="7nr-3u-k0Y" firstAttribute="top" secondItem="bo3-YG-GK5" secondAttribute="top" id="1ug-SM-25k"/>
+                            <constraint firstItem="7nr-3u-k0Y" firstAttribute="top" secondItem="bo3-YG-GK5" secondAttribute="top" id="2yn-Jq-8pz"/>
                             <constraint firstItem="7nr-3u-k0Y" firstAttribute="leading" secondItem="bo3-YG-GK5" secondAttribute="leading" id="BhT-H0-2cg"/>
                             <constraint firstItem="7nr-3u-k0Y" firstAttribute="centerX" secondItem="aLN-ZW-ncA" secondAttribute="centerX" id="JFF-oy-uSg"/>
+                            <constraint firstItem="7nr-3u-k0Y" firstAttribute="bottom" secondItem="bo3-YG-GK5" secondAttribute="bottom" id="Nye-zL-KuN"/>
                             <constraint firstItem="7nr-3u-k0Y" firstAttribute="trailing" secondItem="bo3-YG-GK5" secondAttribute="trailing" id="SWl-VZ-Xdg"/>
                             <constraint firstItem="7nr-3u-k0Y" firstAttribute="bottom" secondItem="bo3-YG-GK5" secondAttribute="bottom" id="Wto-TT-c0w"/>
+                            <constraint firstItem="7nr-3u-k0Y" firstAttribute="bottom" secondItem="bo3-YG-GK5" secondAttribute="bottom" id="ccu-3Q-VCd"/>
+                            <constraint firstItem="7nr-3u-k0Y" firstAttribute="leading" secondItem="bo3-YG-GK5" secondAttribute="leading" id="fEc-14-VVf"/>
+                            <constraint firstItem="7nr-3u-k0Y" firstAttribute="leading" secondItem="bo3-YG-GK5" secondAttribute="leading" id="qTp-FW-pil"/>
+                            <constraint firstItem="7nr-3u-k0Y" firstAttribute="trailing" secondItem="bo3-YG-GK5" secondAttribute="trailing" id="qeC-JN-Hud"/>
+                            <constraint firstItem="7nr-3u-k0Y" firstAttribute="top" secondItem="bo3-YG-GK5" secondAttribute="top" id="xQe-vS-qMd"/>
+                            <constraint firstItem="7nr-3u-k0Y" firstAttribute="trailing" secondItem="bo3-YG-GK5" secondAttribute="trailing" id="xwl-9p-3jE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bo3-YG-GK5"/>
                     </view>

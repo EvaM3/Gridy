@@ -19,13 +19,17 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         
+   /* let closeButton = UIBarButtonItem(title: "x", style: UIBarButtonItem.Style.plain , target: nil, action: Selector (""))
+    let font = UIFont.systemFont(ofSize:40)
+    closeButton.setTitlePositionAdjustment(UIOffset(horizontal: 10, vertical: 0), for: .default) */
+        
     imageView.image = selectedImage
     
     
         
         
     func segueToApp(sender: AnyObject) -> Void {
-        self.performSegue(withIdentifier: "loginSuccess", sender: self)
+        self.performSegue(withIdentifier: "showEditorView", sender: self)
 
     }
         
