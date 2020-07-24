@@ -11,9 +11,8 @@ import PhotosUI
 
 
 
-class EditorViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate {
+class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var imageView: UIImageView!
-    var scrollV : UIScrollView!
     var selectedImage : UIImage?
     
     override func viewDidLoad() {
@@ -30,10 +29,11 @@ class EditorViewController: UIViewController, UIScrollViewDelegate, UIGestureRec
 
     }
         
-   /*     let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = imageView.bounds
-        imageView.addSubview(blurView) */
+    let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(blurEffectView)
     
         imageView.isUserInteractionEnabled = true
         imageView.isMultipleTouchEnabled = true
