@@ -18,6 +18,7 @@ class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    self.navigationController?.isNavigationBarHidden = true
         pickerController.delegate = self
     }
     

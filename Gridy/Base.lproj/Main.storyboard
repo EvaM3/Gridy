@@ -60,7 +60,7 @@
                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="hzN-c1-aKm" userLabel="ButtonsStackView">
                                         <rect key="frame" x="0.0" y="198" width="320" height="282"/>
                                         <subviews>
-                                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-115" translatesAutoresizingMaskIntoConstraints="NO" id="2lx-f3-sBu" userLabel="Picking Stack View">
+                                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-145" translatesAutoresizingMaskIntoConstraints="NO" id="2lx-f3-sBu" userLabel="Picking Stack View">
                                                 <rect key="frame" x="97.5" y="0.0" width="125" height="77.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNd-Qz-5dS" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
@@ -80,7 +80,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gridy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2i-SH-gFO">
-                                                        <rect key="frame" x="0.0" y="-15" width="125" height="92.5"/>
+                                                        <rect key="frame" x="0.0" y="-45" width="125" height="122.5"/>
                                                         <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="32"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -101,7 +101,7 @@
                                             <stackView opaque="NO" contentMode="bottom" distribution="fillEqually" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="zt0-MY-5BC" userLabel="CameraAndLibraryStack View">
                                                 <rect key="frame" x="11" y="204.5" width="298" height="77.5"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-115" translatesAutoresizingMaskIntoConstraints="NO" id="tHU-lB-NnX" userLabel="Camera Stack View">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-145" translatesAutoresizingMaskIntoConstraints="NO" id="tHU-lB-NnX" userLabel="Camera Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="77.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGg-9j-1pp" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
@@ -123,11 +123,11 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy-camera" translatesAutoresizingMaskIntoConstraints="NO" id="9Qf-m1-GRP">
-                                                                <rect key="frame" x="0.0" y="-15" width="125" height="92.5"/>
+                                                                <rect key="frame" x="0.0" y="-45" width="125" height="122.5"/>
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-115" translatesAutoresizingMaskIntoConstraints="NO" id="1aM-ud-TcB" userLabel="Library Stack View">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-145" translatesAutoresizingMaskIntoConstraints="NO" id="1aM-ud-TcB" userLabel="Library Stack View">
                                                         <rect key="frame" x="173" y="0.0" width="125" height="77.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="1" contentMode="bottom" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWv-tZ-AAm" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
@@ -146,7 +146,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy-library" translatesAutoresizingMaskIntoConstraints="NO" id="4UB-B3-nxR">
-                                                                <rect key="frame" x="44.5" y="-15" width="36" height="92.5"/>
+                                                                <rect key="frame" x="44.5" y="-45" width="36" height="122.5"/>
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
@@ -187,10 +187,28 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stonehenge" translatesAutoresizingMaskIntoConstraints="NO" id="7nr-3u-k0Y">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjx-qB-w14">
-                                <rect key="frame" x="250" y="27" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjx-qB-w14" userLabel="BackButton" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
+                                <rect key="frame" x="288.5" y="20" width="15.5" height="22"/>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.91372549020000005" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="multiply" catalog="system">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="r95-WL-fCp" eventType="touchUpInside" id="2eM-v9-On7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNA-Il-PBq">
+                                <rect key="frame" x="139" y="472" width="49" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" name="lightgreen"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonTapped:" destination="r95-WL-fCp" eventType="touchUpInside" id="ojZ-4f-KDV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -201,7 +219,9 @@
                             <constraint firstItem="7nr-3u-k0Y" firstAttribute="centerX" secondItem="aLN-ZW-ncA" secondAttribute="centerX" id="JFF-oy-uSg"/>
                             <constraint firstItem="7nr-3u-k0Y" firstAttribute="bottom" secondItem="bo3-YG-GK5" secondAttribute="bottom" id="Nye-zL-KuN"/>
                             <constraint firstItem="7nr-3u-k0Y" firstAttribute="trailing" secondItem="bo3-YG-GK5" secondAttribute="trailing" id="SWl-VZ-Xdg"/>
+                            <constraint firstItem="bo3-YG-GK5" firstAttribute="trailing" secondItem="Cjx-qB-w14" secondAttribute="trailing" constant="16" id="VQR-GD-Rk0"/>
                             <constraint firstItem="7nr-3u-k0Y" firstAttribute="bottom" secondItem="bo3-YG-GK5" secondAttribute="bottom" id="Wto-TT-c0w"/>
+                            <constraint firstItem="Cjx-qB-w14" firstAttribute="top" secondItem="bo3-YG-GK5" secondAttribute="top" constant="20" id="cLf-QF-Aoa"/>
                             <constraint firstItem="7nr-3u-k0Y" firstAttribute="bottom" secondItem="bo3-YG-GK5" secondAttribute="bottom" id="ccu-3Q-VCd"/>
                             <constraint firstItem="7nr-3u-k0Y" firstAttribute="leading" secondItem="bo3-YG-GK5" secondAttribute="leading" id="fEc-14-VVf"/>
                             <constraint firstItem="7nr-3u-k0Y" firstAttribute="leading" secondItem="bo3-YG-GK5" secondAttribute="leading" id="qTp-FW-pil"/>
@@ -214,12 +234,14 @@
                     <navigationItem key="navigationItem" id="8Te-Jx-ZMM"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="backButton" destination="Cjx-qB-w14" id="bz2-H6-XYt"/>
                         <outlet property="imageView" destination="7nr-3u-k0Y" id="1wl-JY-g7v"/>
+                        <outlet property="startButton" destination="PNA-Il-PBq" id="MGa-lr-wen"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Z6-sL-00z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1169.5652173913045" y="172.82608695652175"/>
+            <point key="canvasLocation" x="1168.125" y="172.18309859154931"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tTd-1H-SU5">
@@ -259,6 +281,7 @@
     <resources>
         <image name="Gridy-camera" width="36" height="28"/>
         <image name="Gridy-library" width="36" height="28"/>
+        <image name="multiply" catalog="system" width="128" height="111"/>
         <image name="stonehenge" width="6240" height="4160"/>
         <namedColor name="lightgreen">
             <color red="0.53299999237060547" green="0.83099997043609619" blue="0.59600001573562622" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
