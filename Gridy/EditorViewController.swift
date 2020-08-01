@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PhotosUI
 
 
 
@@ -22,7 +21,10 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
         let backButton = UIButton(frame: CGRect(x: 330, y: 50, width: 30, height: 30))
         backButton.backgroundColor = .white
         backButton.setTitle("✖️", for: .normal)
-
+        startButton.frame(forAlignmentRect: CGRect(x: 5, y: 10, width: 80, height: 30))
+        
+        
+      //  let startButton = UIButton(frame: CGRect(x: 100, y: 50, width: 80, height: 30))
         
         self.navigationController?.isNavigationBarHidden = true
         imageView.image = selectedImage
@@ -31,14 +33,37 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
          let blurEffectView = UIVisualEffectView(effect: blurEffect)
          blurEffectView.frame = view.bounds
          blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        mask(blurEffectView, maskRect: CGRect(x: 50, y: 50, width: 50, height: 50))
          view.addSubview(blurEffectView)
-         backButton.removeFromSuperview()
-        view.addSubview(backButton)
-        backButton.bringSubviewToFront(backButton)
+//         backButton.removeFromSuperview()
+//        view.addSubview(backButton)
+//        backButton.bringSubviewToFront(backButton)
+//        startButton.removeFromSuperview()
+//        view.addSubview(startButton)
+//        startButton.bringSubviewToFront(startButton)
+//        self.view.addSubview(startButton)
+      // let maskView = UIView(frame: CGRect(x: 50, y: 50, width: 50, height: 50))
+        //maskView.backgroundColor = .red
+        //blurEffectView.mask = maskView
+       // maskView.bringSubviewToFront(maskView)
+      /*  let maskView = UIView(frame: view.bounds)
+        view.addSubview(maskView)
+        func mask(_ viewToMask: UIView, maskRect: CGRect) {
+            let maskLayer = CAShapeLayer()
+            let path = CGPath(rect: maskRect, transform: nil)
+            maskLayer.path = path
+            viewToMask.layer.mask = maskLayer
+        }
+     mask(maskView, maskRect: CGRect(x: 150, y: 150, width: 100, height: 100)
+    let pictureView = UIView(frame: CGRect(x: 150, y: 150, width: 100, height: 100))
+        pictureView.bringSubviewToFront(imageView)
+        view.addSubview(pictureView)
+    let maskView = UIView(frame: CGRect(x: 150, y: 150, width: 100, height: 100))
+        maskView.bringSubviewToFront(imageView)
+        pictureView.mask = maskView */
         
-        startButton.removeFromSuperview()
-        view.addSubview(startButton)
-        startButton.bringSubviewToFront(startButton)
+        
+    
         
         imageView.isUserInteractionEnabled = true
         imageView.isMultipleTouchEnabled = true
@@ -55,6 +80,9 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
         gestureRecognizer.delegate = self
         imageView.addGestureRecognizer(gestureRecognizer)
     }
+ 
+  
+    
     
     @objc func handleRotate(recognizer : UIRotationGestureRecognizer) {
         if let view = recognizer.view {
@@ -83,5 +111,12 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func startButtonTapped(_ sender: Any) {
     }
-    
+    func mask(_ viewToMask: UIView, maskRect: CGRect) {
+            let maskLayer = CAShapeLayer()
+            let path = CGPath(rect: maskRect, transform: nil)
+            maskLayer.path = path
+        maskLayer.fillRule = .evenOdd
+            viewToMask.layer.mask = maskLayer
+
+        }
 }
