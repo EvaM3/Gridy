@@ -15,13 +15,36 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
     var selectedImage : UIImage?
     @IBOutlet var backButton: UIButton!
     @IBOutlet var startButton: UIButton!
-
+    var blurEffectView = UIVisualEffectView()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let backButton = UIButton(frame: CGRect(x: 330, y: 50, width: 30, height: 30))
-        backButton.backgroundColor = .white
-        backButton.setTitle("✖️", for: .normal)
-        startButton.frame(forAlignmentRect: CGRect(x: 5, y: 10, width: 80, height: 30))
+       
+    func mask(_ viewToMask: UIView, maskRect: CGRect) {
+        let maskLayer = CAShapeLayer()
+    let mutablePath = CGMutablePath()
+    mutablePath.addRect(self.blurEffectView.bounds)
+    mutablePath.addRect(maskRect)
+    maskLayer.path = mutablePath
+    maskLayer.fillRule = .evenOdd
+        viewToMask.layer.mask = maskLayer
+
+    }
+    
+  
+        
+        
+        
+       blurEffectView.mask?.frame(forAlignmentRect: CGRect(x: 100, y: 100, width: 150, height: 150))
+        mask(blurEffectView, maskRect: CGRect(x: 80, y: 80, width: 100, height: 100))
+//   let blurFrame = mask(blurEffectView, maskRect: CGRect(x: 100, y: 100, width: 150, height: 150))
+
+//        blurEffectView.frame(forAlignmentRect: CGRect(x: 100, y: 100, width: 150, height: 150))
+       
+    
+//        let backButton = UIButton(frame: CGRect(x: 330, y: 50, width: 30, height: 30))
+//        backButton.backgroundColor = .white
+//        backButton.setTitle("✖️", for: .normal)
+       // startButton.frame(forAlignmentRect: CGRect(x: 5, y: 10, width: 80, height: 30))
         
         
       //  let startButton = UIButton(frame: CGRect(x: 100, y: 50, width: 80, height: 30))
@@ -29,12 +52,12 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
         self.navigationController?.isNavigationBarHidden = true
         imageView.image = selectedImage
         
-         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
-         let blurEffectView = UIVisualEffectView(effect: blurEffect)
-         blurEffectView.frame = view.bounds
-         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        mask(blurEffectView, maskRect: CGRect(x: 50, y: 50, width: 50, height: 50))
-         view.addSubview(blurEffectView)
+//         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+//         blurEffectView = UIVisualEffectView(effect: blurEffect)
+//         blurEffectView.frame = view.bounds
+//         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        mask(blurEffectView, maskRect: CGRect(x: 50, y: 50, width: 200, height: 200))
+//         view.addSubview(blurEffectView)
 //         backButton.removeFromSuperview()
 //        view.addSubview(backButton)
 //        backButton.bringSubviewToFront(backButton)
@@ -113,10 +136,12 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     func mask(_ viewToMask: UIView, maskRect: CGRect) {
             let maskLayer = CAShapeLayer()
-            let path = CGPath(rect: maskRect, transform: nil)
-            maskLayer.path = path
+        let mutablePath = CGMutablePath()
+        mutablePath.addRect(self.blurEffectView.bounds)
+        mutablePath.addRect(maskRect)
+        maskLayer.path = mutablePath
         maskLayer.fillRule = .evenOdd
             viewToMask.layer.mask = maskLayer
-
+ 
         }
 }
