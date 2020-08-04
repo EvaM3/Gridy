@@ -84,7 +84,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gridy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2i-SH-gFO">
-                                                        <rect key="frame" x="58" y="-45" width="84.5" height="122.5"/>
+                                                        <rect key="frame" x="61.5" y="-45" width="77.5" height="122.5"/>
                                                         <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -211,8 +211,18 @@
                                                 <action selector="startButtonTapped:" destination="r95-WL-fCp" eventType="touchUpInside" id="ojZ-4f-KDV"/>
                                             </connections>
                                         </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jSA-ET-Yxp" userLabel="blurCutOut">
+                                            <rect key="frame" x="20" y="144" width="280" height="280"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="jSA-ET-Yxp" secondAttribute="height" multiplier="1:1" id="sQf-gs-zFl"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="jSA-ET-Yxp" firstAttribute="centerY" secondItem="EFb-bw-mpV" secondAttribute="centerY" id="8dt-On-FhJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="jSA-ET-Yxp" secondAttribute="trailing" constant="20" id="DPm-a9-lC8"/>
+                                        <constraint firstItem="jSA-ET-Yxp" firstAttribute="leading" secondItem="EFb-bw-mpV" secondAttribute="leading" constant="20" id="DvD-bU-5Ee"/>
+                                        <constraint firstItem="jSA-ET-Yxp" firstAttribute="centerX" secondItem="EFb-bw-mpV" secondAttribute="centerX" id="cia-yP-w8Y"/>
                                         <constraint firstItem="PNA-Il-PBq" firstAttribute="leading" secondItem="EFb-bw-mpV" secondAttribute="leading" constant="85" id="ljH-k2-Rjt"/>
                                         <constraint firstAttribute="bottom" secondItem="PNA-Il-PBq" secondAttribute="bottom" constant="56" id="ug0-oK-qT1"/>
                                         <constraint firstItem="PNA-Il-PBq" firstAttribute="centerX" secondItem="EFb-bw-mpV" secondAttribute="centerX" id="xsd-kM-UYl"/>
@@ -256,6 +266,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="backButton" destination="Cjx-qB-w14" id="bz2-H6-XYt"/>
+                        <outlet property="blurCutOut" destination="jSA-ET-Yxp" id="fVc-kf-HMV"/>
                         <outlet property="imageView" destination="7nr-3u-k0Y" id="1wl-JY-g7v"/>
                         <outlet property="startButton" destination="PNA-Il-PBq" id="MGa-lr-wen"/>
                     </connections>
