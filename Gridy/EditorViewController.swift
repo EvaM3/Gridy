@@ -21,12 +21,12 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         adjustLabel.numberOfLines = 0
         
         self.navigationController?.isNavigationBarHidden = true
-         imageView.image = selectedImage
-    
+        imageView.image = selectedImage
+        
         mask(blurEffectView, maskRect: blurCutOut.frame)
         
         blurCutOut.isUserInteractionEnabled = true
@@ -49,21 +49,19 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     @objc func handleRotate(recognizer : UIRotationGestureRecognizer) {
-        if let view = recognizer.view {
-            view.transform = blurCutOut.transform.rotated(by: recognizer.rotation)
-            recognizer.rotation = 0
-        }
+        
+        self.imageView.transform = self.imageView.transform.rotated(by: recognizer.rotation)
+        recognizer.rotation = 0
+        
     }
     @objc func pinchRecognized(pinch: UIPinchGestureRecognizer) {
-        if let view = pinch.view {
-            view.transform = blurCutOut.transform.scaledBy(x: pinch.scale, y: pinch.scale)
-            pinch.scale = 1
-        }
+        self.imageView.transform = self.imageView.transform.scaledBy(x: pinch.scale, y: pinch.scale)
+        pinch.scale = 1
     }
     @ objc  func handlePan(_ gestureRecognizer: UIPanGestureRecognizer) {
         if gestureRecognizer.state == .began || gestureRecognizer.state == .changed {
-            let translation = gestureRecognizer.translation(in: self.view)
-            gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x + translation.x, y: gestureRecognizer.view!.center.y + translation.y)
+            let translation = gestureRecognizer.translation(in: imageView.superview)
+            imageView.center = CGPoint(x: imageView.center.x + translation.x, y: imageView.center.y + translation.y)
             gestureRecognizer.setTranslation(CGPoint.zero, in: self.view)
         }
     }

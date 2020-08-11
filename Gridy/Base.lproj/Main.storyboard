@@ -218,7 +218,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stonehenge" translatesAutoresizingMaskIntoConstraints="NO" id="7nr-3u-k0Y">
-                                <rect key="frame" x="0.0" y="0.0" width="6240" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A7a-Eq-21u">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -285,17 +285,18 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="A7a-Eq-21u" firstAttribute="top" secondItem="7nr-3u-k0Y" secondAttribute="top" id="6jS-He-M0F"/>
-                            <constraint firstAttribute="trailing" secondItem="A7a-Eq-21u" secondAttribute="trailing" id="CI9-Vn-t5t"/>
-                            <constraint firstItem="7nr-3u-k0Y" firstAttribute="leading" secondItem="aLN-ZW-ncA" secondAttribute="leading" id="DxN-1U-n21"/>
-                            <constraint firstItem="A7a-Eq-21u" firstAttribute="bottom" secondItem="bo3-YG-GK5" secondAttribute="bottom" id="HC0-7u-BXs"/>
-                            <constraint firstItem="7nr-3u-k0Y" firstAttribute="bottom" secondItem="A7a-Eq-21u" secondAttribute="bottom" id="RX8-AN-aIr"/>
+                            <constraint firstItem="A7a-Eq-21u" firstAttribute="top" secondItem="bo3-YG-GK5" secondAttribute="top" id="1Sg-aJ-c8b"/>
+                            <constraint firstItem="bo3-YG-GK5" firstAttribute="trailing" secondItem="7nr-3u-k0Y" secondAttribute="trailing" id="GeQ-zk-tEr"/>
+                            <constraint firstItem="A7a-Eq-21u" firstAttribute="leading" secondItem="bo3-YG-GK5" secondAttribute="leading" id="MSN-Ol-Roe"/>
+                            <constraint firstItem="A7a-Eq-21u" firstAttribute="trailing" secondItem="bo3-YG-GK5" secondAttribute="trailing" id="RkP-cw-C7b"/>
+                            <constraint firstItem="7nr-3u-k0Y" firstAttribute="bottom" secondItem="bo3-YG-GK5" secondAttribute="bottom" id="WnL-Wr-cN7"/>
                             <constraint firstItem="Cjx-qB-w14" firstAttribute="leading" secondItem="bo3-YG-GK5" secondAttribute="leading" constant="287" id="clQ-jp-JZi"/>
+                            <constraint firstItem="A7a-Eq-21u" firstAttribute="bottom" secondItem="bo3-YG-GK5" secondAttribute="bottom" id="ebu-qS-PMl"/>
                             <constraint firstItem="Cjx-qB-w14" firstAttribute="top" secondItem="bo3-YG-GK5" secondAttribute="top" constant="21" id="f4S-OQ-FIm"/>
                             <constraint firstItem="Cjx-qB-w14" firstAttribute="top" secondItem="bo3-YG-GK5" secondAttribute="top" constant="21" id="gUn-ea-v8C"/>
-                            <constraint firstItem="A7a-Eq-21u" firstAttribute="top" secondItem="bo3-YG-GK5" secondAttribute="top" id="jBD-Vf-lsK"/>
-                            <constraint firstItem="7nr-3u-k0Y" firstAttribute="leading" secondItem="A7a-Eq-21u" secondAttribute="leading" id="pAt-tx-pph"/>
+                            <constraint firstItem="7nr-3u-k0Y" firstAttribute="leading" secondItem="bo3-YG-GK5" secondAttribute="leading" id="hWl-tI-dia"/>
                             <constraint firstItem="bo3-YG-GK5" firstAttribute="trailing" secondItem="Cjx-qB-w14" secondAttribute="trailing" constant="8" id="sQd-MH-3hK"/>
+                            <constraint firstItem="7nr-3u-k0Y" firstAttribute="top" secondItem="bo3-YG-GK5" secondAttribute="top" id="tv3-Kp-mcS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bo3-YG-GK5"/>
                     </view>
