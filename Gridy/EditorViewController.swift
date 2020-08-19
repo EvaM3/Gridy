@@ -22,13 +22,16 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         adjustLabel.numberOfLines = 0
+        
         
         self.navigationController?.isNavigationBarHidden = true
         imageView.image = selectedImage
         
         mask(blurEffectView, maskRect: blurCutOut.frame)
-//        draw(blurCutOut, _, rect: blurCutOut.frame)
+//        blurCutOut.frame = BlurCutOut.self
+  
         
         blurCutOut.isUserInteractionEnabled = true
         blurCutOut.isMultipleTouchEnabled = true
@@ -45,8 +48,10 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
         gestureRecognizer.delegate = self
         blurCutOut.addGestureRecognizer(gestureRecognizer)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        blurCutOut.setNeedsDisplay()
+    }
     
-  
     
     
     
@@ -75,26 +80,34 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func startButtonTapped(_ sender: Any) {
     }
-    class CanvasView: UIViewController {
-
-
-      func draw(_ rect: CGRect) {
-      let path = UIBezierPath()
-      path.move(to: CGPoint(x: 0, y: 0))
-      path.addLine(to: CGPoint(x: 200, y: 100))
-      path.stroke()
-              }
-          }
-
-    func mask(_ viewToMask: UIView, maskRect: CGRect) {
-        let maskLayer = CAShapeLayer()
-        let mutablePath = CGMutablePath()
-        mutablePath.addRect(viewToMask.bounds)
-        mutablePath.addRect(maskRect)
-        maskLayer.path = mutablePath
-        maskLayer.fillRule = .evenOdd
-        viewToMask.layer.mask = maskLayer
-    }
-    
     
 }
+
+func mask(_ viewToMask: UIView, maskRect: CGRect) {
+    let maskLayer = CAShapeLayer()
+    let mutablePath = CGMutablePath()
+    mutablePath.addRect(viewToMask.bounds)
+    mutablePath.addRect(maskRect)
+    maskLayer.path = mutablePath
+    maskLayer.fillRule = .evenOdd
+    viewToMask.layer.mask = maskLayer
+}
+
+//
+//class BlurCutOut: UIView {
+//    override func draw(_ rect: CGRect) {
+//        let path = UIBezierPath()
+//        let sliceCount = 4
+//        for i in 0...sliceCount {
+//            path.move(to: CGPoint(x: Int(self.bounds.width) * i / sliceCount , y: 0))
+//            path.addLine(to: CGPoint(x: self.bounds.width  * CGFloat(i) / CGFloat(sliceCount), y: self.bounds.height))
+//
+//            path.move(to: CGPoint(x: 0, y: Int(self.bounds.height) * i / sliceCount))
+//            path.addLine(to: CGPoint(x: self.bounds.height, y: self.bounds.width  * CGFloat(i) / CGFloat(sliceCount)))
+//
+//        }
+//        path.stroke()
+//        let myBlurCutOut = BlurCutOut()
+        
+//    }
+
