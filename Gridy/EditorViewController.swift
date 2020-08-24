@@ -30,8 +30,8 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
         imageView.image = selectedImage
         
         mask(blurEffectView, maskRect: blurCutOut.frame)
-//        blurCutOut.frame = BlurCutOut.self
-  
+        //        blurCutOut.frame = BlurCutOut.self
+        
         
         blurCutOut.isUserInteractionEnabled = true
         blurCutOut.isMultipleTouchEnabled = true
@@ -48,9 +48,17 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
         gestureRecognizer.delegate = self
         blurCutOut.addGestureRecognizer(gestureRecognizer)
     }
-    override func viewWillAppear(_ animated: Bool) {
-        blurCutOut.setNeedsDisplay()
-    }
+    override func viewDidAppear(_ animated: Bool) {
+        
+//        let concurrentQueue = DispatchQueue(label: "blurCutOut")
+//        concurrentQueue.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.blurCutOut.setNeedsDisplay()
+            }
+            
+            
+        }
+
     
     
     
@@ -108,6 +116,6 @@ func mask(_ viewToMask: UIView, maskRect: CGRect) {
 //        }
 //        path.stroke()
 //        let myBlurCutOut = BlurCutOut()
-        
+
 //    }
 

@@ -20,10 +20,9 @@ class BlurCutOut: UIView {
             path.addLine(to: CGPoint(x: self.bounds.width  * CGFloat(i) / CGFloat(sliceCount), y: self.bounds.height))
             
             path.move(to: CGPoint(x: 0, y: Int(self.bounds.height) * i / sliceCount))
-            path.addLine(to: CGPoint(x: self.bounds.height, y: self.bounds.width  * CGFloat(i) / CGFloat(sliceCount)))
+            path.addLine(to: CGPoint(x: self.bounds.width, y: self.bounds.height  * CGFloat(i) / CGFloat(sliceCount)))
             
         }
         path.stroke()
-        
     }
 }
