@@ -224,11 +224,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="86" translatesAutoresizingMaskIntoConstraints="NO" id="WCU-NQ-5Kj" userLabel="mainStackView">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WCU-NQ-5Kj" userLabel="mainStackView">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="Pqu-UR-cpx" userLabel="backButtonAndLabelStackV">
-                                                    <rect key="frame" x="20" y="0.0" width="394" height="148"/>
+                                                    <rect key="frame" x="20" y="0.0" width="394" height="194"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjx-qB-w14" userLabel="BackButton" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
                                                             <rect key="frame" x="376.5" y="0.0" width="17.5" height="30"/>
@@ -246,7 +246,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adjust the puzzle image: zoom, rotate, reposition" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Y6-FS-rw8">
-                                                            <rect key="frame" x="0.0" y="110" width="394" height="38"/>
+                                                            <rect key="frame" x="0.0" y="110" width="394" height="84"/>
                                                             <fontDescription key="fontDescription" name=".SFNS-Regular" family=".SF NS" pointSize="18"/>
                                                             <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -265,20 +265,20 @@
                                                     </variation>
                                                     <variation key="heightClass=compact-widthClass=regular" alignment="top"/>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="TEu-95-lbE" userLabel="blurAndStartButtonStackV">
-                                                    <rect key="frame" x="0.0" y="234" width="414" height="584"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="TEu-95-lbE" userLabel="blurAndStartButtonStackV">
+                                                    <rect key="frame" x="0.0" y="214" width="414" height="604"/>
                                                     <subviews>
-                                                        <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="jSA-ET-Yxp" userLabel="blurCutOut" customClass="BlurCutOut" customModule="Gridy" customModuleProvider="target">
+                                                        <view contentMode="center" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="jSA-ET-Yxp" userLabel="blurCutOut" customClass="BlurCutOut" customModule="Gridy" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="jSA-ET-Yxp" secondAttribute="height" multiplier="1:1" id="sQf-gs-zFl"/>
                                                             </constraints>
                                                         </view>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="fus-uy-jXa" userLabel="startButtonStack">
-                                                            <rect key="frame" x="147" y="464" width="120" height="120"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="fus-uy-jXa" userLabel="startButtonStack">
+                                                            <rect key="frame" x="112" y="504" width="190" height="100"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNA-Il-PBq" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="190" height="100"/>
                                                                     <color key="backgroundColor" name="lightgreen"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                                     <state key="normal" title="Start">
@@ -290,13 +290,13 @@
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="120" id="226-47-W0f"/>
-                                                                <constraint firstAttribute="width" constant="120" id="oSH-cO-M14"/>
+                                                                <constraint firstAttribute="height" constant="100" id="226-47-W0f"/>
+                                                                <constraint firstAttribute="width" constant="190" id="oSH-cO-M14"/>
                                                             </constraints>
-                                                            <variation key="heightClass=compact" axis="vertical" distribution="fill"/>
+                                                            <variation key="heightClass=compact" axis="horizontal" distribution="fill"/>
                                                         </stackView>
                                                     </subviews>
-                                                    <variation key="heightClass=compact" axis="horizontal" spacing="400"/>
+                                                    <variation key="heightClass=compact" axis="horizontal" spacing="300"/>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -361,7 +361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Z6-sL-00z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1167.2" y="171.36431784107947"/>
+            <point key="canvasLocation" x="1167.1875" y="171.01449275362319"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tTd-1H-SU5">
