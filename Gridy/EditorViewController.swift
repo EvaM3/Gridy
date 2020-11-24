@@ -10,24 +10,30 @@ import UIKit
 
 
 
-class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
+class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var imageView: UIImageView!
-    var selectedImage : UIImage?
     @IBOutlet var backButton: UIButton!
     @IBOutlet var startButton: UIButton!
     @IBOutlet var blurCutOut: UIView!
     @IBOutlet var blurEffectView: UIVisualEffectView!
     @IBOutlet var adjustLabel: UILabel!
     
+     var selectedImage : UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         adjustLabel.numberOfLines = 0
-        
-        
         self.navigationController?.isNavigationBarHidden = true
         imageView.image = selectedImage
+//
+//        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//               if segue.identifier == "showPlayfieldView" {
+//                   if let destinationVC = segue.destination as? PlayfieldViewController {
+//                       destinationVC.crop = self.selectedImage
+//                   }
+//               }
+//           }
+           
         
         mask(blurEffectView, maskRect: blurCutOut.frame)
         //        blurCutOut.frame = BlurCutOut.self
@@ -50,15 +56,15 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     override func viewDidAppear(_ animated: Bool) {
         
-//        let concurrentQueue = DispatchQueue(label: "blurCutOut")
-//        concurrentQueue.async {
+        //        let concurrentQueue = DispatchQueue(label: "blurCutOut")
+        //        concurrentQueue.async {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                self.blurCutOut.setNeedsDisplay()
-            }
-            
-            
+            self.blurCutOut.setNeedsDisplay()
         }
-
+        
+        
+    }
+    
     
     
     
@@ -87,9 +93,107 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func startButtonTapped(_ sender: Any) {
+        if let imageArray = UIImage+splitImage  {
+                   self.UIImage+splitImage = imageArray
+                   performSegue(withIdentifier: "showPlayfieldView", sender: nil)
+               }
+        
+        
+        blurCutOut.setNeedsDisplay()
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+//        func cropMyImage(image: UIImage, toRect cropRect: CGRect, viewSize: CGSize? = nil ) -> UIImage? {
+//            let imageScale: CGFloat
+//            if let viewSize = viewSize {
+//                imageScale = max(image.size.width / viewSize.width,
+//                                 image.size.height / viewSize.height)
+//            } else {
+//                imageScale = 1
+//            }
+//            
+//            
+//            
+//            let cropZone = CGRect(x:cropRect.origin.x * imageScale,        // scaling cropRect to handle images larger than shown-on-screen size
+//                y:cropRect.origin.y * imageScale,
+//                width:cropRect.size.width * imageScale,
+//                height:cropRect.size.height * imageScale)
+//            
+//            
+//            guard let cutImageRef: CGImage = image.cgImage?.cropping(to:cropZone)            // cropping in Core Graphics to cropZone
+//                else {
+//                    return nil
+//            }
+//            
+//            
+//            // Return image to UIImage
+//            let croppedImage: UIImage = UIImage(cgImage: cutImageRef)
+//            return croppedImage
+//        }
+//        
     }
     
+    
+    //    func splitImage(image blurCutOut: UIImage) {
+    //
+    //           let row = 4
+    //           let column = 4
+    //           var myImage = blurCutOut.self
+    //
+    //           let height =  (myImage.size.height) /  CGFloat (row)
+    //           let width =  (myImage.size.width)  / CGFloat (column)
+    //
+    //        let scale = (myImage.scale)          // remove scale
+    //
+    //           var imageArr = [UIImage]()                                 // will contain small pieces of image
+    //           for y in 0..<row{
+    //               var yArr = [UIImage]()
+    //               for x in 0..<column {
+    //
+    //                   UIGraphicsBeginImageContextWithOptions(
+    //                       CGSize(width:width, height:height),
+    //                       false, 0)
+    //                   let i =   (myImage.cgImage?.cropping(to:  CGRect.init(x: CGFloat(x) * width * scale, y:  CGFloat(y) * height * scale  , width: width * scale  , height: height * scale) ))   // remove scale , width, height enough
+    //
+    //                   let newImg = UIImage.init(cgImage: i!)
+    //
+    //
+    //           UIGraphicsEndImageContext();
+    //           yArr.append(newImg)
+    //               }
+    //
+    //               imageArr.append(contentsOf: yArr)
+    //
+    //           }
+    //    func takeScreenshot() -> UIImage {
+    //        let rectangle = CGRect(x: -blurCutOut.frame.origin.x, y: -blurCutOut.frame.origin.y, width: self.view.bounds.width, height: self.view.bounds.height)
+    //        UIGraphicsBeginImageContextWithOptions(blurCutOut.frame.size, false, 0.0)
+    //
+    //        self.view.drawHierarchy(in: rectangle, afterScreenUpdates: true)
+    //
+    //        let image = UIGraphicsGetImageFromCurrentImageContext()
+    //        UIGraphicsEndImageContext()
+    //
+    //        if image != nil {
+    //            return image!
+    //
+    //        }
+    //        return UIImage()
+    //    }
 }
+
+
 
 func mask(_ viewToMask: UIView, maskRect: CGRect) {
     let maskLayer = CAShapeLayer()
@@ -101,21 +205,5 @@ func mask(_ viewToMask: UIView, maskRect: CGRect) {
     viewToMask.layer.mask = maskLayer
 }
 
-//
-//class BlurCutOut: UIView {
-//    override func draw(_ rect: CGRect) {
-//        let path = UIBezierPath()
-//        let sliceCount = 4
-//        for i in 0...sliceCount {
-//            path.move(to: CGPoint(x: Int(self.bounds.width) * i / sliceCount , y: 0))
-//            path.addLine(to: CGPoint(x: self.bounds.width  * CGFloat(i) / CGFloat(sliceCount), y: self.bounds.height))
-//
-//            path.move(to: CGPoint(x: 0, y: Int(self.bounds.height) * i / sliceCount))
-//            path.addLine(to: CGPoint(x: self.bounds.height, y: self.bounds.width  * CGFloat(i) / CGFloat(sliceCount)))
-//
-//        }
-//        path.stroke()
-//        let myBlurCutOut = BlurCutOut()
 
-//    }
 
