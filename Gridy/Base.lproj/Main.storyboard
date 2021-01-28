@@ -390,7 +390,7 @@
         <!--PlayfieldViewController-->
         <scene sceneID="tTd-1H-SU5">
             <objects>
-                <viewController id="ZJP-Zl-Az0" userLabel="PlayfieldViewController" sceneMemberID="viewController">
+                <viewController id="ZJP-Zl-Az0" userLabel="PlayfieldViewController" customClass="PlayfieldViewController" customModule="Gridy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S4H-fd-BDc" userLabel="PlayfieldView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -435,25 +435,51 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jiw-PV-S6g">
+                                <rect key="frame" x="295" y="5" width="75" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="m8s-VE-Df5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5P-cp-pNf">
+                                <rect key="frame" x="334" y="206" width="36" height="32"/>
+                                <state key="normal" backgroundImage="lookup"/>
+                                <connections>
+                                    <action selector="lookUpButtonTapped:" destination="ZJP-Zl-Az0" eventType="touchUpInside" id="sdx-Yl-gmz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="tmI-63-qKV" firstAttribute="bottom" secondItem="jaZ-7o-9Uz" secondAttribute="bottom" id="5W8-d4-mEE"/>
                             <constraint firstItem="jaZ-7o-9Uz" firstAttribute="leading" secondItem="tmI-63-qKV" secondAttribute="leading" id="Dfi-WS-1NQ"/>
+                            <constraint firstItem="tmI-63-qKV" firstAttribute="trailing" secondItem="Jiw-PV-S6g" secondAttribute="trailing" constant="5" id="RZT-o2-DdN"/>
                             <constraint firstItem="tmI-63-qKV" firstAttribute="trailing" secondItem="8bd-Yp-1tN" secondAttribute="trailing" id="SPL-Pg-8dD"/>
+                            <constraint firstItem="Jiw-PV-S6g" firstAttribute="top" secondItem="tmI-63-qKV" secondAttribute="top" constant="5" id="ktP-6X-KaW"/>
                             <constraint firstItem="tmI-63-qKV" firstAttribute="trailing" secondItem="jaZ-7o-9Uz" secondAttribute="trailing" id="mHz-0w-4jl"/>
                             <constraint firstItem="8bd-Yp-1tN" firstAttribute="leading" secondItem="tmI-63-qKV" secondAttribute="leading" id="pZs-7U-Dpg"/>
+                            <constraint firstItem="b5P-cp-pNf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tmI-63-qKV" secondAttribute="leading" symbolic="YES" id="sVD-Wy-FJ2"/>
+                            <constraint firstItem="Jiw-PV-S6g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tmI-63-qKV" secondAttribute="leading" symbolic="YES" id="tfW-Iz-i7B"/>
+                            <constraint firstItem="tmI-63-qKV" firstAttribute="trailing" secondItem="b5P-cp-pNf" secondAttribute="trailing" constant="5" id="uck-sp-GoM"/>
                             <constraint firstItem="8bd-Yp-1tN" firstAttribute="top" secondItem="tmI-63-qKV" secondAttribute="top" constant="50" id="uzP-Il-nKz"/>
+                            <constraint firstItem="b5P-cp-pNf" firstAttribute="top" secondItem="8bd-Yp-1tN" secondAttribute="bottom" constant="19" id="vl4-Pc-juF"/>
                             <constraint firstItem="tmI-63-qKV" firstAttribute="bottom" secondItem="8bd-Yp-1tN" secondAttribute="bottom" constant="480" id="xMa-w3-bqI"/>
                             <constraint firstItem="jaZ-7o-9Uz" firstAttribute="top" secondItem="8bd-Yp-1tN" secondAttribute="bottom" constant="70" id="yZO-2j-Toh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tmI-63-qKV"/>
                     </view>
                     <navigationItem key="navigationItem" id="YN1-rH-9FT"/>
+                    <connections>
+                        <outlet property="lookUpButton" destination="b5P-cp-pNf" id="QM0-Ee-Tkf"/>
+                        <outlet property="scoreLabel" destination="Jiw-PV-S6g" id="z0D-xB-StR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G85-uL-dN4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2143" y="170"/>
+            <point key="canvasLocation" x="2141.5999999999999" y="169.56521739130437"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sp2-7e-Bfd">
@@ -477,6 +503,7 @@
     <resources>
         <image name="Gridy-camera" width="36" height="28"/>
         <image name="Gridy-library" width="36" height="28"/>
+        <image name="lookup" width="36" height="28"/>
         <image name="stonehenge" width="6240" height="4160"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="lightgreen">
