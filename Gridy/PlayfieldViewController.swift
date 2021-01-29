@@ -20,7 +20,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     var imageArray : [UIImage] = []
     var gameArray : [UIImage] = []
-    var originalImage = [UIImage]()
+    var originalImage = UIImage()
     let defaultImage : UIImage = UIImage(named: "placeHolder")!
     var shuffledArray : [UIImage] = []
     let itemsPerRow: CGFloat = 4
@@ -28,21 +28,19 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     let gameCollectionViewIdentifier = "GameCell"
     var gameTimer: Timer?
     var score = 0
-    var croppedImage = UIImage.cropImage
-      var hintImage = UIImageView()
+    var hintImage = UIImageView()
     
     
     
               
     @objc func showHintImage() {
-                  //UIImage.splitImage(on: self)
-                //  hintImage.image = originalImage
-                  hintImage.contentMode = .scaleAspectFit
-                  hintImage.frame = self.view.frame
-                  self.view.addSubview(hintImage)
-                  self.gameCollectionView.isHidden = true
-                  self.view.bringSubviewToFront(hintImage)
-                  gameTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(removeHintImage), userInfo: nil, repeats: false)
+        hintImage.image = originalImage
+        hintImage.contentMode = .scaleToFill
+        hintImage.frame = gameCollectionView.frame
+        self.view.addSubview(hintImage)
+        self.gameCollectionView.isHidden = true
+        self.view.bringSubviewToFront(hintImage)
+        gameTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(removeHintImage), userInfo: nil, repeats: false)
               }
     @objc func removeHintImage() {
                   self.view.sendSubviewToBack(hintImage)
@@ -59,7 +57,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         gameCollectionView.delegate = self
         shuffledCollectionView.dataSource = self
         gameCollectionView.dataSource = self
-         imageArray = originalImage
+        imageArray = originalImage.splitImage(row: Int(itemsPerRow), column: Int(itemsPerRow))
         scoreLabel.text = "Score: \(score)"
         gameArray = Array(repeating: defaultImage, count: 16)
         shuffledArray = imageArray.shuffled()
@@ -94,8 +92,8 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         shuffledCollectionView.reloadData()
             }
         
-    @objc func increaseScore() {
-        score += 1
+    @objc func increaseScore(n: Int = 1) {
+        score += n
         scoreLabel.text = "Score: \(score)"
     }
         
@@ -104,7 +102,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         shuffledArray = imageArray.shuffled()
         self.shuffledCollectionView.reloadData()
         self.gameCollectionView.reloadData()
-            
+        increaseScore(n: 5)
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -120,6 +118,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     @IBAction func lookUpButtonTapped(_ sender: UIButton) {
        showHintImage()
+        increaseScore(n: 2)
     }
 
 
@@ -195,6 +194,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
                         self.shuffledArray.remove(at:removeIndexPath.row)
                         self.shuffledArray.insert(self.defaultImage, at: removeIndexPath.row)
                         self.shuffledCollectionView.reloadData()
+                        self.increaseScore()
                     }
 
 
