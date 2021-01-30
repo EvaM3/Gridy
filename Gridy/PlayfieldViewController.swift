@@ -32,7 +32,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     
     
-              
+    
     @objc func showHintImage() {
         hintImage.image = originalImage
         hintImage.contentMode = .scaleToFill
@@ -41,13 +41,13 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         self.gameCollectionView.isHidden = true
         self.view.bringSubviewToFront(hintImage)
         gameTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(removeHintImage), userInfo: nil, repeats: false)
-              }
+    }
     @objc func removeHintImage() {
-                  self.view.sendSubviewToBack(hintImage)
-                  self.gameCollectionView.isHidden = false
-                  
-              }
-       
+        self.view.sendSubviewToBack(hintImage)
+        self.gameCollectionView.isHidden = false
+        
+    }
+    
     
     
     override func viewDidLoad() {
@@ -61,42 +61,42 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         scoreLabel.text = "Score: \(score)"
         gameArray = Array(repeating: defaultImage, count: 16)
         shuffledArray = imageArray.shuffled()
-      
-
-    
-    
+        
+        
+        
+        
         self.navigationController?.isNavigationBarHidden = true
         shuffledCollectionView.isScrollEnabled = false
         shuffledCollectionView.isUserInteractionEnabled = true
         shuffledCollectionView.dragInteractionEnabled = true
         gameCollectionView.dragInteractionEnabled = true
-//        shuffledCollectionView.dragDelegate = self
-//        gameCollectionView.dragDelegate = self
-//        shuffledCollectionView.dropDelegate = self
-//        gameCollectionView.dropDelegate = self
-
+        //        shuffledCollectionView.dragDelegate = self
+        //        gameCollectionView.dragDelegate = self
+        //        shuffledCollectionView.dropDelegate = self
+        //        gameCollectionView.dropDelegate = self
+        
         
         
         self.view.addSubview(shuffledCollectionView)
         self.view.addSubview(gameCollectionView)
         
-
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didDoubleTap(_gesture:)))
         tapGesture.numberOfTapsRequired = 2
         shuffledCollectionView.addGestureRecognizer(tapGesture)
         
         
         
-        }
+    }
     override func viewDidAppear(_ animated: Bool) {
         shuffledCollectionView.reloadData()
-            }
-        
+    }
+    
     @objc func increaseScore(n: Int = 1) {
         score += n
         scoreLabel.text = "Score: \(score)"
     }
-        
+    
     @objc private func didDoubleTap(_gesture: UITapGestureRecognizer) {
         gameArray = []
         shuffledArray = imageArray.shuffled()
@@ -104,7 +104,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         self.gameCollectionView.reloadData()
         increaseScore(n: 5)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == shuffledCollectionView {
             return shuffledArray.count
@@ -114,54 +114,54 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         }
         return 0
     }
-
+    
     
     @IBAction func lookUpButtonTapped(_ sender: UIButton) {
-       showHintImage()
+        showHintImage()
         increaseScore(n: 2)
     }
-
-
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         let imageView = UIImageView()
         if collectionView == shuffledCollectionView {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayfieldCell", for: indexPath)
             imageView.image = shuffledArray[indexPath.row]
-
+            
         }
         if collectionView == gameCollectionView {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCell", for: indexPath)
             imageView.image = gameArray[indexPath.row]
-
+            
         }
         imageView.frame = cell.contentView.frame
         cell.addSubview(imageView)
         return cell
-
+        
     }
-
-
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionViewWidth : CGFloat = collectionView.frame.width
         let widthPerItem : CGFloat = collectionViewWidth / CGFloat(itemsPerRow)
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
     
-
-        func  collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-            return UIEdgeInsets.zero
-        }
+    
+    func  collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-
-
+    
+    
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         if shuffledArray[indexPath.row] == defaultImage {
             return [UIDragItem]()
@@ -172,7 +172,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         dragItem.localObject = indexPath
         return [dragItem]
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
         let destinationIndexPath: IndexPath
         if let indexPath = coordinator.destinationIndexPath {
@@ -181,8 +181,8 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             let itemCount = collectionView.numberOfItems(inSection: 0)
             destinationIndexPath = IndexPath(row: itemCount, section: 0)
         }
-
-
+        
+        
         coordinator.session.loadObjects(ofClass: UIImage.self) { (NSItemProviderReadingItems) in
             if let imagesDropped = NSItemProviderReadingItems as? [UIImage] {
                 if imagesDropped.count > 0 {
@@ -196,52 +196,15 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
                         self.shuffledCollectionView.reloadData()
                         self.increaseScore()
                     }
-
-
+                    
+                    
                 }
             }
-
-//
-//
-//
-//
-    
-    
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return imageArray.count
-//    }
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        var cell = UICollectionViewCell()
-//        let imageView = UIImageView(frame: cell.contentView.frame)
-//        if collectionView == shuffledCollectionView {
-//            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayfieldCell", for: indexPath)
-//            imageView.image = imageArray[indexPath.row]
-//        }
-//        if collectionView == gameCollectionView {
-//            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCell", for: indexPath)
-//            imageView.image = UIImage()
-//            cell.backgroundColor = UIColor(red: CGFloat(arc4random_uniform(255))/255.0, green:255.0/255.0, blue:CGFloat(arc4random_uniform(255))/255.0, alpha: 1.0)
-//        }
-//        cell.addSubview(imageView)
-//        return cell
-//
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let cellSize = CGSize(width:80 , height:80)
-//
-//        let layout = UICollectionViewFlowLayout()
-//        layout.itemSize = cellSize
-//        layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
-//
-//    return cellSize
-//    }
-//}
-
+            
+            
         }
     }
 }
+
 
 

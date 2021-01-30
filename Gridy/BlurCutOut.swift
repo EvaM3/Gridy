@@ -6,7 +6,6 @@
 //  Copyright © 2020 Eva Madarasz. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 
