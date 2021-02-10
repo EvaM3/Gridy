@@ -451,6 +451,17 @@
                                     <action selector="lookUpButtonTapped:" destination="ZJP-Zl-Az0" eventType="touchUpInside" id="sdx-Yl-gmz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMl-Ej-d7d" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
+                                <rect key="frame" x="16" y="5" width="77" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="deepgreen"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartButtonTapped:" destination="ZJP-Zl-Az0" eventType="touchUpInside" id="CL6-5H-Z8e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -474,6 +485,7 @@
                     <navigationItem key="navigationItem" id="YN1-rH-9FT"/>
                     <connections>
                         <outlet property="lookUpButton" destination="b5P-cp-pNf" id="QM0-Ee-Tkf"/>
+                        <outlet property="restartButton" destination="dMl-Ej-d7d" id="8fz-px-ADl"/>
                         <outlet property="scoreLabel" destination="Jiw-PV-S6g" id="z0D-xB-StR"/>
                     </connections>
                 </viewController>
@@ -506,6 +518,9 @@
         <image name="lookup" width="36" height="28"/>
         <image name="stonehenge" width="6240" height="4160"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="deepgreen">
+            <color red="0.10199999809265137" green="0.57599997520446777" blue="0.43500000238418579" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="lightgreen">
             <color red="0.53299999237060547" green="0.83099997043609619" blue="0.59600001573562622" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

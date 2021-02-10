@@ -15,6 +15,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet var gameCollectionView: UICollectionView!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var lookUpButton: UIButton!
+    @IBOutlet var restartButton: RoundedButton!
     
     
     
@@ -114,6 +115,12 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         }
         return 0
     }
+   
+    @IBAction func restartButtonTapped(_ sender: Any) {
+    
+   navigationController?.popToRootViewController(animated: true)
+    }
+    
     
     
     @IBAction func lookUpButtonTapped(_ sender: UIButton) {
