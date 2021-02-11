@@ -76,8 +76,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         //        shuffledCollectionView.dropDelegate = self
         //        gameCollectionView.dropDelegate = self
         
-        
-        
         self.view.addSubview(shuffledCollectionView)
         self.view.addSubview(gameCollectionView)
         
@@ -85,13 +83,20 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didDoubleTap(_gesture:)))
         tapGesture.numberOfTapsRequired = 2
         shuffledCollectionView.addGestureRecognizer(tapGesture)
-        
-        
-        
+     
     }
     override func viewDidAppear(_ animated: Bool) {
         shuffledCollectionView.reloadData()
     }
+    
+    func restartGame() {
+        self.gameArray.removeAll()
+        self.score = 0
+        self.scoreLabel.text = "Score \(score)"
+        self.shuffledCollectionView.reloadData()
+    }
+    
+    
     
     @objc func increaseScore(n: Int = 1) {
         score += n
@@ -106,6 +111,22 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         increaseScore(n: 5)
     }
     
+func solvedPuzzle() {
+        if self.gameArray == self.imageArray {
+            let alert = UIAlertController(title: "You Won!", message: "Congratulations✌️", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let shareMyText = "My score on Gridy is \(score)"
+            let activityVc = UIActivityViewController(activityItems: [shareMyText], applicationActivities: nil)
+            present(activityVc, animated: true, completion: nil)
+            if let popOver = activityVc.popoverPresentationController {
+                popOver.sourceView = view
+                popOver.sourceView?.center = view.center
+            }
+            alert.addAction(okAction)
+            self.present(alert,animated: true, completion: nil)
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == shuffledCollectionView {
             return shuffledArray.count
@@ -115,13 +136,12 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         }
         return 0
     }
-   
+    
     @IBAction func restartButtonTapped(_ sender: Any) {
-    
-   navigationController?.popToRootViewController(animated: true)
+        
+        navigationController?.popToRootViewController(animated: true)
+        restartGame()
     }
-    
-    
     
     @IBAction func lookUpButtonTapped(_ sender: UIButton) {
         showHintImage()
@@ -147,7 +167,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         return cell
         
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionViewWidth : CGFloat = collectionView.frame.width
@@ -202,6 +221,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
                         self.shuffledArray.insert(self.defaultImage, at: removeIndexPath.row)
                         self.shuffledCollectionView.reloadData()
                         self.increaseScore()
+                        self.solvedPuzzle()
                     }
                     
                     

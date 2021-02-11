@@ -20,7 +20,6 @@
 		08716C00252E933800ECDEF9 /* UIImage+splitImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08716BFF252E933800ECDEF9 /* UIImage+splitImage.swift */; };
 		08743C39246F6216004932DE /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08743C38246F6216004932DE /* EditorViewController.swift */; };
 		08743C3B246F6620004932DE /* PlayfieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08743C3A246F6620004932DE /* PlayfieldViewController.swift */; };
-		08C1390E25C4C66500294AFB /* puzzleFinished.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C1390D25C4C66500294AFB /* puzzleFinished.swift */; };
 		08D91729256D232700404FFC /* UIImage+ takeScreenShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D91728256D232700404FFC /* UIImage+ takeScreenShot.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +39,6 @@
 		08716BFF252E933800ECDEF9 /* UIImage+splitImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+splitImage.swift"; sourceTree = "<group>"; };
 		08743C38246F6216004932DE /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		08743C3A246F6620004932DE /* PlayfieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayfieldViewController.swift; sourceTree = "<group>"; };
-		08C1390D25C4C66500294AFB /* puzzleFinished.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = puzzleFinished.swift; sourceTree = "<group>"; };
 		08D91728256D232700404FFC /* UIImage+ takeScreenShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ takeScreenShot.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,7 +84,6 @@
 				08743C3A246F6620004932DE /* PlayfieldViewController.swift */,
 				08743C38246F6216004932DE /* EditorViewController.swift */,
 				08121F0324EDA957001BA6B1 /* BlurCutOut.swift */,
-				08C1390D25C4C66500294AFB /* puzzleFinished.swift */,
 				082F00402458F1E50014C0CB /* Assets.xcassets */,
 				082F00422458F1E50014C0CB /* LaunchScreen.storyboard */,
 				082F00452458F1E50014C0CB /* Info.plist */,
@@ -176,7 +173,6 @@
 			files = (
 				082F003C2458F1E30014C0CB /* IntroViewController.swift in Sources */,
 				08121F0424EDA957001BA6B1 /* BlurCutOut.swift in Sources */,
-				08C1390E25C4C66500294AFB /* puzzleFinished.swift in Sources */,
 				082F00382458F1E30014C0CB /* AppDelegate.swift in Sources */,
 				082F003A2458F1E30014C0CB /* SceneDelegate.swift in Sources */,
 				08743C3B246F6620004932DE /* PlayfieldViewController.swift in Sources */,
