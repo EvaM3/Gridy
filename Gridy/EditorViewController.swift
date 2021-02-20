@@ -19,6 +19,7 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     @IBOutlet var adjustLabel: UILabel!
     
      var selectedImage : UIImage?
+     var originalImage = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,19 +94,20 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     }
     
     @IBAction func startButtonTapped(_ sender: Any) {
-        if let imageArray = UIImage+splitImage  {
-                   self.UIImage+splitImage = imageArray
-                   performSegue(withIdentifier: "showPlayfieldView", sender: nil)
+        let screenshot = self.view.takeScreenshot()
+        let croppedImage =  screenshot.cropImage(toRect: blurCutOut.frame)
+        originalImage = croppedImage ?? UIImage()
+        self.performSegue(withIdentifier: "showPlayfieldView", sender: nil)
                }
         
         
-        blurCutOut.setNeedsDisplay()
+       // blurCutOut.setNeedsDisplay()
         
         
         
         
         
-        
+            //    "showPlayfieldView"
         
         
         
@@ -191,7 +193,7 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     //        }
     //        return UIImage()
     //    }
-}
+
 
 
 
