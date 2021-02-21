@@ -44,9 +44,9 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         gameTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(removeHintImage), userInfo: nil, repeats: false)
     }
     @objc func removeHintImage() {
-        self.view.sendSubviewToBack(hintImage)
-        self.gameCollectionView.isHidden = false
-        
+     self.view.sendSubviewToBack(hintImage)
+     self.hintImage.removeFromSuperview()
+     self.gameCollectionView.isHidden = false
     }
     
     override func viewDidLoad() {
@@ -165,7 +165,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         }
         imageView.frame = cell.contentView.frame
         cell.addSubview(imageView)
-        // cell.layoutIfNeeded()
         return cell
     }
     
