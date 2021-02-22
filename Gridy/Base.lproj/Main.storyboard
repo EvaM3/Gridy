@@ -250,7 +250,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Pqu-UR-cpx" userLabel="backButtonAndLabelStackV">
-                                                    <rect key="frame" x="20" y="0.0" width="355" height="96.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="355" height="96"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjx-qB-w14" userLabel="BackButton" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
                                                             <rect key="frame" x="337.5" y="0.0" width="17.5" height="30"/>
@@ -268,7 +268,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adjust the puzzle image: zoom, rotate, reposition" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Y6-FS-rw8">
-                                                            <rect key="frame" x="0.0" y="80" width="355" height="16.5"/>
+                                                            <rect key="frame" x="0.0" y="80" width="355" height="16"/>
                                                             <fontDescription key="fontDescription" name=".SFNS-Regular" family=".SF NS" pointSize="14"/>
                                                             <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -288,17 +288,17 @@
                                                     <variation key="heightClass=compact-widthClass=regular" alignment="top"/>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="TEu-95-lbE" userLabel="blurAndStartButtonStackV">
-                                                    <rect key="frame" x="0.0" y="116.5" width="375" height="550.5"/>
+                                                    <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                                                     <subviews>
                                                         <view contentMode="center" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="jSA-ET-Yxp" userLabel="blurCutOut" customClass="BlurCutOut" customModule="Gridy" customModuleProvider="target">
-                                                            <rect key="frame" x="7.5" y="0.0" width="360" height="360.5"/>
+                                                            <rect key="frame" x="7" y="0.0" width="361" height="361"/>
                                                             <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="0.3026808647260274" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="jSA-ET-Yxp" secondAttribute="height" multiplier="1:1" id="sQf-gs-zFl"/>
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="fus-uy-jXa" userLabel="startButtonStack">
-                                                            <rect key="frame" x="150" y="450.5" width="75" height="100"/>
+                                                            <rect key="frame" x="150" y="451" width="75" height="100"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNA-Il-PBq" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="75" height="100"/>
@@ -439,13 +439,13 @@
                                     <constraint firstItem="8bd-Yp-1tN" firstAttribute="leading" secondItem="cfI-Oh-cxO" secondAttribute="leading" id="50n-EE-FX1"/>
                                     <constraint firstAttribute="trailing" secondItem="8bd-Yp-1tN" secondAttribute="trailing" id="gdl-5r-5z8"/>
                                 </constraints>
-                                <variation key="heightClass=compact" alignment="top"/>
+                                <variation key="heightClass=compact" alignment="bottom" axis="horizontal"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lWa-Kf-e3M" userLabel="GameCollectionStackView">
-                                <rect key="frame" x="0.0" y="257" width="375" height="410"/>
+                                <rect key="frame" x="0.0" y="257" width="375" height="414"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jaZ-7o-9Uz" userLabel="GameCollectionView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="410"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="414"/>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.91372549020000005" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rga-8I-jS6">
                                             <size key="itemSize" width="128" height="128"/>
@@ -466,23 +466,39 @@
                                     </collectionView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="jaZ-7o-9Uz" secondAttribute="bottom" id="Fef-9q-SJh"/>
                                     <constraint firstItem="jaZ-7o-9Uz" firstAttribute="leading" secondItem="lWa-Kf-e3M" secondAttribute="leading" id="Kx3-I3-iAB"/>
                                     <constraint firstAttribute="trailing" secondItem="jaZ-7o-9Uz" secondAttribute="trailing" id="lVe-6y-u7r"/>
                                     <constraint firstAttribute="bottom" secondItem="jaZ-7o-9Uz" secondAttribute="bottom" id="rvl-em-3sv"/>
                                     <constraint firstAttribute="bottom" secondItem="jaZ-7o-9Uz" secondAttribute="bottom" id="zjI-UT-3cz"/>
                                 </constraints>
-                                <variation key="heightClass=compact" alignment="bottom" spacingType="standard"/>
+                                <variation key="heightClass=compact" axis="horizontal" spacingType="standard"/>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jiw-PV-S6g">
-                                <rect key="frame" x="295" y="5" width="75" height="20.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="m8s-VE-Df5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cb3-Ji-jkY" userLabel="HintButtonStackView">
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="229" translatesAutoresizingMaskIntoConstraints="NO" id="07t-4O-toH" userLabel="RestartAndScoreStackView">
+                                <rect key="frame" x="16" y="5" width="354" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMl-Ej-d7d" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                        <color key="backgroundColor" name="deepgreen"/>
+                                        <state key="normal" title="Restart">
+                                            <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="restartButtonTapped:" destination="ZJP-Zl-Az0" eventType="touchUpInside" id="CL6-5H-Z8e"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jiw-PV-S6g">
+                                        <rect key="frame" x="279" y="0.0" width="75" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="m8s-VE-Df5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cb3-Ji-jkY" userLabel="HintButtonStackView">
                                 <rect key="frame" x="334" y="206" width="36" height="28"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5P-cp-pNf">
@@ -494,16 +510,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMl-Ej-d7d" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                <rect key="frame" x="16" y="5" width="50" height="30"/>
-                                <color key="backgroundColor" name="deepgreen"/>
-                                <state key="normal" title="Restart">
-                                    <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="restartButtonTapped:" destination="ZJP-Zl-Az0" eventType="touchUpInside" id="CL6-5H-Z8e"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -512,17 +518,13 @@
                             <constraint firstItem="cfI-Oh-cxO" firstAttribute="centerY" secondItem="S4H-fd-BDc" secondAttribute="centerY" id="Ms2-EW-8mO"/>
                             <constraint firstItem="cb3-Ji-jkY" firstAttribute="top" secondItem="S4H-fd-BDc" secondAttribute="top" constant="206" id="N3d-Nu-4ZE"/>
                             <constraint firstItem="tmI-63-qKV" firstAttribute="trailing" secondItem="cb3-Ji-jkY" secondAttribute="trailing" constant="5" id="PfA-d8-Fsn"/>
-                            <constraint firstItem="tmI-63-qKV" firstAttribute="trailing" secondItem="Jiw-PV-S6g" secondAttribute="trailing" constant="5" id="RZT-o2-DdN"/>
                             <constraint firstItem="cfI-Oh-cxO" firstAttribute="leading" secondItem="lWa-Kf-e3M" secondAttribute="leading" id="SYI-9o-EUA"/>
                             <constraint firstItem="lWa-Kf-e3M" firstAttribute="top" secondItem="cb3-Ji-jkY" secondAttribute="bottom" constant="23" id="TEO-Zq-sPz"/>
-                            <constraint firstItem="dMl-Ej-d7d" firstAttribute="leading" secondItem="tmI-63-qKV" secondAttribute="leading" constant="16" id="cEO-G3-ibD"/>
                             <constraint firstItem="lWa-Kf-e3M" firstAttribute="centerX" secondItem="S4H-fd-BDc" secondAttribute="centerX" id="cIO-Gd-IWe"/>
-                            <constraint firstItem="dMl-Ej-d7d" firstAttribute="top" secondItem="tmI-63-qKV" secondAttribute="top" constant="5" id="h6X-I8-cOJ"/>
+                            <constraint firstItem="lWa-Kf-e3M" firstAttribute="bottom" secondItem="tmI-63-qKV" secondAttribute="bottom" constant="5" id="fqV-eh-q9N"/>
                             <constraint firstItem="lWa-Kf-e3M" firstAttribute="bottom" secondItem="tmI-63-qKV" secondAttribute="bottom" id="jih-na-gwM"/>
-                            <constraint firstItem="Jiw-PV-S6g" firstAttribute="top" secondItem="tmI-63-qKV" secondAttribute="top" constant="5" id="ktP-6X-KaW"/>
                             <constraint firstItem="lWa-Kf-e3M" firstAttribute="leading" secondItem="tmI-63-qKV" secondAttribute="leading" id="p8S-It-7sS"/>
                             <constraint firstItem="cb3-Ji-jkY" firstAttribute="top" secondItem="cfI-Oh-cxO" secondAttribute="bottom" constant="19" id="rbE-eJ-G7C"/>
-                            <constraint firstItem="Jiw-PV-S6g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tmI-63-qKV" secondAttribute="leading" symbolic="YES" id="tfW-Iz-i7B"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tmI-63-qKV"/>
                     </view>

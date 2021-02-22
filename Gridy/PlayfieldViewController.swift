@@ -17,8 +17,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet var lookUpButton: UIButton!
     @IBOutlet var restartButton: RoundedButton!
     
-    
-    
     var imageArray : [UIImage] = []
     var gameArray : [UIImage] = []
     var originalImage = UIImage()
@@ -31,9 +29,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     var score = 0
     var hintImage = UIImageView()
     
-    
-    
-    
     @objc func showHintImage() {
         hintImage.image = originalImage
         hintImage.contentMode = .scaleToFill
@@ -43,10 +38,11 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         self.view.bringSubviewToFront(hintImage)
         gameTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(removeHintImage), userInfo: nil, repeats: false)
     }
+    
     @objc func removeHintImage() {
-     self.view.sendSubviewToBack(hintImage)
-     self.hintImage.removeFromSuperview()
-     self.gameCollectionView.isHidden = false
+        self.view.sendSubviewToBack(hintImage)
+        self.hintImage.removeFromSuperview()
+        self.gameCollectionView.isHidden = false
     }
     
     override func viewDidLoad() {
@@ -60,8 +56,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         scoreLabel.text = "Score: \(score)"
         gameArray = Array(repeating: defaultImage, count: 16)
         shuffledArray = imageArray.shuffled()
-        
-        
         
         
         self.navigationController?.isNavigationBarHidden = true
@@ -89,7 +83,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         self.scoreLabel.text = "Score \(score)"
         self.shuffledCollectionView.reloadData()
     }
-    
     
     
     @objc func increaseScore(n: Int = 1) {
@@ -161,7 +154,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             gameCollectionView.layer.borderColor = UIColor.black.cgColor
             cell.layer.borderWidth = 0.2
             cell.layer.borderColor = UIColor.black.cgColor
-            
         }
         imageView.frame = cell.contentView.frame
         cell.addSubview(imageView)
@@ -178,7 +170,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         }
     }
     
-    
     func  collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if collectionView == shuffledCollectionView {
             return UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
@@ -192,13 +183,12 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-      if collectionView == shuffledCollectionView {
-               return 0.5
-           } else {
-               return 0
-           }
+        if collectionView == shuffledCollectionView {
+            return 0.5
+        } else {
+            return 0
+        }
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         if shuffledArray[indexPath.row] == defaultImage {
@@ -239,7 +229,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
                     
                 }
             }
-            
             
         }
     }
