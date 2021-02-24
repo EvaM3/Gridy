@@ -122,13 +122,13 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="bottom" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zt0-MY-5BC" userLabel="CameraAndLibraryStack View">
-                                                <rect key="frame" x="10" y="297.5" width="355" height="124"/>
+                                                <rect key="frame" x="0.0" y="297.5" width="375" height="124"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-185" translatesAutoresizingMaskIntoConstraints="NO" id="tHU-lB-NnX" userLabel="Camera Stack View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="170" height="124"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="180" height="124"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGg-9j-1pp" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="170" height="119"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="180" height="126"/>
                                                                 <color key="backgroundColor" name="sand"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="CGg-9j-1pp" secondAttribute="height" multiplier="1:0.7" id="dqH-mm-qGa"/>
@@ -145,7 +145,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy-camera" translatesAutoresizingMaskIntoConstraints="NO" id="9Qf-m1-GRP">
-                                                                <rect key="frame" x="67" y="-66" width="36" height="190"/>
+                                                                <rect key="frame" x="72" y="-59" width="36" height="183"/>
                                                             </imageView>
                                                         </subviews>
                                                         <constraints>
@@ -155,10 +155,10 @@
                                                         <variation key="heightClass=compact" alignment="fill" spacing="-80"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-185" translatesAutoresizingMaskIntoConstraints="NO" id="1aM-ud-TcB" userLabel="Library Stack View">
-                                                        <rect key="frame" x="185" y="0.0" width="170" height="124"/>
+                                                        <rect key="frame" x="195" y="0.0" width="180" height="124"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="1" contentMode="bottom" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWv-tZ-AAm" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="170" height="119"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="180" height="126"/>
                                                                 <color key="backgroundColor" name="sand"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="UWv-tZ-AAm" secondAttribute="height" multiplier="1:0.7" id="JXY-DT-yUg"/>
@@ -172,7 +172,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy-library" translatesAutoresizingMaskIntoConstraints="NO" id="4UB-B3-nxR">
-                                                                <rect key="frame" x="67" y="-66" width="36" height="190"/>
+                                                                <rect key="frame" x="72" y="-59" width="36" height="183"/>
                                                             </imageView>
                                                         </subviews>
                                                         <constraints>
@@ -437,6 +437,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <variation key="heightClass=compact" spacing="530"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cfI-Oh-cxO" userLabel="StarterCollectionStackView">
                                         <rect key="frame" x="0.0" y="48" width="375" height="137"/>
@@ -464,15 +465,21 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="8bd-Yp-1tN" firstAttribute="leading" secondItem="cfI-Oh-cxO" secondAttribute="leading" id="50n-EE-FX1"/>
-                                            <constraint firstAttribute="trailing" secondItem="8bd-Yp-1tN" secondAttribute="trailing" id="gdl-5r-5z8"/>
                                         </constraints>
-                                        <variation key="heightClass=compact" alignment="bottom" axis="horizontal"/>
+                                        <variation key="heightClass=compact" alignment="bottom" axis="horizontal">
+                                            <mask key="constraints">
+                                                <exclude reference="50n-EE-FX1"/>
+                                            </mask>
+                                        </variation>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cb3-Ji-jkY" userLabel="HintButtonStackView">
-                                        <rect key="frame" x="339" y="205" width="36" height="28"/>
+                                        <rect key="frame" x="339" y="205" width="36" height="36"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5P-cp-pNf">
-                                                <rect key="frame" x="0.0" y="0.0" width="36" height="28"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="F2J-wL-STq"/>
+                                                </constraints>
                                                 <state key="normal" backgroundImage="lookup"/>
                                                 <connections>
                                                     <action selector="lookUpButtonTapped:" destination="ZJP-Zl-Az0" eventType="touchUpInside" id="sdx-Yl-gmz"/>
@@ -481,10 +488,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lWa-Kf-e3M" userLabel="GameCollectionStackView">
-                                        <rect key="frame" x="0.0" y="253" width="375" height="414"/>
+                                        <rect key="frame" x="0.0" y="261" width="375" height="406"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jaZ-7o-9Uz" userLabel="GameCollectionView">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="414"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="406"/>
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.91372549020000005" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rga-8I-jS6">
                                                     <size key="itemSize" width="128" height="128"/>
@@ -514,7 +521,7 @@
                                             <constraint firstAttribute="bottom" secondItem="jaZ-7o-9Uz" secondAttribute="bottom" id="rvl-em-3sv"/>
                                             <constraint firstAttribute="bottom" secondItem="jaZ-7o-9Uz" secondAttribute="bottom" id="zjI-UT-3cz"/>
                                         </constraints>
-                                        <variation key="heightClass=compact" axis="horizontal" spacingType="standard"/>
+                                        <variation key="heightClass=compact" alignment="top" axis="horizontal" spacingType="standard"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -527,7 +534,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="K80-hb-FTR" firstAttribute="bottom" secondItem="tmI-63-qKV" secondAttribute="bottom" id="NNk-SB-LYk"/>
                             <constraint firstItem="tmI-63-qKV" firstAttribute="trailing" secondItem="K80-hb-FTR" secondAttribute="trailing" id="fw5-ao-H2d"/>
+                            <constraint firstItem="K80-hb-FTR" firstAttribute="top" secondItem="tmI-63-qKV" secondAttribute="top" id="ndE-Ge-wZU"/>
                             <constraint firstItem="K80-hb-FTR" firstAttribute="leading" secondItem="S4H-fd-BDc" secondAttribute="leading" id="nlI-JC-TfU"/>
                             <constraint firstAttribute="bottom" secondItem="K80-hb-FTR" secondAttribute="bottom" id="ol3-pg-u97"/>
                             <constraint firstItem="K80-hb-FTR" firstAttribute="top" secondItem="tmI-63-qKV" secondAttribute="top" id="ySX-wx-puO"/>

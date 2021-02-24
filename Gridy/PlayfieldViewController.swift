@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 
 class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -28,6 +29,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     var gameTimer: Timer?
     var score = 0
     var hintImage = UIImageView()
+    var audioPlayer: AVAudioPlayer!
     
     @objc func showHintImage() {
         hintImage.image = originalImage
@@ -67,6 +69,15 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         
         self.view.addSubview(shuffledCollectionView)
         self.view.addSubview(gameCollectionView)
+        
+        do {
+            let tunePath = Bundle.main.path(forResource: "glitter", ofType: "wav")!
+            let tuneUrl = URL(fileURLWithPath: tunePath)
+            audioPlayer = try AVAudioPlayer(contentsOf: tuneUrl)
+            audioPlayer.prepareToPlay()
+        } catch {
+            print("Something went wrong with audio player \(error.localizedDescription)")
+        }
         
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didDoubleTap(_gesture:)))
@@ -131,6 +142,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     @IBAction func lookUpButtonTapped(_ sender: UIButton) {
+        audioPlayer.play()
         showHintImage()
         increaseScore(n: 2)
     }

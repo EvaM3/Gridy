@@ -16,6 +16,7 @@
 		082F003F2458F1E30014C0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082F003D2458F1E30014C0CB /* Main.storyboard */; };
 		082F00412458F1E50014C0CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 082F00402458F1E50014C0CB /* Assets.xcassets */; };
 		082F00442458F1E50014C0CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082F00422458F1E50014C0CB /* LaunchScreen.storyboard */; };
+		084A4B9025E5D95C00185457 /* glitter.wav in Resources */ = {isa = PBXBuildFile; fileRef = 084A4B8F25E5D95B00185457 /* glitter.wav */; };
 		08716BFE252E923D00ECDEF9 /* UIImage+cropImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08716BFD252E923D00ECDEF9 /* UIImage+cropImage.swift */; };
 		08716C00252E933800ECDEF9 /* UIImage+splitImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08716BFF252E933800ECDEF9 /* UIImage+splitImage.swift */; };
 		08743C39246F6216004932DE /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08743C38246F6216004932DE /* EditorViewController.swift */; };
@@ -35,6 +36,7 @@
 		082F00402458F1E50014C0CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		082F00432458F1E50014C0CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		082F00452458F1E50014C0CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		084A4B8F25E5D95B00185457 /* glitter.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = glitter.wav; sourceTree = "<group>"; };
 		08716BFD252E923D00ECDEF9 /* UIImage+cropImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+cropImage.swift"; sourceTree = "<group>"; };
 		08716BFF252E933800ECDEF9 /* UIImage+splitImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+splitImage.swift"; sourceTree = "<group>"; };
 		08743C38246F6216004932DE /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				08743C3A246F6620004932DE /* PlayfieldViewController.swift */,
 				08743C38246F6216004932DE /* EditorViewController.swift */,
 				08121F0324EDA957001BA6B1 /* BlurCutOut.swift */,
+				084A4B8F25E5D95B00185457 /* glitter.wav */,
 				082F00402458F1E50014C0CB /* Assets.xcassets */,
 				082F00422458F1E50014C0CB /* LaunchScreen.storyboard */,
 				082F00452458F1E50014C0CB /* Info.plist */,
@@ -161,6 +164,7 @@
 				080785AB24B99DE800EF9CBD /* timeburnernormal.ttf in Resources */,
 				082F00412458F1E50014C0CB /* Assets.xcassets in Resources */,
 				082F003F2458F1E30014C0CB /* Main.storyboard in Resources */,
+				084A4B9025E5D95C00185457 /* glitter.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
