@@ -466,7 +466,7 @@
                                         <constraints>
                                             <constraint firstItem="8bd-Yp-1tN" firstAttribute="leading" secondItem="cfI-Oh-cxO" secondAttribute="leading" id="50n-EE-FX1"/>
                                         </constraints>
-                                        <variation key="heightClass=compact" alignment="bottom" axis="horizontal">
+                                        <variation key="heightClass=compact" alignment="top" axis="horizontal">
                                             <mask key="constraints">
                                                 <exclude reference="50n-EE-FX1"/>
                                             </mask>
@@ -515,7 +515,7 @@
                                             <constraint firstAttribute="bottom" secondItem="jaZ-7o-9Uz" secondAttribute="bottom" id="Nlt-7X-i6d"/>
                                             <constraint firstAttribute="trailing" secondItem="jaZ-7o-9Uz" secondAttribute="trailing" id="lVe-6y-u7r"/>
                                         </constraints>
-                                        <variation key="heightClass=compact" alignment="top" axis="horizontal" spacingType="standard"/>
+                                        <variation key="heightClass=compact" alignment="bottom" axis="horizontal" spacingType="standard"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
