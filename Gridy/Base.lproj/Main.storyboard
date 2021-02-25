@@ -512,14 +512,8 @@
                                             </collectionView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="jaZ-7o-9Uz" secondAttribute="bottom" id="Fef-9q-SJh"/>
-                                            <constraint firstItem="jaZ-7o-9Uz" firstAttribute="leading" secondItem="lWa-Kf-e3M" secondAttribute="leading" id="Kx3-I3-iAB"/>
                                             <constraint firstAttribute="bottom" secondItem="jaZ-7o-9Uz" secondAttribute="bottom" id="Nlt-7X-i6d"/>
-                                            <constraint firstAttribute="bottom" secondItem="jaZ-7o-9Uz" secondAttribute="bottom" id="ZgA-nw-zTv"/>
                                             <constraint firstAttribute="trailing" secondItem="jaZ-7o-9Uz" secondAttribute="trailing" id="lVe-6y-u7r"/>
-                                            <constraint firstAttribute="bottom" secondItem="jaZ-7o-9Uz" secondAttribute="bottom" id="r0S-mU-GJy"/>
-                                            <constraint firstAttribute="bottom" secondItem="jaZ-7o-9Uz" secondAttribute="bottom" id="rvl-em-3sv"/>
-                                            <constraint firstAttribute="bottom" secondItem="jaZ-7o-9Uz" secondAttribute="bottom" id="zjI-UT-3cz"/>
                                         </constraints>
                                         <variation key="heightClass=compact" alignment="top" axis="horizontal" spacingType="standard"/>
                                     </stackView>
@@ -534,9 +528,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="K80-hb-FTR" firstAttribute="leading" secondItem="tmI-63-qKV" secondAttribute="leading" id="0Nx-vo-oTo"/>
+                            <constraint firstItem="K80-hb-FTR" firstAttribute="top" secondItem="tmI-63-qKV" secondAttribute="top" id="3Rj-lZ-OlG"/>
+                            <constraint firstItem="K80-hb-FTR" firstAttribute="trailing" secondItem="tmI-63-qKV" secondAttribute="trailing" id="CxD-GP-RGi"/>
                             <constraint firstItem="K80-hb-FTR" firstAttribute="bottom" secondItem="tmI-63-qKV" secondAttribute="bottom" id="NNk-SB-LYk"/>
                             <constraint firstItem="tmI-63-qKV" firstAttribute="trailing" secondItem="K80-hb-FTR" secondAttribute="trailing" id="fw5-ao-H2d"/>
-                            <constraint firstItem="K80-hb-FTR" firstAttribute="top" secondItem="tmI-63-qKV" secondAttribute="top" id="ndE-Ge-wZU"/>
                             <constraint firstItem="K80-hb-FTR" firstAttribute="leading" secondItem="S4H-fd-BDc" secondAttribute="leading" id="nlI-JC-TfU"/>
                             <constraint firstAttribute="bottom" secondItem="K80-hb-FTR" secondAttribute="bottom" id="ol3-pg-u97"/>
                             <constraint firstItem="K80-hb-FTR" firstAttribute="top" secondItem="tmI-63-qKV" secondAttribute="top" id="ySX-wx-puO"/>
