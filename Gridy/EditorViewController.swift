@@ -26,11 +26,11 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         adjustLabel.numberOfLines = 0
         self.navigationController?.isNavigationBarHidden = true
         imageView.image = selectedImage
-//
+////
 //        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //               if segue.identifier == "showPlayfieldView" {
 //                   if let destinationVC = segue.destination as? PlayfieldViewController {
-//                       destinationVC.crop = self.selectedImage
+//                       destinationVC.originalImage = self.selectedImage
 //                   }
 //               }
 //           }
@@ -97,7 +97,7 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         let screenshot = self.view.takeScreenshot()
         let croppedImage =  screenshot.cropImage(toRect: blurCutOut.frame)
         originalImage = croppedImage ?? UIImage()
-        self.performSegue(withIdentifier: "showPlayfieldView", sender: nil)
+        self.performSegue(withIdentifier: "PlayfieldSegue", sender: nil)
                }
         
         
