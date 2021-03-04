@@ -23,14 +23,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aJ1-yC-hHq" userLabel="MainStackView">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aJ1-yC-hHq" userLabel="MainStackView">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="top" axis="vertical" distribution="fillEqually" alignment="center" spacing="-130" translatesAutoresizingMaskIntoConstraints="NO" id="OXc-Ad-Vmk" userLabel="Logo Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="307.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="309"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Gridy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ycI-5O-AuH">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="219"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="219.5"/>
                                                 <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="168"/>
                                                 <color key="textColor" name="lightgreen"/>
                                                 <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="500" text="Challenge yourself with a photo puzzle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1l0-JF-6mu">
-                                                <rect key="frame" x="67" y="89" width="241.5" height="218.5"/>
+                                                <rect key="frame" x="67" y="89.5" width="241.5" height="219.5"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -51,64 +51,73 @@
                                         <variation key="heightClass=compact" distribution="fillEqually" spacing="-180"/>
                                         <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="hzN-c1-aKm" userLabel="ButtonsStackView">
-                                        <rect key="frame" x="0.0" y="315.5" width="375" height="307.5"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hzN-c1-aKm" userLabel="ButtonsStackView">
+                                        <rect key="frame" x="0.0" y="317" width="375" height="306"/>
                                         <subviews>
-                                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-110" translatesAutoresizingMaskIntoConstraints="NO" id="2lx-f3-sBu" userLabel="Picking Stack View">
-                                                <rect key="frame" x="137.5" y="0.0" width="100" height="69"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="p0J-Kt-bZe">
+                                                <rect key="frame" x="110.5" y="0.0" width="154.5" height="148"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNd-Qz-5dS" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                        <color key="backgroundColor" name="sand"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="100" id="CDg-WE-fMY"/>
-                                                            <constraint firstAttribute="width" constant="100" id="szY-y5-1jL"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
-                                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="15"/>
-                                                        <state key="normal" title="Pick">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="pickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uvy-yj-G1e"/>
-                                                        </connections>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gridy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2i-SH-gFO">
-                                                        <rect key="frame" x="8" y="-10" width="84.5" height="79"/>
-                                                        <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="35"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" name="sand"/>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EfP-BI-lA3" userLabel="LoadYourOwnSView">
-                                                <rect key="frame" x="110.5" y="119" width="154.5" height="69.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- OR load your own-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8P4-QR-0WX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="154.5" height="69.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <variation key="heightClass=regular-widthClass=regular">
-                                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                        </variation>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="bottom" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="zt0-MY-5BC" userLabel="CameraAndLibraryStack View">
-                                                <rect key="frame" x="58.5" y="238.5" width="258" height="69"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="-110" translatesAutoresizingMaskIntoConstraints="NO" id="tHU-lB-NnX" userLabel="Camera Stack View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="109" height="69"/>
+                                                    <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-130" translatesAutoresizingMaskIntoConstraints="NO" id="2lx-f3-sBu" userLabel="Picking Stack View">
+                                                        <rect key="frame" x="32" y="0.0" width="90.5" height="118.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGg-9j-1pp" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                                                <rect key="frame" x="9.5" y="0.0" width="90" height="89.5"/>
+                                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNd-Qz-5dS" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="90" height="100"/>
                                                                 <color key="backgroundColor" name="sand"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="CGg-9j-1pp" secondAttribute="height" multiplier="1:1" id="AcJ-0U-AHy"/>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="NVq-gu-9pQ"/>
+                                                                    <constraint firstAttribute="height" constant="100" id="CDg-WE-fMY"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="WRY-km-5Dn"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                                                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="15"/>
+                                                                <state key="normal" title="Pick">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="pickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uvy-yj-G1e"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gridy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2i-SH-gFO">
+                                                                <rect key="frame" x="3" y="-30" width="84.5" height="148.5"/>
+                                                                <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="35"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="sand"/>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EfP-BI-lA3" userLabel="LoadYourOwnSView">
+                                                        <rect key="frame" x="0.0" y="128.5" width="154.5" height="19.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- OR load your own-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8P4-QR-0WX">
+                                                                <rect key="frame" x="0.0" y="0.0" width="154.5" height="19.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                                </variation>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="EfP-BI-lA3" firstAttribute="top" secondItem="p0J-Kt-bZe" secondAttribute="top" constant="128.5" id="OML-S3-NGO"/>
+                                                    <constraint firstItem="2lx-f3-sBu" firstAttribute="leading" secondItem="p0J-Kt-bZe" secondAttribute="leading" constant="32" id="rOs-Sn-h9o"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="bottom" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="zt0-MY-5BC" userLabel="CameraAndLibraryStack View">
+                                                <rect key="frame" x="40" y="158" width="295" height="148"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="-130" translatesAutoresizingMaskIntoConstraints="NO" id="tHU-lB-NnX" userLabel="Camera Stack View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="127.5" height="148"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGg-9j-1pp" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
+                                                                <rect key="frame" x="19" y="0.0" width="90" height="139"/>
+                                                                <color key="backgroundColor" name="sand"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="90" id="P0u-qQ-SW7"/>
+                                                                    <constraint firstAttribute="width" secondItem="CGg-9j-1pp" secondAttribute="height" multiplier="90:139" id="jJZ-hy-dCM"/>
                                                                 </constraints>
                                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="15"/>
                                                                 <state key="normal" title="Camera">
@@ -122,17 +131,20 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy-camera" translatesAutoresizingMaskIntoConstraints="NO" id="9Qf-m1-GRP">
-                                                                <rect key="frame" x="36.5" y="-20.5" width="36" height="89.5"/>
+                                                                <rect key="frame" x="46" y="9" width="36" height="139"/>
                                                             </imageView>
                                                         </subviews>
-                                                        <variation key="heightClass=compact" alignment="fill" spacing="-100"/>
+                                                        <variation key="heightClass=compact" alignment="fill" spacing="-120"/>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="-105" translatesAutoresizingMaskIntoConstraints="NO" id="1aM-ud-TcB" userLabel="Library Stack View">
-                                                        <rect key="frame" x="149" y="0.0" width="109" height="69"/>
+                                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="-130" translatesAutoresizingMaskIntoConstraints="NO" id="1aM-ud-TcB" userLabel="Library Stack View">
+                                                        <rect key="frame" x="167.5" y="0.0" width="127.5" height="148"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="1" contentMode="bottom" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWv-tZ-AAm" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="109" height="87"/>
+                                                                <rect key="frame" x="9" y="0.0" width="110" height="139"/>
                                                                 <color key="backgroundColor" name="sand"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="110" id="tix-IP-vdb"/>
+                                                                </constraints>
                                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="15"/>
                                                                 <state key="normal" title="Photo Library">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -142,17 +154,19 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy-library" translatesAutoresizingMaskIntoConstraints="NO" id="4UB-B3-nxR">
-                                                                <rect key="frame" x="36.5" y="-18" width="36" height="87"/>
+                                                                <rect key="frame" x="46" y="9" width="36" height="139"/>
                                                             </imageView>
                                                         </subviews>
-                                                        <variation key="heightClass=compact" spacing="-105"/>
+                                                        <variation key="heightClass=compact" spacing="-125"/>
                                                     </stackView>
                                                 </subviews>
                                                 <variation key="heightClass=compact" distribution="fillEqually" spacing="40"/>
                                             </stackView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="zt0-MY-5BC" secondAttribute="trailing" constant="40" id="MXd-Gs-z7f"/>
                                             <constraint firstAttribute="bottom" secondItem="zt0-MY-5BC" secondAttribute="bottom" id="S4u-Yl-ziP"/>
+                                            <constraint firstItem="zt0-MY-5BC" firstAttribute="leading" secondItem="hzN-c1-aKm" secondAttribute="leading" constant="40" id="hzx-0B-0hF"/>
                                         </constraints>
                                         <variation key="heightClass=compact-widthClass=regular">
                                             <mask key="subviews">
@@ -161,6 +175,9 @@
                                         </variation>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="OXc-Ad-Vmk" firstAttribute="top" secondItem="aJ1-yC-hHq" secondAttribute="top" id="VR8-Cx-99k"/>
+                                </constraints>
                                 <variation key="heightClass=compact" axis="horizontal"/>
                             </stackView>
                         </subviews>
@@ -186,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-101.3671875" y="172.6207906295754"/>
+            <point key="canvasLocation" x="-101.59999999999999" y="172.26386806596702"/>
         </scene>
         <!--Editor View Controller-->
         <scene sceneID="VHa-Db-Ude">
@@ -360,7 +377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Z6-sL-00z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1167.1875" y="171.01449275362319"/>
+            <point key="canvasLocation" x="1206" y="170"/>
         </scene>
         <!--PlayfieldViewController-->
         <scene sceneID="tTd-1H-SU5">
