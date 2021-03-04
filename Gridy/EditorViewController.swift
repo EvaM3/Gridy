@@ -14,7 +14,7 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var backButton: UIButton!
     @IBOutlet var startButton: UIButton!
-    @IBOutlet var blurCutOut: UIView!
+    @IBOutlet var blurCutOut: BlurCutOut!
     @IBOutlet var blurEffectView: UIVisualEffectView!
     @IBOutlet var adjustLabel: UILabel!
     
@@ -27,8 +27,8 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         self.navigationController?.isNavigationBarHidden = true
         imageView.image = selectedImage
         
-        
-        mask(blurEffectView, maskRect: blurCutOut.frame)
+    
+       
         //        blurCutOut.frame = BlurCutOut.self
         
         
@@ -47,13 +47,15 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         gestureRecognizer.delegate = self
         blurCutOut.addGestureRecognizer(gestureRecognizer)
     }
+
+    
+    
     override func viewDidAppear(_ animated: Bool) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            self.blurCutOut.setNeedsDisplay()
-        }
-    }
+        self.blurCutOut.setNeedsDisplay()
+          mask(self.blurEffectView, maskRect: self.blurCutOut.frame)
+}
     
-    
+   
     @objc func handleRotate(recognizer : UIRotationGestureRecognizer) {
         
         self.imageView.transform = self.imageView.transform.rotated(by: recognizer.rotation)
