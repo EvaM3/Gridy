@@ -12,14 +12,30 @@ import UIKit
 
 class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var selectedImage = UIImage()
+    @objc var selectedImage = UIImage()
     var pickerController = UIImagePickerController()
     let pickedImages: [UIImage] = [UIImage(named: "tiger")!,UIImage(named: "stonehenge")!,UIImage(named: "books")!,UIImage(named:"church")!,UIImage(named: "machu-picchu")!]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = true
         pickerController.delegate = self
+    }
+    
+    @IBAction func save(_ sender: Any) {
+        guard selectedImage.images != nil else { return }
+        UIImageWriteToSavedPhotosAlbum(selectedImage, self, #selector(getter: selectedImage), nil)
+    }
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer  ) {
+        if let error = error {
+        let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+        } else {
+            let ac = UIAlertController(title: "Saved!", message: "Your image has been saved to your photos!", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -39,7 +55,6 @@ class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBAction func cameraButton(_ sender: Any) {
         if pickerController.sourceType == .camera  {
-            pickerController.sourceType = .camera
             present(pickerController, animated: true, completion: nil)
         } else {
             let actionController: UIAlertController = UIAlertController(title: "Camera is not available",message: "On the simulator the camera is not available.", preferredStyle: .alert)
@@ -54,7 +69,7 @@ class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UI
         pickerController.sourceType = .photoLibrary
         present(pickerController, animated: true, completion: nil)
     }
-    
+    // image capturing is done
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.originalImage] as? UIImage {
             self.selectedImage = selectedImage
@@ -63,6 +78,8 @@ class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UI
         } else {
             pickerController.dismiss(animated: true, completion: nil)
         }
+        
+        
     }
 }
 

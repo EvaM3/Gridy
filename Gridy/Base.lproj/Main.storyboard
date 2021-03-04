@@ -27,10 +27,10 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="top" axis="vertical" distribution="fillEqually" alignment="center" spacing="-130" translatesAutoresizingMaskIntoConstraints="NO" id="OXc-Ad-Vmk" userLabel="Logo Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="309"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="307"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Gridy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ycI-5O-AuH">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="219.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="218.5"/>
                                                 <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="168"/>
                                                 <color key="textColor" name="lightgreen"/>
                                                 <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="500" text="Challenge yourself with a photo puzzle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1l0-JF-6mu">
-                                                <rect key="frame" x="67" y="89.5" width="241.5" height="219.5"/>
+                                                <rect key="frame" x="67" y="88.5" width="241.5" height="218.5"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -52,20 +52,21 @@
                                         <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hzN-c1-aKm" userLabel="ButtonsStackView">
-                                        <rect key="frame" x="0.0" y="317" width="375" height="306"/>
+                                        <rect key="frame" x="0.0" y="315" width="375" height="308"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="p0J-Kt-bZe">
-                                                <rect key="frame" x="110.5" y="0.0" width="154.5" height="148"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="p0J-Kt-bZe" userLabel="PickingAndLabelStackView">
+                                                <rect key="frame" x="100.5" y="0.0" width="174" height="149"/>
                                                 <subviews>
                                                     <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-130" translatesAutoresizingMaskIntoConstraints="NO" id="2lx-f3-sBu" userLabel="Picking Stack View">
-                                                        <rect key="frame" x="32" y="0.0" width="90.5" height="118.5"/>
+                                                        <rect key="frame" x="32" y="0.0" width="110" height="98.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNd-Qz-5dS" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="90" height="100"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="110" height="100"/>
                                                                 <color key="backgroundColor" name="sand"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="100" id="CDg-WE-fMY"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="WRY-km-5Dn"/>
+                                                                    <constraint firstAttribute="width" constant="110" id="dWd-ou-yMc"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
@@ -78,19 +79,20 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gridy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2i-SH-gFO">
-                                                                <rect key="frame" x="3" y="-30" width="84.5" height="148.5"/>
+                                                                <rect key="frame" x="13" y="-30" width="84.5" height="128.5"/>
                                                                 <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="35"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" name="sand"/>
+                                                        <variation key="heightClass=compact" spacing="-145"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EfP-BI-lA3" userLabel="LoadYourOwnSView">
-                                                        <rect key="frame" x="0.0" y="128.5" width="154.5" height="19.5"/>
+                                                        <rect key="frame" x="10" y="128.5" width="154.5" height="20.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- OR load your own-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8P4-QR-0WX">
-                                                                <rect key="frame" x="0.0" y="0.0" width="154.5" height="19.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="154.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -105,19 +107,19 @@
                                                     <constraint firstItem="EfP-BI-lA3" firstAttribute="top" secondItem="p0J-Kt-bZe" secondAttribute="top" constant="128.5" id="OML-S3-NGO"/>
                                                     <constraint firstItem="2lx-f3-sBu" firstAttribute="leading" secondItem="p0J-Kt-bZe" secondAttribute="leading" constant="32" id="rOs-Sn-h9o"/>
                                                 </constraints>
+                                                <variation key="heightClass=compact" spacing="10"/>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="bottom" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="zt0-MY-5BC" userLabel="CameraAndLibraryStack View">
-                                                <rect key="frame" x="40" y="158" width="295" height="148"/>
+                                            <stackView opaque="NO" contentMode="bottom" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="zt0-MY-5BC" userLabel="CameraAndLibraryStack View">
+                                                <rect key="frame" x="40" y="159" width="295" height="149"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="-130" translatesAutoresizingMaskIntoConstraints="NO" id="tHU-lB-NnX" userLabel="Camera Stack View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="127.5" height="148"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="149"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGg-9j-1pp" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                                                <rect key="frame" x="19" y="0.0" width="90" height="139"/>
+                                                                <rect key="frame" x="4" y="0.0" width="110" height="139.5"/>
                                                                 <color key="backgroundColor" name="sand"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="90" id="P0u-qQ-SW7"/>
-                                                                    <constraint firstAttribute="width" secondItem="CGg-9j-1pp" secondAttribute="height" multiplier="90:139" id="jJZ-hy-dCM"/>
+                                                                    <constraint firstAttribute="width" constant="110" id="3C7-6V-W3y"/>
                                                                 </constraints>
                                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="15"/>
                                                                 <state key="normal" title="Camera">
@@ -131,19 +133,19 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy-camera" translatesAutoresizingMaskIntoConstraints="NO" id="9Qf-m1-GRP">
-                                                                <rect key="frame" x="46" y="9" width="36" height="139"/>
+                                                                <rect key="frame" x="41" y="9.5" width="36" height="139.5"/>
                                                             </imageView>
                                                         </subviews>
-                                                        <variation key="heightClass=compact" alignment="fill" spacing="-120"/>
+                                                        <variation key="heightClass=compact" alignment="fill" spacing="-140"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="-130" translatesAutoresizingMaskIntoConstraints="NO" id="1aM-ud-TcB" userLabel="Library Stack View">
-                                                        <rect key="frame" x="167.5" y="0.0" width="127.5" height="148"/>
+                                                        <rect key="frame" x="177.5" y="0.0" width="117.5" height="149"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="1" contentMode="bottom" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWv-tZ-AAm" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                                                <rect key="frame" x="9" y="0.0" width="110" height="139"/>
+                                                                <rect key="frame" x="4" y="0.0" width="110" height="139.5"/>
                                                                 <color key="backgroundColor" name="sand"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="110" id="tix-IP-vdb"/>
+                                                                    <constraint firstAttribute="width" constant="110" id="mWO-Tk-Pp8"/>
                                                                 </constraints>
                                                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="15"/>
                                                                 <state key="normal" title="Photo Library">
@@ -154,10 +156,10 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gridy-library" translatesAutoresizingMaskIntoConstraints="NO" id="4UB-B3-nxR">
-                                                                <rect key="frame" x="46" y="9" width="36" height="139"/>
+                                                                <rect key="frame" x="41" y="9.5" width="36" height="139.5"/>
                                                             </imageView>
                                                         </subviews>
-                                                        <variation key="heightClass=compact" spacing="-125"/>
+                                                        <variation key="heightClass=compact" spacing="-140"/>
                                                     </stackView>
                                                 </subviews>
                                                 <variation key="heightClass=compact" distribution="fillEqually" spacing="40"/>
@@ -168,6 +170,7 @@
                                             <constraint firstAttribute="bottom" secondItem="zt0-MY-5BC" secondAttribute="bottom" id="S4u-Yl-ziP"/>
                                             <constraint firstItem="zt0-MY-5BC" firstAttribute="leading" secondItem="hzN-c1-aKm" secondAttribute="leading" constant="40" id="hzx-0B-0hF"/>
                                         </constraints>
+                                        <variation key="heightClass=compact" spacing="30"/>
                                         <variation key="heightClass=compact-widthClass=regular">
                                             <mask key="subviews">
                                                 <exclude reference="zt0-MY-5BC"/>
@@ -226,7 +229,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Pqu-UR-cpx" userLabel="backButtonAndLabelStackV">
-                                                    <rect key="frame" x="20" y="0.0" width="355" height="96"/>
+                                                    <rect key="frame" x="20" y="0.0" width="355" height="82"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjx-qB-w14" userLabel="BackButton" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
                                                             <rect key="frame" x="337.5" y="0.0" width="17.5" height="30"/>
@@ -244,7 +247,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adjust the puzzle image: zoom, rotate, reposition" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Y6-FS-rw8">
-                                                            <rect key="frame" x="0.0" y="80" width="355" height="16"/>
+                                                            <rect key="frame" x="0.0" y="80" width="355" height="2"/>
                                                             <fontDescription key="fontDescription" name=".SFNS-Regular" family=".SF NS" pointSize="14"/>
                                                             <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -264,22 +267,24 @@
                                                     <variation key="heightClass=compact-widthClass=regular" alignment="top"/>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="TEu-95-lbE" userLabel="blurAndStartButtonStackV">
-                                                    <rect key="frame" x="0.0" y="116" width="375" height="551"/>
+                                                    <rect key="frame" x="0.0" y="102" width="375" height="565"/>
                                                     <subviews>
                                                         <view contentMode="center" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="jSA-ET-Yxp" userLabel="blurCutOut" customClass="BlurCutOut" customModule="Gridy" customModuleProvider="target">
-                                                            <rect key="frame" x="7" y="0.0" width="361" height="361"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                                             <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="0.3026808647260274" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="jSA-ET-Yxp" secondAttribute="height" multiplier="1:1" id="sQf-gs-zFl"/>
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="fus-uy-jXa" userLabel="startButtonStack">
-                                                            <rect key="frame" x="150" y="451" width="75" height="100"/>
+                                                            <rect key="frame" x="137.5" y="465" width="100" height="100"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNA-Il-PBq" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="100"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                                     <color key="backgroundColor" name="lightgreen"/>
                                                                     <constraints>
+                                                                        <constraint firstAttribute="width" constant="100" id="8ei-UK-tIB"/>
+                                                                        <constraint firstAttribute="width" secondItem="PNA-Il-PBq" secondAttribute="height" multiplier="1:1" id="K28-XD-Nog"/>
                                                                         <constraint firstAttribute="height" constant="100" id="flR-Jb-ab5"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="36"/>
@@ -291,22 +296,7 @@
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="150" id="oSH-cO-M14">
-                                                                    <variation key="heightClass=compact-widthClass=compact" constant="190"/>
-                                                                </constraint>
-                                                            </constraints>
-                                                            <variation key="default">
-                                                                <mask key="constraints">
-                                                                    <exclude reference="oSH-cO-M14"/>
-                                                                </mask>
-                                                            </variation>
                                                             <variation key="heightClass=compact" axis="horizontal" distribution="fill"/>
-                                                            <variation key="heightClass=compact-widthClass=compact">
-                                                                <mask key="constraints">
-                                                                    <include reference="oSH-cO-M14"/>
-                                                                </mask>
-                                                            </variation>
                                                         </stackView>
                                                     </subviews>
                                                     <variation key="heightClass=compact" axis="horizontal"/>
