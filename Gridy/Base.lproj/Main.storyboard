@@ -202,12 +202,16 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WCU-NQ-5Kj" userLabel="mainStackView">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Pqu-UR-cpx" userLabel="backButtonAndLabelStackV">
-                                                    <rect key="frame" x="22" y="0.0" width="276.5" height="92.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Pqu-UR-cpx" userLabel="backButtonAndLabelStackV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjx-qB-w14" userLabel="BackButton" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                                            <rect key="frame" x="259" y="0.0" width="17.5" height="26.5"/>
+                                                            <rect key="frame" x="302.5" y="0.0" width="17.5" height="25"/>
                                                             <color key="backgroundColor" red="0.95294117649999999" green="0.91372549020000005" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="17.5" id="O8h-wL-qWe"/>
+                                                                <constraint firstAttribute="height" constant="25" id="ZXk-s2-sPm"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                             <color key="tintColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" image="xmark" catalog="system">
@@ -218,29 +222,36 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adjust the puzzle image: zoom, rotate, reposition" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Y6-FS-rw8">
-                                                            <rect key="frame" x="0.0" y="76.5" width="276.5" height="16"/>
+                                                            <rect key="frame" x="21" y="40" width="299" height="16"/>
                                                             <fontDescription key="fontDescription" name=".SFNS-Regular" family=".SF NS" pointSize="14"/>
                                                             <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="2Y6-FS-rw8" firstAttribute="leading" secondItem="Pqu-UR-cpx" secondAttribute="leading" constant="21" id="buu-hF-tcL"/>
+                                                    </constraints>
                                                     <variation key="heightClass=compact" axis="horizontal" distribution="fillProportionally" spacing="40"/>
                                                     <variation key="heightClass=compact-widthClass=regular" alignment="top"/>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="TEu-95-lbE" userLabel="blurAndStartButtonStackV">
-                                                    <rect key="frame" x="25" y="112.5" width="270" height="455.5"/>
+                                                    <rect key="frame" x="25" y="76" width="270" height="492"/>
                                                     <subviews>
                                                         <view contentMode="center" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="jSA-ET-Yxp" userLabel="blurCutOut" customClass="BlurCutOut" customModule="Gridy" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="270" height="309"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="270" height="302"/>
                                                             <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="0.3026808647260274" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="fus-uy-jXa" userLabel="startButtonStack">
-                                                            <rect key="frame" x="97.5" y="399" width="75" height="56.5"/>
+                                                            <rect key="frame" x="85" y="392" width="100" height="100"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNA-Il-PBq" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="56.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                                     <color key="backgroundColor" name="lightgreen"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="100" id="6Gq-Pb-2vv"/>
+                                                                        <constraint firstAttribute="height" constant="100" id="lag-np-40w"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                                     <state key="normal" title="Start">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -257,6 +268,10 @@
                                                     <variation key="heightClass=compact-widthClass=compact" spacing="100"/>
                                                 </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Pqu-UR-cpx" secondAttribute="trailing" id="9Sp-OF-qn7"/>
+                                                <constraint firstItem="Pqu-UR-cpx" firstAttribute="leading" secondItem="WCU-NQ-5Kj" secondAttribute="leading" id="P66-hT-fuu"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>

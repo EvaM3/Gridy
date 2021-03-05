@@ -14,7 +14,7 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var backButton: UIButton!
     @IBOutlet var startButton: UIButton!
-    @IBOutlet var blurCutOut: BlurCutOut!
+    @IBOutlet var blurCutOut: UIView!
     @IBOutlet var blurEffectView: UIVisualEffectView!
     @IBOutlet var adjustLabel: UILabel!
     
@@ -26,10 +26,6 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         adjustLabel.numberOfLines = 0
         self.navigationController?.isNavigationBarHidden = true
         imageView.image = selectedImage
-        
-    
-       
-        //        blurCutOut.frame = BlurCutOut.self
         
         
         blurCutOut.isUserInteractionEnabled = true
@@ -51,16 +47,17 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     
     
     override func viewDidAppear(_ animated: Bool) {
-        self.blurCutOut.setNeedsDisplay()
-          mask(self.blurEffectView, maskRect: self.blurCutOut.frame)
+        DispatchQueue.main.async { [weak self] in
+            self?.blurCutOut.setNeedsDisplay()
+        }
+       // self.blurCutOut.setNeedsDisplay()
+        mask(self.blurEffectView, maskRect: self.blurCutOut.frame)
 }
     
    
     @objc func handleRotate(recognizer : UIRotationGestureRecognizer) {
-        
         self.imageView.transform = self.imageView.transform.rotated(by: recognizer.rotation)
         recognizer.rotation = 0
-        
     }
     @objc func pinchRecognized(pinch: UIPinchGestureRecognizer) {
         self.imageView.transform = self.imageView.transform.scaledBy(x: pinch.scale, y: pinch.scale)
