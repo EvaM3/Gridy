@@ -321,22 +321,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMl-Ej-d7d" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                <rect key="frame" x="20" y="20" width="50" height="30"/>
-                                <color key="backgroundColor" name="deepgreen"/>
-                                <state key="normal" title="Restart">
-                                    <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="restartButtonTapped:" destination="ZJP-Zl-Az0" eventType="touchUpInside" id="CL6-5H-Z8e"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jiw-PV-S6g">
-                                <rect key="frame" x="236" y="20" width="64" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="166" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-Xf-UPB" userLabel="RestartandScoreStackView">
+                                <rect key="frame" x="20" y="20" width="280" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMl-Ej-d7d" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                        <color key="backgroundColor" name="deepgreen"/>
+                                        <state key="normal" title="Restart">
+                                            <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="restartButtonTapped:" destination="ZJP-Zl-Az0" eventType="touchUpInside" id="CL6-5H-Z8e"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jiw-PV-S6g">
+                                        <rect key="frame" x="216" y="0.0" width="64" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="zta-Ge-04P">
                                 <rect key="frame" x="20" y="70" width="280" height="518"/>
                                 <subviews>
@@ -397,14 +402,13 @@
                         <constraints>
                             <constraint firstItem="zta-Ge-04P" firstAttribute="leading" secondItem="tmI-63-qKV" secondAttribute="leading" constant="20" id="2SM-DB-dgU"/>
                             <constraint firstAttribute="trailing" secondItem="zta-Ge-04P" secondAttribute="trailing" constant="20" id="4we-Dx-aFi"/>
-                            <constraint firstItem="tmI-63-qKV" firstAttribute="trailing" secondItem="Jiw-PV-S6g" secondAttribute="trailing" constant="20" id="KYy-cy-3Ag"/>
-                            <constraint firstItem="zta-Ge-04P" firstAttribute="top" secondItem="dMl-Ej-d7d" secondAttribute="bottom" constant="20" id="Pwa-Kd-QUA"/>
-                            <constraint firstItem="dMl-Ej-d7d" firstAttribute="top" secondItem="tmI-63-qKV" secondAttribute="top" constant="20" id="XVc-0q-IdC"/>
+                            <constraint firstItem="4UM-Xf-UPB" firstAttribute="leading" secondItem="tmI-63-qKV" secondAttribute="leading" constant="20" id="Wbw-j1-haB"/>
                             <constraint firstItem="b5P-cp-pNf" firstAttribute="bottom" secondItem="8bd-Yp-1tN" secondAttribute="bottom" constant="8" id="ZXE-y6-vNB"/>
                             <constraint firstItem="b5P-cp-pNf" firstAttribute="trailing" secondItem="8bd-Yp-1tN" secondAttribute="trailing" constant="8" id="Zd3-XT-Clk"/>
+                            <constraint firstItem="4UM-Xf-UPB" firstAttribute="top" secondItem="tmI-63-qKV" secondAttribute="top" constant="20" id="jWt-4k-MBa"/>
+                            <constraint firstItem="tmI-63-qKV" firstAttribute="trailing" secondItem="4UM-Xf-UPB" secondAttribute="trailing" constant="20" id="kE5-OW-MJQ"/>
                             <constraint firstItem="zta-Ge-04P" firstAttribute="bottom" secondItem="tmI-63-qKV" secondAttribute="bottom" constant="20" id="mS4-Uq-nrJ"/>
-                            <constraint firstItem="Jiw-PV-S6g" firstAttribute="top" secondItem="tmI-63-qKV" secondAttribute="top" constant="20" id="nNB-Ia-meL"/>
-                            <constraint firstItem="dMl-Ej-d7d" firstAttribute="leading" secondItem="tmI-63-qKV" secondAttribute="leading" constant="20" id="sXs-96-i91"/>
+                            <constraint firstItem="zta-Ge-04P" firstAttribute="top" secondItem="4UM-Xf-UPB" secondAttribute="bottom" constant="20" id="xh1-fs-vl9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tmI-63-qKV"/>
                     </view>

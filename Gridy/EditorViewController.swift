@@ -25,6 +25,7 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         super.viewDidLoad()
         adjustLabel.numberOfLines = 0
         self.navigationController?.isNavigationBarHidden = true
+        mask(blurEffectView, maskRect: blurCutOut.frame.self)
         imageView.image = selectedImage
         
         
@@ -44,15 +45,17 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         blurCutOut.addGestureRecognizer(gestureRecognizer)
     }
 
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        DispatchQueue.main.async { [weak self] in
-            self?.blurCutOut.setNeedsDisplay()
-        }
-       // self.blurCutOut.setNeedsDisplay()
-        mask(self.blurEffectView, maskRect: self.blurCutOut.frame)
-}
+//    
+//    override func viewDidAppear(_ animated: Bool) {
+//               DispatchQueue.main.async { [weak self] in
+//                   self?.blurCutOut.setNeedsDisplay()
+//               }
+//           
+//               mask(self.blurEffectView, maskRect: self.blurCutOut.frame)
+//           
+//              
+//       }
+// 
     
    
     @objc func handleRotate(recognizer : UIRotationGestureRecognizer) {
@@ -70,7 +73,7 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
             gestureRecognizer.setTranslation(CGPoint.zero, in: self.view)
         }
     }
-    
+      
     @IBAction func backButtonTapped(_ sender: Any) {
         _ = navigationController?.popViewController(animated: true)
         
