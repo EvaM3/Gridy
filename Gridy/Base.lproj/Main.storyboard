@@ -326,7 +326,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="166" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-Xf-UPB" userLabel="RestartandScoreStackView">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="166" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-Xf-UPB" userLabel="RestartandScoreStackView">
                                 <rect key="frame" x="20" y="20" width="280" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMl-Ej-d7d" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
@@ -346,8 +346,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <variation key="heightClass=compact" spacing="350"/>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="zta-Ge-04P">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="zta-Ge-04P" userLabel="CollectionViewStackView">
                                 <rect key="frame" x="20" y="70" width="280" height="518"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8bd-Yp-1tN" userLabel="StarterCollectionView">
