@@ -15,11 +15,13 @@ class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @objc var selectedImage = UIImage()
     var pickerController = UIImagePickerController()
     let pickedImages: [UIImage] = [UIImage(named: "tiger")!,UIImage(named: "stonehenge")!,UIImage(named: "books")!,UIImage(named:"church")!,UIImage(named: "machu-picchu")!]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         pickerController.delegate = self
+    
     }
     
     @IBAction func save(_ sender: Any) {

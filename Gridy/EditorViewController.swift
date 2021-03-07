@@ -44,20 +44,20 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         gestureRecognizer.delegate = self
         blurCutOut.addGestureRecognizer(gestureRecognizer)
     }
-
-//    
-//    override func viewDidAppear(_ animated: Bool) {
-//               DispatchQueue.main.async { [weak self] in
-//                   self?.blurCutOut.setNeedsDisplay()
-//               }
-//           
-//               mask(self.blurEffectView, maskRect: self.blurCutOut.frame)
-//           
-//              
-//       }
-// 
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        DispatchQueue.main.async {
+            self.blurCutOut.setNeedsDisplay()
+            mask(self.blurEffectView, maskRect: self.blurCutOut.frame)
+        }
+        
    
+        
+    }
+    //
+    
+    
     @objc func handleRotate(recognizer : UIRotationGestureRecognizer) {
         self.imageView.transform = self.imageView.transform.rotated(by: recognizer.rotation)
         recognizer.rotation = 0
@@ -73,7 +73,7 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
             gestureRecognizer.setTranslation(CGPoint.zero, in: self.view)
         }
     }
-      
+    
     @IBAction func backButtonTapped(_ sender: Any) {
         _ = navigationController?.popViewController(animated: true)
         
