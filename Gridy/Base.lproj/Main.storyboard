@@ -407,7 +407,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="zta-Ge-04P" firstAttribute="leading" secondItem="tmI-63-qKV" secondAttribute="leading" constant="20" id="2SM-DB-dgU"/>
-                            <constraint firstAttribute="trailing" secondItem="zta-Ge-04P" secondAttribute="trailing" constant="20" id="4we-Dx-aFi"/>
+                            <constraint firstAttribute="trailing" secondItem="zta-Ge-04P" secondAttribute="trailing" constant="20" id="4we-Dx-aFi">
+                                <variation key="heightClass=compact" constant="310"/>
+                            </constraint>
                             <constraint firstItem="4UM-Xf-UPB" firstAttribute="leading" secondItem="tmI-63-qKV" secondAttribute="leading" constant="20" id="Wbw-j1-haB"/>
                             <constraint firstItem="b5P-cp-pNf" firstAttribute="bottom" secondItem="8bd-Yp-1tN" secondAttribute="bottom" constant="8" id="ZXE-y6-vNB"/>
                             <constraint firstItem="b5P-cp-pNf" firstAttribute="trailing" secondItem="8bd-Yp-1tN" secondAttribute="trailing" constant="8" id="Zd3-XT-Clk"/>
