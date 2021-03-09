@@ -230,7 +230,9 @@
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="2Y6-FS-rw8" firstAttribute="leading" secondItem="Pqu-UR-cpx" secondAttribute="leading" constant="21" id="buu-hF-tcL"/>
+                                                        <constraint firstItem="2Y6-FS-rw8" firstAttribute="leading" secondItem="Pqu-UR-cpx" secondAttribute="leading" constant="21" id="buu-hF-tcL">
+                                                            <variation key="heightClass=compact" constant="50"/>
+                                                        </constraint>
                                                     </constraints>
                                                     <variation key="heightClass=compact" axis="horizontal" distribution="fillProportionally" spacing="40"/>
                                                     <variation key="heightClass=compact-widthClass=regular" alignment="top"/>
@@ -252,7 +254,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                                     <color key="backgroundColor" name="lightgreen"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="100" id="6Gq-Pb-2vv"/>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="6Gq-Pb-2vv"/>
                                                                         <constraint firstAttribute="height" constant="100" id="lag-np-40w"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="36"/>
@@ -292,7 +294,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="7nr-3u-k0Y" firstAttribute="top" secondItem="bo3-YG-GK5" secondAttribute="top" id="ELZ-4a-eFT"/>
-                            <constraint firstItem="7nr-3u-k0Y" firstAttribute="trailing" secondItem="bo3-YG-GK5" secondAttribute="trailing" id="Gy8-tK-ZgM"/>
+                            <constraint firstItem="7nr-3u-k0Y" firstAttribute="trailing" secondItem="bo3-YG-GK5" secondAttribute="trailing" id="Gy8-tK-ZgM">
+                                <variation key="heightClass=compact" constant="-8"/>
+                            </constraint>
                             <constraint firstItem="A7a-Eq-21u" firstAttribute="top" secondItem="bo3-YG-GK5" secondAttribute="top" id="IJH-sg-bew"/>
                             <constraint firstItem="7nr-3u-k0Y" firstAttribute="bottom" secondItem="bo3-YG-GK5" secondAttribute="bottom" id="Szm-QL-GeR"/>
                             <constraint firstItem="7nr-3u-k0Y" firstAttribute="leading" secondItem="bo3-YG-GK5" secondAttribute="leading" id="d75-A1-UCA"/>
@@ -326,78 +330,93 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="166" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-Xf-UPB" userLabel="RestartandScoreStackView">
-                                <rect key="frame" x="20" y="20" width="280" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="wRE-Yl-sJr" userLabel="PlayfieldMainStackView">
+                                <rect key="frame" x="8" y="8" width="300" height="552"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMl-Ej-d7d" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
-                                        <color key="backgroundColor" name="deepgreen"/>
-                                        <state key="normal" title="Restart">
-                                            <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="restartButtonTapped:" destination="ZJP-Zl-Az0" eventType="touchUpInside" id="CL6-5H-Z8e"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jiw-PV-S6g">
-                                        <rect key="frame" x="216" y="0.0" width="64" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <variation key="heightClass=compact" spacing="350"/>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="zta-Ge-04P" userLabel="CollectionViewStackView">
-                                <rect key="frame" x="20" y="70" width="280" height="518"/>
-                                <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8bd-Yp-1tN" userLabel="StarterCollectionView">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="196"/>
-                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XDp-nO-gGc">
-                                            <size key="itemSize" width="128" height="128"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlayfieldCell" id="iJC-1b-XnS">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9XA-qs-HkQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </collectionViewCellContentView>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jaZ-7o-9Uz" userLabel="GameCollectionView">
-                                        <rect key="frame" x="0.0" y="238" width="280" height="280"/>
-                                        <color key="backgroundColor" red="0.95294117649999999" green="0.91372549020000005" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="jaZ-7o-9Uz" secondAttribute="height" multiplier="1:1" id="V9e-3Y-iU2"/>
-                                        </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rga-8I-jS6">
-                                            <size key="itemSize" width="128" height="128"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GameCell" id="N6S-Bc-qh3">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Q1I-cG-6TB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </collectionViewCellContentView>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="122" translatesAutoresizingMaskIntoConstraints="NO" id="cGi-3p-Vcv" userLabel="Restart&amp;GridyScoreStackView">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="31.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMl-Ej-d7d" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="31.5"/>
+                                                <color key="backgroundColor" name="deepgreen"/>
+                                                <state key="normal" title="Restart">
+                                                    <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="restartButtonTapped:" destination="ZJP-Zl-Az0" eventType="touchUpInside" id="CL6-5H-Z8e"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S6B-Ra-1mP" userLabel="Gridy&amp;ScoreStackView">
+                                                <rect key="frame" x="171" y="0.0" width="129" height="31.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Gridy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcE-m1-mRY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="31.5"/>
+                                                        <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="27"/>
+                                                        <color key="textColor" name="lightgreen"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jiw-PV-S6g">
+                                                        <rect key="frame" x="65" y="0.0" width="64" height="31.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="zta-Ge-04P" userLabel="CollectionViewStackView">
+                                        <rect key="frame" x="0.0" y="45.5" width="300" height="506.5"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8bd-Yp-1tN" userLabel="StarterCollectionView">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="164.5"/>
+                                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XDp-nO-gGc">
+                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlayfieldCell" id="iJC-1b-XnS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9XA-qs-HkQ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </collectionViewCellContentView>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jaZ-7o-9Uz" userLabel="GameCollectionView">
+                                                <rect key="frame" x="0.0" y="206.5" width="300" height="300"/>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.91372549020000005" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="jaZ-7o-9Uz" secondAttribute="height" multiplier="1:1" id="V9e-3Y-iU2"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rga-8I-jS6">
+                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GameCell" id="N6S-Bc-qh3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Q1I-cG-6TB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </collectionViewCellContentView>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5P-cp-pNf">
-                                <rect key="frame" x="272" y="246" width="36" height="28"/>
+                                <rect key="frame" x="272" y="180" width="36" height="28"/>
                                 <state key="normal" backgroundImage="lookup"/>
                                 <connections>
                                     <action selector="lookUpButtonTapped:" destination="ZJP-Zl-Az0" eventType="touchUpInside" id="sdx-Yl-gmz"/>
@@ -406,17 +425,18 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="zta-Ge-04P" firstAttribute="leading" secondItem="tmI-63-qKV" secondAttribute="leading" constant="20" id="2SM-DB-dgU"/>
-                            <constraint firstAttribute="trailing" secondItem="zta-Ge-04P" secondAttribute="trailing" constant="20" id="4we-Dx-aFi">
-                                <variation key="heightClass=compact" constant="310"/>
+                            <constraint firstItem="wRE-Yl-sJr" firstAttribute="bottom" secondItem="tmI-63-qKV" secondAttribute="bottom" constant="-8" id="5AV-ON-O2W"/>
+                            <constraint firstItem="b5P-cp-pNf" firstAttribute="leading" secondItem="tmI-63-qKV" secondAttribute="leading" constant="272" id="PyN-O7-YkR">
+                                <variation key="heightClass=compact" constant="20"/>
                             </constraint>
-                            <constraint firstItem="4UM-Xf-UPB" firstAttribute="leading" secondItem="tmI-63-qKV" secondAttribute="leading" constant="20" id="Wbw-j1-haB"/>
-                            <constraint firstItem="b5P-cp-pNf" firstAttribute="bottom" secondItem="8bd-Yp-1tN" secondAttribute="bottom" constant="8" id="ZXE-y6-vNB"/>
-                            <constraint firstItem="b5P-cp-pNf" firstAttribute="trailing" secondItem="8bd-Yp-1tN" secondAttribute="trailing" constant="8" id="Zd3-XT-Clk"/>
-                            <constraint firstItem="4UM-Xf-UPB" firstAttribute="top" secondItem="tmI-63-qKV" secondAttribute="top" constant="20" id="jWt-4k-MBa"/>
-                            <constraint firstItem="tmI-63-qKV" firstAttribute="trailing" secondItem="4UM-Xf-UPB" secondAttribute="trailing" constant="20" id="kE5-OW-MJQ"/>
-                            <constraint firstItem="zta-Ge-04P" firstAttribute="bottom" secondItem="tmI-63-qKV" secondAttribute="bottom" constant="20" id="mS4-Uq-nrJ"/>
-                            <constraint firstItem="zta-Ge-04P" firstAttribute="top" secondItem="4UM-Xf-UPB" secondAttribute="bottom" constant="20" id="xh1-fs-vl9"/>
+                            <constraint firstItem="wRE-Yl-sJr" firstAttribute="top" secondItem="tmI-63-qKV" secondAttribute="top" constant="8" id="Yxu-3p-dFT"/>
+                            <constraint firstItem="wRE-Yl-sJr" firstAttribute="leading" secondItem="tmI-63-qKV" secondAttribute="leading" constant="8" id="t2X-ha-wKW">
+                                <variation key="heightClass=compact" constant="250"/>
+                            </constraint>
+                            <constraint firstItem="wRE-Yl-sJr" firstAttribute="trailing" secondItem="tmI-63-qKV" secondAttribute="trailing" constant="-12" id="u41-1O-yVl">
+                                <variation key="heightClass=compact" constant="-10"/>
+                            </constraint>
+                            <constraint firstItem="tmI-63-qKV" firstAttribute="bottom" secondItem="b5P-cp-pNf" secondAttribute="bottom" constant="360" id="ubg-4A-54u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tmI-63-qKV"/>
                     </view>
@@ -431,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G85-uL-dN4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2141.5999999999999" y="169.56521739130437"/>
+            <point key="canvasLocation" x="2141.25" y="169.01408450704224"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sp2-7e-Bfd">
