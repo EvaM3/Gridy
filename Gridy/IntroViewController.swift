@@ -9,19 +9,20 @@
 import UIKit
 
 
-
 class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @objc var selectedImage = UIImage()
     var pickerController = UIImagePickerController()
     let pickedImages: [UIImage] = [UIImage(named: "tiger")!,UIImage(named: "stonehenge")!,UIImage(named: "books")!,UIImage(named:"church")!,UIImage(named: "machu-picchu")!]
-
+    
+    @IBOutlet var libraryButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         pickerController.delegate = self
-    
+//       libraryButton.titleLabel?.adjustsFontSizeToFitWidth = true
+//        libraryButton.titleLabel?.minimumScaleFactor = 0.5
     }
     
     @IBAction func save(_ sender: Any) {
