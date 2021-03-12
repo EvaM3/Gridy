@@ -23,27 +23,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="500" text="Challenge yourself with a photo puzzle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1l0-JF-6mu">
-                                <rect key="frame" x="20" y="239" width="292" height="16.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <color key="textColor" name="black"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=compact">
-                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                                </variation>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aJ1-yC-hHq" userLabel="MainStackView">
                                 <rect key="frame" x="20" y="47" width="280" height="491"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Gridy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ycI-5O-AuH">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-70" translatesAutoresizingMaskIntoConstraints="NO" id="kG6-tZ-Wrq" userLabel="GridyandChallengeStackView">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="241.5"/>
-                                        <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="168"/>
-                                        <color key="textColor" name="lightgreen"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="177"/>
-                                        </variation>
-                                    </label>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Gridy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ycI-5O-AuH">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="295"/>
+                                                <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="168"/>
+                                                <color key="textColor" name="lightgreen"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="177"/>
+                                                </variation>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1Lp-Fv-vsq" userLabel="ChallengeStackView">
+                                                <rect key="frame" x="19.5" y="225" width="241.5" height="16.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="500" text="Challenge yourself with a photo puzzle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1l0-JF-6mu">
+                                                        <rect key="frame" x="0.0" y="0.0" width="241.5" height="16.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <color key="textColor" name="black"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=compact">
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                        </variation>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <variation key="heightClass=compact" spacing="-70"/>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hzN-c1-aKm" userLabel="ButtonsStackView">
                                         <rect key="frame" x="0.0" y="249.5" width="280" height="241.5"/>
                                         <subviews>
@@ -160,7 +171,6 @@
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1l0-JF-6mu" secondAttribute="trailing" constant="8" id="0D3-ul-dEY"/>
                             <constraint firstItem="aJ1-yC-hHq" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-30" id="3So-td-woG">
                                 <variation key="heightClass=compact" constant="-70"/>
                             </constraint>
@@ -169,9 +179,6 @@
                                 <variation key="heightClass=compact" constant="10"/>
                             </constraint>
                             <constraint firstItem="aJ1-yC-hHq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Fvj-5J-TCE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1l0-JF-6mu" secondAttribute="trailing" symbolic="YES" id="PKa-ta-Tyd"/>
-                            <constraint firstItem="1l0-JF-6mu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="195" id="aSu-O7-BSO"/>
-                            <constraint firstItem="1l0-JF-6mu" firstAttribute="leading" secondItem="aJ1-yC-hHq" secondAttribute="leading" id="xa6-DC-wgZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -183,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-101.59999999999999" y="172.26386806596702"/>
+            <point key="canvasLocation" x="-103.125" y="172.18309859154931"/>
         </scene>
         <!--Editor View Controller-->
         <scene sceneID="VHa-Db-Ude">
@@ -194,7 +201,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stonehenge" translatesAutoresizingMaskIntoConstraints="NO" id="7nr-3u-k0Y">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="315" height="568"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="A7a-Eq-21u">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -206,7 +213,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Pqu-UR-cpx" userLabel="backButtonAndLabelStackV">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjx-qB-w14" userLabel="BackButton" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
                                                             <rect key="frame" x="302.5" y="0.0" width="17.5" height="25"/>
@@ -225,7 +232,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adjust the puzzle image: zoom, rotate, reposition" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Y6-FS-rw8">
-                                                            <rect key="frame" x="21" y="40" width="299" height="18"/>
+                                                            <rect key="frame" x="21" y="40" width="299" height="28"/>
                                                             <fontDescription key="fontDescription" name=".SFNS-Regular" family=".SF NS" pointSize="14"/>
                                                             <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -240,8 +247,8 @@
                                                     <variation key="heightClass=compact" axis="horizontal" distribution="fillProportionally" spacing="40"/>
                                                     <variation key="heightClass=compact-widthClass=regular" alignment="top"/>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="TEu-95-lbE" userLabel="blurAndStartButtonStackV">
-                                                    <rect key="frame" x="0.0" y="58" width="320" height="510"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="TEu-95-lbE" userLabel="blurAndStartButtonStackV">
+                                                    <rect key="frame" x="0.0" y="68" width="320" height="500"/>
                                                     <subviews>
                                                         <view contentMode="center" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="jSA-ET-Yxp" userLabel="blurCutOut" customClass="BlurCutOut" customModule="Gridy" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
@@ -251,7 +258,7 @@
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="fus-uy-jXa" userLabel="startButtonStack">
-                                                            <rect key="frame" x="110" y="410" width="100" height="100"/>
+                                                            <rect key="frame" x="110" y="400" width="100" height="100"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNA-Il-PBq" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -297,7 +304,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="7nr-3u-k0Y" firstAttribute="top" secondItem="bo3-YG-GK5" secondAttribute="top" id="ELZ-4a-eFT"/>
-                            <constraint firstItem="7nr-3u-k0Y" firstAttribute="trailing" secondItem="bo3-YG-GK5" secondAttribute="trailing" id="Gy8-tK-ZgM">
+                            <constraint firstItem="7nr-3u-k0Y" firstAttribute="trailing" secondItem="bo3-YG-GK5" secondAttribute="trailing" constant="-5" id="Gy8-tK-ZgM">
                                 <variation key="heightClass=compact" constant="-8"/>
                             </constraint>
                             <constraint firstItem="A7a-Eq-21u" firstAttribute="top" secondItem="bo3-YG-GK5" secondAttribute="top" id="IJH-sg-bew"/>

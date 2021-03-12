@@ -25,7 +25,7 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         super.viewDidLoad()
         adjustLabel.numberOfLines = 0
         self.navigationController?.isNavigationBarHidden = true
-        mask(blurEffectView, maskRect: blurCutOut.frame.self)
+       // mask(blurEffectView, maskRect: blurCutOut.frame.self)
         imageView.image = selectedImage
         
         
@@ -48,14 +48,13 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     
     override func viewDidAppear(_ animated: Bool) {
         DispatchQueue.main.async {
+            mask(self.blurEffectView, maskView: self.blurCutOut)
             self.blurCutOut.setNeedsDisplay()
-            mask(self.blurEffectView, maskRect: self.blurCutOut.frame)
         }
         
    
         
     }
-    //
     
     
     @objc func handleRotate(recognizer : UIRotationGestureRecognizer) {
@@ -95,10 +94,10 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     
 }
 
-
-func mask(_ viewToMask: UIView, maskRect: CGRect) {
+func mask(_ viewToMask: UIView, maskView: UIView) {
     let maskLayer = CAShapeLayer()
     let mutablePath = CGMutablePath()
+    let maskRect = maskView.convert(maskView.bounds, to: viewToMask)
     mutablePath.addRect(viewToMask.bounds)
     mutablePath.addRect(maskRect)
     maskLayer.path = mutablePath
