@@ -25,9 +25,8 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         super.viewDidLoad()
         adjustLabel.numberOfLines = 0
         self.navigationController?.isNavigationBarHidden = true
-       // mask(blurEffectView, maskRect: blurCutOut.frame.self)
         imageView.image = selectedImage
-        
+       
         
         blurCutOut.isUserInteractionEnabled = true
         blurCutOut.isMultipleTouchEnabled = true
@@ -44,16 +43,16 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         gestureRecognizer.delegate = self
         blurCutOut.addGestureRecognizer(gestureRecognizer)
     }
-    
+    override func viewDidLayoutSubviews() {
+       mask(self.blurEffectView, maskView: self.blurCutOut)
+        self.blurCutOut.setNeedsDisplay()    //should trigger the draw func
+    }
     
     override func viewDidAppear(_ animated: Bool) {
-        DispatchQueue.main.async {
-            mask(self.blurEffectView, maskView: self.blurCutOut)
-            self.blurCutOut.setNeedsDisplay()
-        }
-        
-   
-        
+//       DispatchQueue.main.async {
+//
+//        }
+      
     }
     
     
