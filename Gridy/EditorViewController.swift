@@ -45,7 +45,8 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     }
     override func viewDidLayoutSubviews() {
        mask(self.blurEffectView, maskView: self.blurCutOut)
-        self.blurCutOut.setNeedsDisplay()    //should trigger the draw func
+        self.blurCutOut.setNeedsDisplay() //should trigger the draw func
+        blurCutOut.draw(blurCutOut.bounds)
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -408,7 +408,7 @@
                                         </subviews>
                                         <variation key="heightClass=compact" spacing="7"/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QYa-IB-BNr" userLabel="DragLabelStackView">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="QYa-IB-BNr" userLabel="DragLabelStackView">
                                         <rect key="frame" x="0.0" y="238" width="300" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag pieces to the grid swipe out of the grid to undo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mv6-D5-gZK" userLabel="DragDescriptionLabel">
@@ -449,6 +449,10 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Opq-Oe-Nxr" firstAttribute="top" secondItem="QYa-IB-BNr" secondAttribute="bottom" constant="14" id="Lb9-Jr-foF"/>
+                                    <constraint firstItem="QYa-IB-BNr" firstAttribute="top" secondItem="sM3-DY-gAj" secondAttribute="bottom" constant="14" id="jOw-Lw-5Uf"/>
+                                </constraints>
                                 <variation key="heightClass=compact" axis="horizontal" spacing="40"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5P-cp-pNf">
