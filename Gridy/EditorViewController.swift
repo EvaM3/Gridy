@@ -20,14 +20,14 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     
     var selectedImage : UIImage?
     var originalImage = UIImage()
-    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         adjustLabel.numberOfLines = 0
         self.navigationController?.isNavigationBarHidden = true
         imageView.image = selectedImage
-        self.blurCutOut.draw(blurCutOut.frame)
+   
        
        
         blurCutOut.isUserInteractionEnabled = true
@@ -47,9 +47,8 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     }
     override func viewDidLayoutSubviews() {
        mask(self.blurEffectView, maskView: self.blurCutOut)
+        self.blurCutOut.draw(blurCutOut.bounds)
         self.blurCutOut.setNeedsDisplay() //should trigger the draw func
-          
-    
     }
     
 //    override func viewDidAppear(_ animated: Bool) {
