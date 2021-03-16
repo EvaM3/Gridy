@@ -219,7 +219,6 @@
                                                             <rect key="frame" x="302.5" y="0.0" width="17.5" height="25"/>
                                                             <color key="backgroundColor" red="0.95294117649999999" green="0.91372549020000005" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="17.5" id="O8h-wL-qWe"/>
                                                                 <constraint firstAttribute="height" constant="25" id="ZXk-s2-sPm"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -344,7 +343,7 @@
                                 <rect key="frame" x="8" y="8" width="300" height="552"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="sM3-DY-gAj" userLabel="Button&amp;Labels&amp;StarterCollectionViewStackView">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="224"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="206"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="122" translatesAutoresizingMaskIntoConstraints="NO" id="cGi-3p-Vcv" userLabel="Restart&amp;GridyScoreStackView">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
@@ -381,10 +380,10 @@
                                                 <variation key="heightClass=compact" distribution="fillProportionally" spacing="10"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HB4-le-4di" userLabel="StarterCollectionVStackView">
-                                                <rect key="frame" x="0.0" y="44" width="300" height="180"/>
+                                                <rect key="frame" x="0.0" y="44" width="300" height="162"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8bd-Yp-1tN" userLabel="StarterCollectionView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="180"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="162"/>
                                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XDp-nO-gGc">
                                                             <size key="itemSize" width="128" height="128"/>
@@ -408,11 +407,11 @@
                                         </subviews>
                                         <variation key="heightClass=compact" spacing="7"/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="QYa-IB-BNr" userLabel="DragLabelStackView">
-                                        <rect key="frame" x="0.0" y="238" width="300" height="0.0"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QYa-IB-BNr" userLabel="DragLabelStackView">
+                                        <rect key="frame" x="0.0" y="220" width="300" height="18"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag pieces to the grid swipe out of the grid to undo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mv6-D5-gZK" userLabel="DragDescriptionLabel">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
+                                                <rect key="frame" x="12.5" y="0.0" width="275" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -449,10 +448,6 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="Opq-Oe-Nxr" firstAttribute="top" secondItem="QYa-IB-BNr" secondAttribute="bottom" constant="14" id="Lb9-Jr-foF"/>
-                                    <constraint firstItem="QYa-IB-BNr" firstAttribute="top" secondItem="sM3-DY-gAj" secondAttribute="bottom" constant="14" id="jOw-Lw-5Uf"/>
-                                </constraints>
                                 <variation key="heightClass=compact" axis="horizontal" spacing="40"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5P-cp-pNf">
