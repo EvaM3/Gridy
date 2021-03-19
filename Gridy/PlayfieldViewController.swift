@@ -76,9 +76,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         gameCollectionView.dragInteractionEnabled = true
         
         
-        self.view.addSubview(shuffledCollectionView)
-        self.view.addSubview(gameCollectionView)
-        
         do {
             let tunePath = Bundle.main.path(forResource: "glitter", ofType: "wav")!
             let tuneUrl = URL(fileURLWithPath: tunePath)
@@ -93,8 +90,9 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         tapGesture.numberOfTapsRequired = 2
         shuffledCollectionView.addGestureRecognizer(tapGesture)
     }
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         shuffledCollectionView.reloadData()
+        gameCollectionView.reloadData()
     }
     
     func restartGame() {

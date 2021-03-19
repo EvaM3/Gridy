@@ -324,118 +324,110 @@
                         <outlet property="blurEffectView" destination="A7a-Eq-21u" id="eiI-p3-DZ4"/>
                         <outlet property="imageView" destination="7nr-3u-k0Y" id="1wl-JY-g7v"/>
                         <outlet property="startButton" destination="PNA-Il-PBq" id="MGa-lr-wen"/>
-                        <segue destination="ZJP-Zl-Az0" kind="show" identifier="PlayfieldSegue" id="ODY-eQ-qVv"/>
+                        <segue destination="Hy2-4N-QR8" kind="show" identifier="PlayfieldSegue" id="6Tf-w2-9wj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Z6-sL-00z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1206" y="170"/>
         </scene>
-        <!--PlayfieldViewController-->
-        <scene sceneID="tTd-1H-SU5">
+        <!--Playfield View Controller-->
+        <scene sceneID="78C-Y7-Rk0">
             <objects>
-                <viewController id="ZJP-Zl-Az0" userLabel="PlayfieldViewController" customClass="PlayfieldViewController" customModule="Gridy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="S4H-fd-BDc" userLabel="PlayfieldView">
+                <viewController id="Hy2-4N-QR8" customClass="PlayfieldViewController" customModule="Gridy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jb4-zg-QbJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="wRE-Yl-sJr" userLabel="PlayfieldMainStackView">
-                                <rect key="frame" x="10" y="10" width="300" height="548"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="HXF-lw-y0I" userLabel="PlayfieldMainStackView">
+                                <rect key="frame" x="8" y="8" width="304" height="552"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="QOu-jt-2ug" userLabel="ButtonsLabelsandCollectionVStackView">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="234"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="oYB-sc-u2l" userLabel="RestartAndScoreStackView">
+                                        <rect key="frame" x="0.0" y="0.0" width="284" height="30"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="110" translatesAutoresizingMaskIntoConstraints="NO" id="cGi-3p-Vcv" userLabel="RestartGridyScoreStackView">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5S5-En-8DJ" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="91.5" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="ap6-x7-Qp0"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="lpI-X7-2Ec"/>
+                                                </constraints>
+                                                <state key="normal" title="Restart">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="tyU-SY-Fz5" userLabel="GridyScoreStackView">
+                                                <rect key="frame" x="150.5" y="0.0" width="133.5" height="30"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mBh-yV-tM9" userLabel="ButtonRestartStackView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="61" height="30"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMl-Ej-d7d" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="61" height="30"/>
-                                                                <color key="backgroundColor" name="deepgreen"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="58" id="5LB-at-QnX"/>
-                                                                    <constraint firstAttribute="height" constant="30" id="WY3-CK-qd8"/>
-                                                                </constraints>
-                                                                <state key="normal" title="Restart">
-                                                                    <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="restartButtonTapped:" destination="ZJP-Zl-Az0" eventType="touchUpInside" id="CL6-5H-Z8e"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S6B-Ra-1mP" userLabel="Gridy&amp;ScoreStackView">
-                                                        <rect key="frame" x="171" y="0.0" width="129" height="30"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gridy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcE-m1-mRY">
-                                                                <rect key="frame" x="0.0" y="0.0" width="65" height="30"/>
-                                                                <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="27"/>
-                                                                <color key="textColor" name="lightgreen"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jiw-PV-S6g">
-                                                                <rect key="frame" x="65" y="0.0" width="64" height="30"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <variation key="heightClass=compact" spacing="-20"/>
-                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gridy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e30-Yx-kko">
+                                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="30"/>
+                                                        <color key="tintColor" name="lightgreen"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                                        <color key="textColor" name="lightgreen"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyX-dM-ymY">
+                                                        <rect key="frame" x="69.5" y="0.0" width="64" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
-                                                <variation key="heightClass=compact" distribution="fillProportionally" spacing="30"/>
                                             </stackView>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8bd-Yp-1tN" userLabel="StarterCollectionView">
-                                                <rect key="frame" x="0.0" y="44" width="300" height="146"/>
-                                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XDp-nO-gGc">
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sqp-f1-FBJ" userLabel="ShuffledAndLabelStackView">
+                                        <rect key="frame" x="0.0" y="49" width="304" height="180"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n6x-DZ-6fa">
+                                                <rect key="frame" x="0.0" y="0.0" width="304" height="149"/>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.91372549020000005" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yOe-RM-16O">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlayfieldCell" id="iJC-1b-XnS">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlayfieldCell" id="9Lj-7U-rOh">
                                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9XA-qs-HkQ">
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RF3-mw-e7E">
                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </collectionViewCellContentView>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag pieces to the grid swipe out of the grid to undo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mv6-D5-gZK" userLabel="DragDescriptionLabel">
-                                                <rect key="frame" x="0.0" y="204" width="300" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag pieces to the grid, swipe out of the grid to undo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjn-mS-QRz" userLabel="DragLabel">
+                                                <rect key="frame" x="0.0" y="157" width="304" height="23"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="Ydr-ug-yEU"/>
+                                                    <constraint firstAttribute="height" constant="23" id="Eyk-r9-q2E"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jaZ-7o-9Uz" userLabel="GameCollectionView">
-                                        <rect key="frame" x="0.0" y="248" width="300" height="300"/>
-                                        <color key="backgroundColor" red="0.95294117649999999" green="0.91372549020000005" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="m7w-SR-QX2">
+                                        <rect key="frame" x="0.0" y="248" width="304" height="304"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="Gm7-64-smI"/>
+                                            <constraint firstAttribute="width" secondItem="m7w-SR-QX2" secondAttribute="height" multiplier="1:1" id="sDU-ba-MwG"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rga-8I-jS6">
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SwX-IM-TqY">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GameCell" id="N6S-Bc-qh3">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GameCell" id="Skh-w8-3Vv">
                                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Q1I-cG-6TB">
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ggN-6E-g56">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </collectionViewCellContentView>
@@ -443,43 +435,43 @@
                                         </cells>
                                     </collectionView>
                                 </subviews>
-                                <variation key="heightClass=compact" axis="horizontal" spacing="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="sqp-f1-FBJ" secondAttribute="trailing" id="6cA-tX-TCa"/>
+                                    <constraint firstAttribute="trailing" secondItem="m7w-SR-QX2" secondAttribute="trailing" id="8kZ-SJ-1El"/>
+                                    <constraint firstItem="oYB-sc-u2l" firstAttribute="leading" secondItem="HXF-lw-y0I" secondAttribute="leading" id="HdY-JK-uW7"/>
+                                    <constraint firstItem="sqp-f1-FBJ" firstAttribute="leading" secondItem="HXF-lw-y0I" secondAttribute="leading" id="JEl-1H-iHr"/>
+                                    <constraint firstItem="m7w-SR-QX2" firstAttribute="leading" secondItem="HXF-lw-y0I" secondAttribute="leading" id="LvU-c1-xpn"/>
+                                    <constraint firstAttribute="trailing" secondItem="oYB-sc-u2l" secondAttribute="trailing" constant="20" id="Pdc-Rw-E8Z"/>
+                                </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5P-cp-pNf">
-                                <rect key="frame" x="270" y="170" width="36" height="28"/>
-                                <state key="normal" backgroundImage="lookup"/>
-                                <connections>
-                                    <action selector="lookUpButtonTapped:" destination="ZJP-Zl-Az0" eventType="touchUpInside" id="sdx-Yl-gmz"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1n-SC-48c">
+                                <rect key="frame" x="275" y="180" width="36" height="28"/>
+                                <state key="normal" image="lookup"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="wRE-Yl-sJr" firstAttribute="top" secondItem="tmI-63-qKV" secondAttribute="top" constant="10" id="Dm6-ca-BYW"/>
-                            <constraint firstItem="b5P-cp-pNf" firstAttribute="top" secondItem="tmI-63-qKV" secondAttribute="top" constant="170" id="HVg-lG-6MQ">
-                                <variation key="heightClass=compact" constant="240"/>
-                            </constraint>
-                            <constraint firstItem="b5P-cp-pNf" firstAttribute="leading" secondItem="tmI-63-qKV" secondAttribute="leading" constant="270" id="V8T-0f-25E">
-                                <variation key="heightClass=compact" constant="180"/>
-                            </constraint>
-                            <constraint firstItem="tmI-63-qKV" firstAttribute="bottom" secondItem="wRE-Yl-sJr" secondAttribute="bottom" constant="10" id="dvz-wm-RSA"/>
-                            <constraint firstItem="tmI-63-qKV" firstAttribute="trailing" secondItem="wRE-Yl-sJr" secondAttribute="trailing" constant="10" id="pHA-GR-VER"/>
-                            <constraint firstItem="wRE-Yl-sJr" firstAttribute="leading" secondItem="tmI-63-qKV" secondAttribute="leading" constant="10" id="wAT-8e-GVh"/>
+                            <constraint firstItem="HXF-lw-y0I" firstAttribute="top" secondItem="dtx-pt-Vtw" secondAttribute="top" constant="8" id="5sH-lM-YDW"/>
+                            <constraint firstItem="L1n-SC-48c" firstAttribute="leading" secondItem="dtx-pt-Vtw" secondAttribute="leading" constant="275" id="7lD-S2-hNl"/>
+                            <constraint firstItem="HXF-lw-y0I" firstAttribute="leading" secondItem="dtx-pt-Vtw" secondAttribute="leading" constant="8" id="Eex-cc-DzV"/>
+                            <constraint firstItem="dtx-pt-Vtw" firstAttribute="bottom" secondItem="HXF-lw-y0I" secondAttribute="bottom" constant="8" id="Ita-EP-Gs0"/>
+                            <constraint firstItem="L1n-SC-48c" firstAttribute="top" secondItem="dtx-pt-Vtw" secondAttribute="top" constant="180" id="Mb4-1v-lUy"/>
+                            <constraint firstItem="dtx-pt-Vtw" firstAttribute="trailing" secondItem="HXF-lw-y0I" secondAttribute="trailing" constant="8" id="NdW-NB-KZQ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="tmI-63-qKV"/>
+                        <viewLayoutGuide key="safeArea" id="dtx-pt-Vtw"/>
                     </view>
-                    <navigationItem key="navigationItem" id="YN1-rH-9FT"/>
+                    <navigationItem key="navigationItem" id="C37-oB-1sv"/>
                     <connections>
-                        <outlet property="gameCollectionView" destination="jaZ-7o-9Uz" id="vn5-SU-HCA"/>
-                        <outlet property="lookUpButton" destination="b5P-cp-pNf" id="QM0-Ee-Tkf"/>
-                        <outlet property="restartButton" destination="dMl-Ej-d7d" id="8fz-px-ADl"/>
-                        <outlet property="scoreLabel" destination="Jiw-PV-S6g" id="z0D-xB-StR"/>
-                        <outlet property="shuffledCollectionView" destination="8bd-Yp-1tN" id="Kts-t8-2yC"/>
+                        <outlet property="gameCollectionView" destination="m7w-SR-QX2" id="s7P-tM-4Jr"/>
+                        <outlet property="lookUpButton" destination="L1n-SC-48c" id="4aE-7F-HPv"/>
+                        <outlet property="restartButton" destination="5S5-En-8DJ" id="AN2-Xm-llk"/>
+                        <outlet property="scoreLabel" destination="pyX-dM-ymY" id="4su-Hb-5cL"/>
+                        <outlet property="shuffledCollectionView" destination="n6x-DZ-6fa" id="yU8-79-tJH"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G85-uL-dN4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vG9-o3-6Lo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2310" y="169"/>
+            <point key="canvasLocation" x="2190" y="167.95774647887325"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sp2-7e-Bfd">
@@ -508,9 +500,6 @@
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="black">
             <color red="0.26100000739097595" green="0.26100000739097595" blue="0.26100000739097595" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="deepgreen">
-            <color red="0.10199999809265137" green="0.57599997520446777" blue="0.43500000238418579" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="lightgreen">
             <color red="0.53299999237060547" green="0.83099997043609619" blue="0.59600001573562622" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
