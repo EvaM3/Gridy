@@ -379,7 +379,7 @@
                                                         <variation key="heightClass=compact" distribution="equalSpacing" spacing="-10"/>
                                                     </stackView>
                                                 </subviews>
-                                                <variation key="heightClass=compact" distribution="fillProportionally" spacing="90"/>
+                                                <variation key="heightClass=compact" alignment="center" distribution="equalSpacing" spacing="90"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sqp-f1-FBJ" userLabel="ShuffledAndLabelStackView">
                                                 <rect key="frame" x="0.0" y="39" width="300" height="200"/>
@@ -423,7 +423,7 @@
                                                     <constraint firstAttribute="height" constant="200" id="Fxv-7E-to6"/>
                                                     <constraint firstAttribute="width" constant="300" id="Rnr-MF-RKV"/>
                                                 </constraints>
-                                                <variation key="heightClass=compact" axis="horizontal" spacing="-180"/>
+                                                <variation key="heightClass=compact" axis="horizontal" spacing="-170"/>
                                             </stackView>
                                         </subviews>
                                         <variation key="heightClass=compact" spacing="80"/>
@@ -480,7 +480,7 @@
                                 <variation key="heightClass=compact" constant="210"/>
                             </constraint>
                             <constraint firstItem="HXF-lw-y0I" firstAttribute="leading" secondItem="dtx-pt-Vtw" secondAttribute="leading" constant="8" id="Eex-cc-DzV">
-                                <variation key="heightClass=compact" constant="20"/>
+                                <variation key="heightClass=compact" constant="10"/>
                             </constraint>
                             <constraint firstItem="dtx-pt-Vtw" firstAttribute="bottom" secondItem="HXF-lw-y0I" secondAttribute="bottom" constant="8" id="Ita-EP-Gs0">
                                 <variation key="heightClass=compact" constant="0.0"/>
@@ -488,7 +488,9 @@
                             <constraint firstItem="L1n-SC-48c" firstAttribute="top" secondItem="dtx-pt-Vtw" secondAttribute="top" constant="180" id="Mb4-1v-lUy">
                                 <variation key="heightClass=compact" constant="250"/>
                             </constraint>
-                            <constraint firstItem="dtx-pt-Vtw" firstAttribute="trailing" secondItem="HXF-lw-y0I" secondAttribute="trailing" constant="8" id="NdW-NB-KZQ"/>
+                            <constraint firstItem="dtx-pt-Vtw" firstAttribute="trailing" secondItem="HXF-lw-y0I" secondAttribute="trailing" constant="8" id="NdW-NB-KZQ">
+                                <variation key="heightClass=compact" constant="10"/>
+                            </constraint>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dtx-pt-Vtw"/>
                     </view>
