@@ -464,7 +464,7 @@
                                     <constraint firstAttribute="bottom" secondItem="0GI-3s-eMz" secondAttribute="bottom" id="Jxo-ug-vZ9"/>
                                     <constraint firstItem="Imk-rp-tTo" firstAttribute="top" secondItem="HXF-lw-y0I" secondAttribute="top" id="Sc6-cx-OgK"/>
                                 </constraints>
-                                <variation key="heightClass=compact" axis="horizontal" distribution="fillProportionally" spacing="-40"/>
+                                <variation key="heightClass=compact" axis="horizontal" distribution="fillProportionally" spacing="-35"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1n-SC-48c">
                                 <rect key="frame" x="275" y="180" width="36" height="28"/>
@@ -480,16 +480,16 @@
                                 <variation key="heightClass=compact" constant="210"/>
                             </constraint>
                             <constraint firstItem="HXF-lw-y0I" firstAttribute="leading" secondItem="dtx-pt-Vtw" secondAttribute="leading" constant="8" id="Eex-cc-DzV">
-                                <variation key="heightClass=compact" constant="10"/>
+                                <variation key="heightClass=compact" constant="8"/>
                             </constraint>
                             <constraint firstItem="dtx-pt-Vtw" firstAttribute="bottom" secondItem="HXF-lw-y0I" secondAttribute="bottom" constant="8" id="Ita-EP-Gs0">
-                                <variation key="heightClass=compact" constant="0.0"/>
+                                <variation key="heightClass=compact" constant="5"/>
                             </constraint>
                             <constraint firstItem="L1n-SC-48c" firstAttribute="top" secondItem="dtx-pt-Vtw" secondAttribute="top" constant="180" id="Mb4-1v-lUy">
                                 <variation key="heightClass=compact" constant="250"/>
                             </constraint>
                             <constraint firstItem="dtx-pt-Vtw" firstAttribute="trailing" secondItem="HXF-lw-y0I" secondAttribute="trailing" constant="8" id="NdW-NB-KZQ">
-                                <variation key="heightClass=compact" constant="10"/>
+                                <variation key="heightClass=compact" constant="18"/>
                             </constraint>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dtx-pt-Vtw"/>
