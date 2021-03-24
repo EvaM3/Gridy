@@ -376,10 +376,10 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <variation key="heightClass=compact" distribution="equalSpacing" spacing="-10"/>
+                                                        <variation key="heightClass=compact" distribution="equalSpacing"/>
                                                     </stackView>
                                                 </subviews>
-                                                <variation key="heightClass=compact" alignment="center" distribution="equalSpacing" spacing="80"/>
+                                                <variation key="heightClass=compact" alignment="center" distribution="equalSpacing" spacing="50"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lSK-jb-y8w" userLabel="ShuffledStackView">
                                                 <rect key="frame" x="0.0" y="36" width="304" height="164"/>
@@ -406,23 +406,30 @@
                                                     </collectionView>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag pieces to the grid, swipe out of the grid to undo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjn-mS-QRz" userLabel="DragLabel">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6cv-Bd-dUm" userLabel="DragLabelStackView">
                                                 <rect key="frame" x="0.0" y="206" width="304" height="23"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="23" id="Eyk-r9-q2E"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag pieces to the grid, swipe out of the grid to undo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjn-mS-QRz" userLabel="DragLabel">
+                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="23"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="23" id="Eyk-r9-q2E">
+                                                                <variation key="heightClass=compact" constant="15"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <variation key="heightClass=compact" alignment="center"/>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="lSK-jb-y8w" firstAttribute="top" secondItem="oYB-sc-u2l" secondAttribute="bottom" constant="6" id="83I-2J-rfU">
-                                                <variation key="heightClass=compact" constant="10"/>
+                                            <constraint firstItem="6cv-Bd-dUm" firstAttribute="top" secondItem="lSK-jb-y8w" secondAttribute="bottom" constant="6" id="85g-Vh-8nM">
+                                                <variation key="heightClass=compact" constant="30"/>
                                             </constraint>
-                                            <constraint firstItem="qjn-mS-QRz" firstAttribute="top" secondItem="lSK-jb-y8w" secondAttribute="bottom" constant="6" id="lNk-rI-CEx"/>
                                         </constraints>
-                                        <variation key="heightClass=compact" distribution="equalSpacing" spacing="50"/>
+                                        <variation key="heightClass=compact" distribution="equalSpacing" spacing="15"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0GI-3s-eMz" userLabel="GameCollectionStackView">
                                         <rect key="frame" x="0.0" y="248" width="304" height="304"/>
@@ -455,12 +462,22 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="0GI-3s-eMz" firstAttribute="top" secondItem="Imk-rp-tTo" secondAttribute="bottom" constant="19" id="Fs9-0e-yZe"/>
-                                    <constraint firstAttribute="trailing" secondItem="Imk-rp-tTo" secondAttribute="trailing" id="Jha-Qm-V59"/>
-                                    <constraint firstAttribute="bottom" secondItem="0GI-3s-eMz" secondAttribute="bottom" id="Jxo-ug-vZ9"/>
-                                    <constraint firstItem="Imk-rp-tTo" firstAttribute="top" secondItem="HXF-lw-y0I" secondAttribute="top" id="Sc6-cx-OgK"/>
+                                    <constraint firstItem="0GI-3s-eMz" firstAttribute="top" secondItem="Imk-rp-tTo" secondAttribute="bottom" constant="19" id="Fs9-0e-yZe">
+                                        <variation key="heightClass=compact" constant="8" symbolic="YES"/>
+                                    </constraint>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Imk-rp-tTo" secondAttribute="trailing" id="Jha-Qm-V59">
+                                        <variation key="heightClass=compact" constant="10"/>
+                                    </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="0GI-3s-eMz" secondAttribute="bottom" id="Jxo-ug-vZ9">
+                                        <variation key="heightClass=compact" constant="-5"/>
+                                    </constraint>
+                                    <constraint firstItem="Imk-rp-tTo" firstAttribute="top" secondItem="HXF-lw-y0I" secondAttribute="top" id="Sc6-cx-OgK">
+                                        <variation key="heightClass=compact" constant="0.0"/>
+                                    </constraint>
+                                    <constraint firstAttribute="trailing" secondItem="Imk-rp-tTo" secondAttribute="trailing" id="mZB-Vg-s3Q"/>
+                                    <constraint firstItem="Imk-rp-tTo" firstAttribute="leading" secondItem="HXF-lw-y0I" secondAttribute="leading" id="zKB-eM-K07"/>
                                 </constraints>
-                                <variation key="heightClass=compact" axis="horizontal" distribution="fillProportionally" spacing="-35"/>
+                                <variation key="heightClass=compact" axis="horizontal" distribution="fillEqually" spacing="5"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1n-SC-48c">
                                 <rect key="frame" x="275" y="180" width="36" height="28"/>
@@ -473,19 +490,19 @@
                                 <variation key="heightClass=compact" constant="-10"/>
                             </constraint>
                             <constraint firstItem="L1n-SC-48c" firstAttribute="leading" secondItem="dtx-pt-Vtw" secondAttribute="leading" constant="275" id="7lD-S2-hNl">
-                                <variation key="heightClass=compact" constant="210"/>
+                                <variation key="heightClass=compact" constant="235"/>
                             </constraint>
                             <constraint firstItem="HXF-lw-y0I" firstAttribute="leading" secondItem="dtx-pt-Vtw" secondAttribute="leading" constant="8" id="Eex-cc-DzV">
-                                <variation key="heightClass=compact" constant="8"/>
+                                <variation key="heightClass=compact" constant="-5"/>
                             </constraint>
                             <constraint firstItem="dtx-pt-Vtw" firstAttribute="bottom" secondItem="HXF-lw-y0I" secondAttribute="bottom" constant="8" id="Ita-EP-Gs0">
                                 <variation key="heightClass=compact" constant="5"/>
                             </constraint>
                             <constraint firstItem="L1n-SC-48c" firstAttribute="top" secondItem="dtx-pt-Vtw" secondAttribute="top" constant="180" id="Mb4-1v-lUy">
-                                <variation key="heightClass=compact" constant="250"/>
+                                <variation key="heightClass=compact" constant="215"/>
                             </constraint>
                             <constraint firstItem="dtx-pt-Vtw" firstAttribute="trailing" secondItem="HXF-lw-y0I" secondAttribute="trailing" constant="8" id="NdW-NB-KZQ">
-                                <variation key="heightClass=compact" constant="18"/>
+                                <variation key="heightClass=compact" constant="5"/>
                             </constraint>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dtx-pt-Vtw"/>
