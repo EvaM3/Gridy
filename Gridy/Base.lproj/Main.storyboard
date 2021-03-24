@@ -38,7 +38,7 @@
                                                     <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="177"/>
                                                 </variation>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1Lp-Fv-vsq" userLabel="ChallengeStackView">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1Lp-Fv-vsq" userLabel="ChallengeStackView">
                                                 <rect key="frame" x="19.5" y="225" width="241.5" height="16.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="500" text="Challenge yourself with a photo puzzle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1l0-JF-6mu">
@@ -386,7 +386,7 @@
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n6x-DZ-6fa">
                                                         <rect key="frame" x="0.0" y="0.0" width="304" height="164"/>
-                                                        <color key="backgroundColor" red="0.95294117649999999" green="0.91372549020000005" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yOe-RM-16O">
                                                             <size key="itemSize" width="128" height="128"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -462,14 +462,8 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="0GI-3s-eMz" firstAttribute="top" secondItem="Imk-rp-tTo" secondAttribute="bottom" constant="19" id="Fs9-0e-yZe">
-                                        <variation key="heightClass=compact" constant="8" symbolic="YES"/>
-                                    </constraint>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Imk-rp-tTo" secondAttribute="trailing" id="Jha-Qm-V59">
                                         <variation key="heightClass=compact" constant="10"/>
-                                    </constraint>
-                                    <constraint firstAttribute="bottom" secondItem="0GI-3s-eMz" secondAttribute="bottom" id="Jxo-ug-vZ9">
-                                        <variation key="heightClass=compact" constant="-5"/>
                                     </constraint>
                                     <constraint firstItem="Imk-rp-tTo" firstAttribute="top" secondItem="HXF-lw-y0I" secondAttribute="top" id="Sc6-cx-OgK">
                                         <variation key="heightClass=compact" constant="0.0"/>

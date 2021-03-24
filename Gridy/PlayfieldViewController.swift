@@ -154,7 +154,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         increaseScore(n: 2)
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         let imageView = UIImageView()
@@ -181,17 +180,17 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == shuffledCollectionView {
-            return CGSize(width: 60, height: 60)
+            return CGSize(width: 59, height: 59)
         } else {
             let collectionViewWidth : CGFloat = collectionView.frame.width
             let widthPerItem : CGFloat = collectionViewWidth / CGFloat(itemsPerRow)
-            return CGSize(width: widthPerItem - 1, height: widthPerItem - 1)
+            return CGSize(width: widthPerItem - 0.5, height: widthPerItem - 0.5)
         }
     }
     
     func  collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if collectionView == shuffledCollectionView {
-            return UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+            return UIEdgeInsets(top: 0, left: 0.2, bottom: 0, right: 0.2)
         } else {
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
@@ -203,7 +202,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == shuffledCollectionView {
-            return 0.5
+            return 0
         } else {
             return 0
         }
