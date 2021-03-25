@@ -386,7 +386,7 @@
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n6x-DZ-6fa">
                                                         <rect key="frame" x="0.0" y="0.0" width="304" height="164"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" red="0.95294117649999999" green="0.91372549020000005" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yOe-RM-16O">
                                                             <size key="itemSize" width="128" height="128"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -424,11 +424,6 @@
                                                 <variation key="heightClass=compact" alignment="center"/>
                                             </stackView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="6cv-Bd-dUm" firstAttribute="top" secondItem="lSK-jb-y8w" secondAttribute="bottom" constant="6" id="85g-Vh-8nM">
-                                                <variation key="heightClass=compact" constant="30"/>
-                                            </constraint>
-                                        </constraints>
                                         <variation key="heightClass=compact" distribution="equalSpacing" spacing="15"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0GI-3s-eMz" userLabel="GameCollectionStackView">
@@ -459,16 +454,18 @@
                                                 </cells>
                                             </collectionView>
                                         </subviews>
+                                        <variation key="heightClass=compact" spacingType="standard"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Imk-rp-tTo" secondAttribute="trailing" id="Jha-Qm-V59">
-                                        <variation key="heightClass=compact" constant="10"/>
-                                    </constraint>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Imk-rp-tTo" secondAttribute="trailing" id="Jha-Qm-V59"/>
                                     <constraint firstItem="Imk-rp-tTo" firstAttribute="top" secondItem="HXF-lw-y0I" secondAttribute="top" id="Sc6-cx-OgK">
                                         <variation key="heightClass=compact" constant="0.0"/>
                                     </constraint>
-                                    <constraint firstAttribute="trailing" secondItem="Imk-rp-tTo" secondAttribute="trailing" id="mZB-Vg-s3Q"/>
+                                    <constraint firstItem="0GI-3s-eMz" firstAttribute="top" relation="lessThanOrEqual" secondItem="Imk-rp-tTo" secondAttribute="bottom" constant="19" id="rGB-Ny-bzE">
+                                        <variation key="heightClass=compact" constant="8"/>
+                                    </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="0GI-3s-eMz" secondAttribute="bottom" id="xKk-Ww-NTB"/>
                                     <constraint firstItem="Imk-rp-tTo" firstAttribute="leading" secondItem="HXF-lw-y0I" secondAttribute="leading" id="zKB-eM-K07"/>
                                 </constraints>
                                 <variation key="heightClass=compact" axis="horizontal" distribution="fillEqually" spacing="5"/>
