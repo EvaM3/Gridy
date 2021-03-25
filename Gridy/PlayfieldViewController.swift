@@ -65,7 +65,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         gameCollectionView.dataSource = self
         imageArray = originalImage.splitImage(row: Int(itemsPerRow), column: Int(itemsPerRow))
         scoreLabel.text = "Score: \(score)"
-       gameArray = Array(repeating: defaultImage, count: 16)
+        gameArray = Array(repeating: defaultImage, count: 16)
         shuffledArray = imageArray.shuffled()
         
         

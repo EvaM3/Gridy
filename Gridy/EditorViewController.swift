@@ -46,8 +46,10 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         blurCutOut.addGestureRecognizer(gestureRecognizer)
     }
     override func viewDidLayoutSubviews() {
-        self.blurCutOut.bounds = self.blurCutOut.frame
-       mask(self.blurEffectView, maskView: self.blurCutOut)
+        mask(self.blurEffectView, maskView: self.blurCutOut)
+//        let parentView = self.blurCutOut.superview
+//        self.blurCutOut.removeFromSuperview()
+//        parentView?.addSubview(self.blurCutOut)
         self.blurCutOut.setNeedsDisplay() //should trigger the draw func
     }
 //
