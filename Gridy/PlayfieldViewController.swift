@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 
-class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDragDelegate, UICollectionViewDropDelegate {
     
     @IBOutlet var shuffledCollectionView: UICollectionView!
     @IBOutlet var gameCollectionView: UICollectionView!
@@ -74,6 +74,12 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         shuffledCollectionView.isUserInteractionEnabled = true
         shuffledCollectionView.dragInteractionEnabled = true
         gameCollectionView.dragInteractionEnabled = true
+        shuffledCollectionView.dragDelegate = self
+          gameCollectionView.dragDelegate = self
+          shuffledCollectionView.dropDelegate = self
+          gameCollectionView.dropDelegate = self
+          shuffledCollectionView.layoutSubviews()
+          self.navigationController?.isNavigationBarHidden = true
         
         
         do {
