@@ -418,11 +418,6 @@
                                                 <variation key="heightClass=compact" alignment="center"/>
                                             </stackView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="lSK-jb-y8w" firstAttribute="top" secondItem="oYB-sc-u2l" secondAttribute="bottom" constant="6" id="6gM-5u-xX4">
-                                                <variation key="heightClass=compact" constant="15"/>
-                                            </constraint>
-                                        </constraints>
                                         <variation key="heightClass=compact" distribution="equalSpacing" spacing="15"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0GI-3s-eMz" userLabel="GameCollectionStackView">
@@ -464,6 +459,7 @@
                                     <constraint firstAttribute="bottom" secondItem="0GI-3s-eMz" secondAttribute="bottom" id="xKk-Ww-NTB">
                                         <variation key="heightClass=compact" constant="0.0"/>
                                     </constraint>
+                                    <constraint firstItem="0GI-3s-eMz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HXF-lw-y0I" secondAttribute="leading" id="zWu-gN-iRQ"/>
                                 </constraints>
                                 <variation key="heightClass=compact" axis="horizontal" distribution="fillProportionally" spacing="10"/>
                             </stackView>
