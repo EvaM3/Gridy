@@ -453,8 +453,14 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Imk-rp-tTo" secondAttribute="trailing" id="Jha-Qm-V59"/>
+                                    <constraint firstItem="0GI-3s-eMz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HXF-lw-y0I" secondAttribute="leading" id="S7D-0c-xNX">
+                                        <variation key="heightClass=compact" constant="8"/>
+                                    </constraint>
                                     <constraint firstItem="Imk-rp-tTo" firstAttribute="top" secondItem="HXF-lw-y0I" secondAttribute="top" id="Sc6-cx-OgK">
-                                        <variation key="heightClass=compact" constant="0.0"/>
+                                        <variation key="heightClass=compact" constant="8"/>
+                                    </constraint>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="0GI-3s-eMz" secondAttribute="trailing" id="hvV-uK-UeN">
+                                        <variation key="heightClass=compact" constant="8"/>
                                     </constraint>
                                     <constraint firstAttribute="bottom" secondItem="0GI-3s-eMz" secondAttribute="bottom" id="xKk-Ww-NTB">
                                         <variation key="heightClass=compact" constant="0.0"/>
