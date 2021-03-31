@@ -338,17 +338,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="HXF-lw-y0I" userLabel="PlayfieldMainStackView">
                                 <rect key="frame" x="8" y="-10" width="304" height="570"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Imk-rp-tTo" userLabel="LabelsButtonsAndShuffledStackView">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Imk-rp-tTo" userLabel="LabelsButtonsAndShuffledStackView">
                                         <rect key="frame" x="0.0" y="0.0" width="304" height="229"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="oYB-sc-u2l" userLabel="RestartAndScoreStackView">
-                                                <rect key="frame" x="0.0" y="0.0" width="304" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="304" height="39"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5S5-En-8DJ" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="39"/>
                                                         <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="ap6-x7-Qp0"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="lpI-X7-2Ec"/>
                                                         </constraints>
                                                         <state key="normal" title="Restart">
@@ -359,17 +358,17 @@
                                                         </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="tyU-SY-Fz5" userLabel="GridyScoreStackView">
-                                                        <rect key="frame" x="170.5" y="0.0" width="133.5" height="30"/>
+                                                        <rect key="frame" x="170.5" y="0.0" width="133.5" height="39"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gridy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e30-Yx-kko">
-                                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="39"/>
                                                                 <color key="tintColor" name="lightgreen"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                                                                 <color key="textColor" name="lightgreen"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyX-dM-ymY">
-                                                                <rect key="frame" x="69.5" y="0.0" width="64" height="30"/>
+                                                                <rect key="frame" x="69.5" y="0.0" width="64" height="39"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -380,11 +379,11 @@
                                                 </subviews>
                                                 <variation key="heightClass=compact" alignment="center" distribution="equalSpacing" spacing="50"/>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lSK-jb-y8w" userLabel="ShuffledStackView">
-                                                <rect key="frame" x="0.0" y="36" width="304" height="187"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lSK-jb-y8w" userLabel="ShuffledStackView">
+                                                <rect key="frame" x="0.0" y="45" width="304" height="178"/>
                                                 <subviews>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n6x-DZ-6fa">
-                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="187"/>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n6x-DZ-6fa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="178"/>
                                                         <color key="backgroundColor" red="0.95294117649999999" green="0.91372549020000005" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yOe-RM-16O">
                                                             <size key="itemSize" width="128" height="128"/>
@@ -405,7 +404,7 @@
                                                     </collectionView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6cv-Bd-dUm" userLabel="DragLabelStackView">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6cv-Bd-dUm" userLabel="DragLabelStackView">
                                                 <rect key="frame" x="0.0" y="229" width="304" height="0.0"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag pieces to the grid, swipe out of the grid to undo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjn-mS-QRz" userLabel="DragLabel">
@@ -418,12 +417,16 @@
                                                 <variation key="heightClass=compact" alignment="center"/>
                                             </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="lSK-jb-y8w" firstAttribute="top" secondItem="Imk-rp-tTo" secondAttribute="top" constant="45" id="3BI-8u-6Y4"/>
+                                            <constraint firstItem="6cv-Bd-dUm" firstAttribute="top" secondItem="Imk-rp-tTo" secondAttribute="top" constant="229" id="7h6-K5-Hz8"/>
+                                        </constraints>
                                         <variation key="heightClass=compact" distribution="equalSpacing" spacing="15"/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0GI-3s-eMz" userLabel="GameCollectionStackView">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0GI-3s-eMz" userLabel="GameCollectionStackView">
                                         <rect key="frame" x="0.0" y="248" width="304" height="322"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="m7w-SR-QX2">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="m7w-SR-QX2">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="322"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -458,21 +461,23 @@
                                     <constraint firstItem="0GI-3s-eMz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HXF-lw-y0I" secondAttribute="leading" id="S7D-0c-xNX">
                                         <variation key="heightClass=compact" constant="8"/>
                                     </constraint>
-                                    <constraint firstItem="Imk-rp-tTo" firstAttribute="top" secondItem="HXF-lw-y0I" secondAttribute="top" id="Sc6-cx-OgK">
+                                    <constraint firstItem="Imk-rp-tTo" firstAttribute="top" relation="lessThanOrEqual" secondItem="HXF-lw-y0I" secondAttribute="top" id="Sc6-cx-OgK">
                                         <variation key="heightClass=compact" constant="8"/>
                                     </constraint>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="0GI-3s-eMz" secondAttribute="trailing" id="hvV-uK-UeN">
                                         <variation key="heightClass=compact" constant="8"/>
                                     </constraint>
+                                    <constraint firstItem="0GI-3s-eMz" firstAttribute="top" relation="lessThanOrEqual" secondItem="Imk-rp-tTo" secondAttribute="bottom" constant="19" id="ucv-fL-k9X">
+                                        <variation key="heightClass=compact" constant="8"/>
+                                    </constraint>
                                     <constraint firstAttribute="bottom" secondItem="0GI-3s-eMz" secondAttribute="bottom" id="xKk-Ww-NTB">
                                         <variation key="heightClass=compact" constant="0.0"/>
                                     </constraint>
-                                    <constraint firstItem="0GI-3s-eMz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HXF-lw-y0I" secondAttribute="leading" id="zWu-gN-iRQ"/>
                                 </constraints>
                                 <variation key="heightClass=compact" axis="horizontal" distribution="fillProportionally" spacing="10"/>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1n-SC-48c">
-                                <rect key="frame" x="235" y="180" width="36" height="28"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1n-SC-48c">
+                                <rect key="frame" x="276" y="180" width="36" height="28"/>
                                 <state key="normal" image="lookup"/>
                                 <connections>
                                     <action selector="lookUpButtonTapped:" destination="Hy2-4N-QR8" eventType="touchUpInside" id="L0t-Vy-CcI"/>
@@ -488,12 +493,11 @@
                                 <variation key="heightClass=compact" constant="8"/>
                             </constraint>
                             <constraint firstItem="HXF-lw-y0I" firstAttribute="top" secondItem="Jb4-zg-QbJ" secondAttribute="topMargin" constant="-10" id="Jac-fs-yW7"/>
-                            <constraint firstItem="L1n-SC-48c" firstAttribute="top" secondItem="dtx-pt-Vtw" secondAttribute="top" constant="180" id="Mb4-1v-lUy">
-                                <variation key="heightClass=compact" constant="215"/>
-                            </constraint>
                             <constraint firstItem="dtx-pt-Vtw" firstAttribute="trailing" secondItem="HXF-lw-y0I" secondAttribute="trailing" constant="8" id="NdW-NB-KZQ">
                                 <variation key="heightClass=compact" constant="8"/>
                             </constraint>
+                            <constraint firstItem="dtx-pt-Vtw" firstAttribute="trailing" secondItem="L1n-SC-48c" secondAttribute="trailing" constant="8" id="RAh-0d-AQM"/>
+                            <constraint firstItem="L1n-SC-48c" firstAttribute="top" secondItem="dtx-pt-Vtw" secondAttribute="top" constant="180" id="djg-SH-5Yk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dtx-pt-Vtw"/>
                     </view>
