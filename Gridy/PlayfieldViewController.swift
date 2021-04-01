@@ -189,8 +189,8 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             return CGSize(width: 59, height: 59)
         } else {
             let collectionViewWidth : CGFloat = collectionView.frame.width
-            let widthPerItem : CGFloat = collectionViewWidth / CGFloat(itemsPerRow)
-            return CGSize(width: widthPerItem - 0.5, height: widthPerItem - 0.5)
+            let widthPerItem : CGFloat = collectionViewWidth / CGFloat(itemsPerRow)  // find an other solution
+            return CGSize(width: widthPerItem, height: widthPerItem)  // redo it
         }
     }
     
