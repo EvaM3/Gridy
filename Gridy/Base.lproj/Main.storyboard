@@ -437,9 +437,7 @@
                                     </collectionView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="m7w-SR-QX2" secondAttribute="bottom" id="Gt0-PX-Svx"/>
                                     <constraint firstAttribute="bottom" secondItem="m7w-SR-QX2" secondAttribute="bottom" id="LGG-ef-yOW"/>
-                                    <constraint firstAttribute="trailing" secondItem="m7w-SR-QX2" secondAttribute="trailing" id="VjA-L7-kM8"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Imk-rp-tTo" secondAttribute="trailing" id="dOD-k9-brr"/>
                                     <constraint firstAttribute="trailing" secondItem="m7w-SR-QX2" secondAttribute="trailing" id="fIC-ne-iJD"/>
                                     <constraint firstItem="Imk-rp-tTo" firstAttribute="leading" secondItem="HXF-lw-y0I" secondAttribute="leading" id="uCO-2y-n40"/>
