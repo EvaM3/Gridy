@@ -444,20 +444,7 @@
                                     <constraint firstAttribute="trailing" secondItem="m7w-SR-QX2" secondAttribute="trailing" id="fIC-ne-iJD"/>
                                     <constraint firstItem="Imk-rp-tTo" firstAttribute="leading" secondItem="HXF-lw-y0I" secondAttribute="leading" id="uCO-2y-n40"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Gt0-PX-Svx"/>
-                                    </mask>
-                                </variation>
                                 <variation key="heightClass=compact" axis="horizontal" distribution="equalSpacing" spacing="5"/>
-                                <variation key="heightClass=regular">
-                                    <mask key="subviews">
-                                        <include reference="m7w-SR-QX2"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <include reference="Gt0-PX-Svx"/>
-                                    </mask>
-                                </variation>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1n-SC-48c">
                                 <rect key="frame" x="325" y="210" width="36" height="28"/>

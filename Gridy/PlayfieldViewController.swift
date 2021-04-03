@@ -24,7 +24,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     let defaultImage : UIImage = UIImage(named: "placeHolder")!
     var shuffledArray : [UIImage] = []
     let itemsPerRow: CGFloat = 4
-   // let CGNumber : Int8 = -1
     let collectionViewIdentifier = "PlayfieldCell"
     let gameCollectionViewIdentifier = "GameCell"
     var gameTimer: Timer?
@@ -189,9 +188,9 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         if collectionView == shuffledCollectionView {
             return CGSize(width: 53, height: 53)
         } else {
-            let collectionViewWidth : CGFloat = collectionView.frame.width
-            let widthPerItem : CGFloat = collectionViewWidth / CGFloat(itemsPerRow)  // find an other solution
-            return CGSize(width: widthPerItem - 1.0, height: widthPerItem - 1.0)  // redo it
+            let collectionViewWidth : CGFloat = collectionView.frame.width - (itemsPerRow)
+            let widthPerItem : CGFloat = collectionViewWidth / CGFloat(itemsPerRow)
+            return CGSize(width: widthPerItem, height: widthPerItem)
         }
     }
     
