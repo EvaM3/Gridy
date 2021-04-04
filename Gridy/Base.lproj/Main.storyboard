@@ -26,11 +26,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aJ1-yC-hHq" userLabel="MainStackView">
                                 <rect key="frame" x="20" y="47" width="335" height="590"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-70" translatesAutoresizingMaskIntoConstraints="NO" id="kG6-tZ-Wrq" userLabel="GridyandChallengeStackView">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="-120" translatesAutoresizingMaskIntoConstraints="NO" id="kG6-tZ-Wrq" userLabel="GridyandChallengeStackView">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="291"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Gridy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ycI-5O-AuH">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="344.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="205.5"/>
                                                 <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="168"/>
                                                 <color key="textColor" name="lightgreen"/>
                                                 <nil key="highlightedColor"/>
@@ -39,10 +39,10 @@
                                                 </variation>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1Lp-Fv-vsq" userLabel="ChallengeStackView">
-                                                <rect key="frame" x="47" y="274.5" width="241.5" height="16.5"/>
+                                                <rect key="frame" x="47" y="85.5" width="241.5" height="205.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="500" text="Challenge yourself with a photo puzzle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1l0-JF-6mu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="241.5" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="241.5" height="205.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <color key="textColor" name="black"/>
                                                         <nil key="highlightedColor"/>
@@ -51,6 +51,9 @@
                                                         </variation>
                                                     </label>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="1l0-JF-6mu" firstAttribute="top" secondItem="1Lp-Fv-vsq" secondAttribute="top" id="q2P-2n-eeE"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <variation key="heightClass=compact" spacing="-40"/>
