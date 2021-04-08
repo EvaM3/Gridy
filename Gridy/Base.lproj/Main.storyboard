@@ -378,6 +378,7 @@
                                                             </label>
                                                         </subviews>
                                                         <variation key="heightClass=compact" distribution="equalSpacing"/>
+                                                        <variation key="heightClass=regular-widthClass=regular" spacing="5"/>
                                                     </stackView>
                                                 </subviews>
                                                 <variation key="heightClass=compact" alignment="center" distribution="equalSpacing" spacing="50"/>
@@ -407,11 +408,14 @@
                                                         </cells>
                                                     </collectionView>
                                                 </subviews>
+                                                <variation key="heightClass=regular-widthClass=regular" alignment="top" distribution="equalSpacing" spacingType="standard"/>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag pieces to the grid, swipe out of the grid to undo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjn-mS-QRz" userLabel="DragLabel">
                                                 <rect key="frame" x="0.0" y="233" width="359" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="hUR-K7-DHj"/>
+                                                    <constraint firstAttribute="height" constant="40" id="hUR-K7-DHj">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -419,7 +423,7 @@
                                             </label>
                                         </subviews>
                                         <variation key="heightClass=compact" distribution="fillProportionally" spacing="20"/>
-                                        <variation key="heightClass=regular-widthClass=regular" spacing="80"/>
+                                        <variation key="heightClass=regular-widthClass=regular" alignment="top" distribution="fillProportionally" spacing="35"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VVx-Ut-jNm" userLabel="GameCollectionStackView">
                                         <rect key="frame" x="0.0" y="292" width="359" height="359"/>
@@ -449,14 +453,14 @@
                                                 </cells>
                                             </collectionView>
                                         </subviews>
+                                        <variation key="heightClass=regular-widthClass=regular" alignment="bottom" spacing="8"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Imk-rp-tTo" secondAttribute="trailing" id="dOD-k9-brr"/>
-                                    <constraint firstItem="Imk-rp-tTo" firstAttribute="leading" secondItem="HXF-lw-y0I" secondAttribute="leading" id="uCO-2y-n40"/>
                                 </constraints>
                                 <variation key="heightClass=compact" axis="horizontal" distribution="equalSpacing" spacing="5"/>
-                                <variation key="heightClass=regular-widthClass=regular" spacing="18"/>
+                                <variation key="heightClass=regular-widthClass=regular" spacing="60"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1n-SC-48c">
                                 <rect key="frame" x="325" y="210" width="36" height="28"/>
@@ -469,17 +473,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="dtx-pt-Vtw" firstAttribute="bottom" secondItem="HXF-lw-y0I" secondAttribute="bottom" constant="8" id="92c-63-N6k">
-                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="-150"/>
                             </constraint>
                             <constraint firstItem="HXF-lw-y0I" firstAttribute="top" secondItem="dtx-pt-Vtw" secondAttribute="top" constant="8" id="GGB-oj-Ylr">
-                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="-50"/>
                             </constraint>
-                            <constraint firstItem="HXF-lw-y0I" firstAttribute="leading" secondItem="dtx-pt-Vtw" secondAttribute="leading" constant="8" id="R8q-K5-tYg"/>
+                            <constraint firstItem="HXF-lw-y0I" firstAttribute="leading" secondItem="dtx-pt-Vtw" secondAttribute="leading" constant="8" id="R8q-K5-tYg">
+                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                            </constraint>
                             <constraint firstItem="L1n-SC-48c" firstAttribute="top" secondItem="dtx-pt-Vtw" secondAttribute="top" constant="210" id="ama-re-n9X">
                                 <variation key="heightClass=compact" constant="275"/>
                             </constraint>
                             <constraint firstAttribute="trailing" secondItem="HXF-lw-y0I" secondAttribute="trailing" constant="8" id="s6Z-ez-sWM">
-                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="L1n-SC-48c" firstAttribute="leading" secondItem="dtx-pt-Vtw" secondAttribute="leading" constant="325" id="y1h-lL-2fM">
                                 <variation key="heightClass=compact" constant="260"/>
@@ -498,7 +504,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vG9-o3-6Lo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2189.0554722638681" y="165.59999999999999"/>
+            <point key="canvasLocation" x="2188.8888888888887" y="165.18518518518516"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sp2-7e-Bfd">
