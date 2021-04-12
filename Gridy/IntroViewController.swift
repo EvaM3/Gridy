@@ -21,8 +21,6 @@ class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UI
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         pickerController.delegate = self
-//       libraryButton.titleLabel?.adjustsFontSizeToFitWidth = true
-//        libraryButton.titleLabel?.minimumScaleFactor = 0.5
     }
     
     @IBAction func save(_ sender: Any) {
@@ -81,8 +79,6 @@ class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UI
         } else {
             pickerController.dismiss(animated: true, completion: nil)
         }
-        
-        
     }
 }
 

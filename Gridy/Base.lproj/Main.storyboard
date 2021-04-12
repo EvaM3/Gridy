@@ -473,10 +473,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="dtx-pt-Vtw" firstAttribute="bottom" secondItem="HXF-lw-y0I" secondAttribute="bottom" constant="8" id="92c-63-N6k">
-                                <variation key="heightClass=regular-widthClass=regular" constant="-240"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="-310"/>
                             </constraint>
                             <constraint firstItem="HXF-lw-y0I" firstAttribute="top" secondItem="dtx-pt-Vtw" secondAttribute="top" constant="8" id="GGB-oj-Ylr">
-                                <variation key="heightClass=regular-widthClass=regular" constant="-230"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="8"/>
                             </constraint>
                             <constraint firstItem="HXF-lw-y0I" firstAttribute="leading" secondItem="dtx-pt-Vtw" secondAttribute="leading" constant="8" id="R8q-K5-tYg">
                                 <variation key="heightClass=regular-widthClass=regular" constant="40"/>

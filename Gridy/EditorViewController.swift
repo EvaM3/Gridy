@@ -28,8 +28,6 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         self.navigationController?.isNavigationBarHidden = true
         imageView.image = selectedImage
        
-       
-    
         blurCutOut.isUserInteractionEnabled = true
         blurCutOut.isMultipleTouchEnabled = true
         
@@ -47,15 +45,9 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     }
     override func viewDidLayoutSubviews() {
         mask(self.blurEffectView, maskView: self.blurCutOut)
-//        let parentView = self.blurCutOut.superview
-//        self.blurCutOut.removeFromSuperview()
-//        parentView?.addSubview(self.blurCutOut)
-        self.blurCutOut.setNeedsDisplay() //should trigger the draw func
+        self.blurCutOut.setNeedsDisplay()
     }
-//
-//    override func viewDidAppear(_ animated: Bool) {
-//     self.blurCutOut.draw(blurCutOut.bounds)
-//    }
+
     @objc func handleRotate(recognizer : UIRotationGestureRecognizer) {
         self.imageView.transform = self.imageView.transform.rotated(by: recognizer.rotation)
         recognizer.rotation = 0
