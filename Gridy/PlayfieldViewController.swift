@@ -78,7 +78,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
           gameCollectionView.dragDelegate = self
           shuffledCollectionView.dropDelegate = self
           gameCollectionView.dropDelegate = self
-          shuffledCollectionView.layoutSubviews()
+        //  shuffledCollectionView.layoutSubviews()
           self.navigationController?.isNavigationBarHidden = true
         
         
@@ -97,10 +97,13 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         shuffledCollectionView.addGestureRecognizer(tapGesture)
     }
     override func viewWillAppear(_ animated: Bool) {
-        shuffledCollectionView.reloadData()
-        gameCollectionView.reloadData()
+        DispatchQueue.main.async {
+            self.shuffledCollectionView.reloadData()
+            self.gameCollectionView.reloadData()
+        }
+ 
     }
-    
+
     func restartGame() {
         self.gameArray.removeAll()
         self.score = 0
@@ -186,7 +189,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == shuffledCollectionView {
-            return CGSize(width: 53, height: 53)
+            return CGSize(width: 55, height: 55)
         } else {
             let collectionViewWidth : CGFloat = collectionView.frame.width - (itemsPerRow)
             let widthPerItem : CGFloat = collectionViewWidth / CGFloat(itemsPerRow)
@@ -196,7 +199,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func  collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if collectionView == shuffledCollectionView {
-            return UIEdgeInsets(top: 0, left: 0.2, bottom: 0, right: 0.2)
+            return UIEdgeInsets(top: 0.2, left: 0.2, bottom: 0.2, right: 0.2)
         } else {
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
@@ -208,7 +211,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == shuffledCollectionView {
-            return 0
+            return 3
         } else {
             return 0
         }
@@ -243,8 +246,8 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
                     self.gameArray.insert(newImage, at: destinationIndexPath.row)
                     collectionView.reloadData()
                     if let removeIndexPath = coordinator.items.first?.dragItem.localObject as? IndexPath  {
-                        self.shuffledArray.remove(at:removeIndexPath.row)
-                        self.shuffledArray.insert(self.defaultImage, at: removeIndexPath.row)
+                        self.shuffledArray[removeIndexPath.row] = self.defaultImage     //.remove(at:removeIndexPath.row)
+                      // self.shuffledArray.insert(self.defaultImage, at: removeIndexPath.row)
                         self.shuffledCollectionView.reloadData()
                         self.increaseScore()
                         self.solvedPuzzle()

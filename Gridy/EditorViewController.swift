@@ -71,13 +71,13 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PlayfieldSegue" {
             if let destinationVC = segue.destination as? PlayfieldViewController {
-                destinationVC.originalImage = self.selectedImage ?? UIImage()
+                destinationVC.originalImage = self.originalImage
             }
         }
     }
     @IBAction func startButtonTapped(_ sender: Any) {
         let screenshot = self.view.takeScreenshot()
-        let croppedImage =  screenshot.cropImage(toRect: blurCutOut.frame)
+        let croppedImage =  screenshot.cropImage(toRect: blurCutOut.frame) // convert to only x,y create the new CGRect , bounds from BlurCutOut , x,y from the frame should be converted into the main views.
         originalImage = croppedImage ?? UIImage()
         self.performSegue(withIdentifier: "PlayfieldSegue", sender: nil)
         
