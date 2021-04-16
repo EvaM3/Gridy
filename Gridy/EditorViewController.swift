@@ -76,13 +76,13 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         }
     }
     @IBAction func startButtonTapped(_ sender: Any) {
+        let size  = CGRect(x: blurCutOut.frame.minX, y: blurCutOut.frame.minY, width: blurCutOut.bounds.width, height: blurCutOut.bounds.height)
         let screenshot = self.view.takeScreenshot()
-        let croppedImage =  screenshot.cropImage(toRect: blurCutOut.frame) // convert to only x,y create the new CGRect , bounds from BlurCutOut , x,y from the frame should be converted into the main views.
+        let croppedImage =  screenshot.cropImage(toRect: size)
+        // convert to only x,y create the new CGRect , bounds from BlurCutOut , x,y from the frame should be converted into the main views.
         originalImage = croppedImage ?? UIImage()
         self.performSegue(withIdentifier: "PlayfieldSegue", sender: nil)
-        
     }
-    
 }
 
 func mask(_ viewToMask: UIView, maskView: UIView) {
