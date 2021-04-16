@@ -75,11 +75,11 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         shuffledCollectionView.dragInteractionEnabled = true
         gameCollectionView.dragInteractionEnabled = true
         shuffledCollectionView.dragDelegate = self
-          gameCollectionView.dragDelegate = self
-          shuffledCollectionView.dropDelegate = self
-          gameCollectionView.dropDelegate = self
+        gameCollectionView.dragDelegate = self
+        shuffledCollectionView.dropDelegate = self
+        gameCollectionView.dropDelegate = self
         //  shuffledCollectionView.layoutSubviews()
-          self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = true
         
         
         do {
@@ -101,9 +101,9 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             self.shuffledCollectionView.reloadData()
             self.gameCollectionView.reloadData()
         }
- 
+        
     }
-
+    
     func restartGame() {
         self.gameArray.removeAll()
         self.score = 0
@@ -191,7 +191,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         if collectionView == shuffledCollectionView {
             return CGSize(width: 55, height: 55)
         } else {
-            let collectionViewWidth : CGFloat = collectionView.frame.width - (itemsPerRow)
+            let collectionViewWidth : CGFloat = collectionView.frame.width  / 1.2  //- (itemsPerRow)
             let widthPerItem : CGFloat = collectionViewWidth / CGFloat(itemsPerRow)
             return CGSize(width: widthPerItem, height: widthPerItem)
         }
@@ -206,7 +206,11 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        if collectionView == shuffledCollectionView {
+            return 0.5
+        } else {
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -242,12 +246,13 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             if let imagesDropped = NSItemProviderReadingItems as? [UIImage] {
                 if imagesDropped.count > 0 {
                     let newImage = imagesDropped[0]
-                    self.gameArray.remove(at: destinationIndexPath.row)
-                    self.gameArray.insert(newImage, at: destinationIndexPath.row)
+                    self.gameArray[destinationIndexPath.row] = newImage
+                    //                    self.gameArray.remove(at: destinationIndexPath.row)
+                    //                    self.gameArray.insert(newImage, at: destinationIndexPath.row)
                     collectionView.reloadData()
                     if let removeIndexPath = coordinator.items.first?.dragItem.localObject as? IndexPath  {
                         self.shuffledArray[removeIndexPath.row] = self.defaultImage     //.remove(at:removeIndexPath.row)
-                      // self.shuffledArray.insert(self.defaultImage, at: removeIndexPath.row)
+                        // self.shuffledArray.insert(self.defaultImage, at: removeIndexPath.row)
                         self.shuffledCollectionView.reloadData()
                         self.increaseScore()
                         self.solvedPuzzle()
