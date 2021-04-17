@@ -36,7 +36,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         hintImage.contentMode = .scaleToFill
         hintImage.frame = gameCollectionView.frame
         self.view.addSubview(hintImage)
-        self.gameCollectionView.isHidden = true
+            //self.gameCollectionView.isHidden = true
         self.view.bringSubviewToFront(hintImage)
         gameTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(removeHintImage), userInfo: nil, repeats: false)
         UIView.animate(withDuration: 1.0,
@@ -191,7 +191,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         if collectionView == shuffledCollectionView {
             return CGSize(width: 55, height: 55)
         } else {
-            let collectionViewWidth : CGFloat = collectionView.frame.width  / 1.07 //- (itemsPerRow)
+            let collectionViewWidth : CGFloat = collectionView.frame.width - (itemsPerRow)
             let widthPerItem : CGFloat = collectionViewWidth / CGFloat(itemsPerRow)
             return CGSize(width: widthPerItem, height: widthPerItem)
         }
