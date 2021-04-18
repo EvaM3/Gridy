@@ -20,7 +20,6 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     
     var selectedImage : UIImage?
     var originalImage = UIImage()
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()

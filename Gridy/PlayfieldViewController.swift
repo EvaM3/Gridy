@@ -36,7 +36,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         hintImage.contentMode = .scaleToFill
         hintImage.frame = gameCollectionView.frame
         self.view.addSubview(hintImage)
-            //self.gameCollectionView.isHidden = true
         self.view.bringSubviewToFront(hintImage)
         gameTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(removeHintImage), userInfo: nil, repeats: false)
         UIView.animate(withDuration: 1.0,
@@ -91,7 +90,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             print("Something went wrong with audio player \(error.localizedDescription)")
         }
         
-        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didDoubleTap(_gesture:)))
         tapGesture.numberOfTapsRequired = 2
         shuffledCollectionView.addGestureRecognizer(tapGesture)
@@ -101,7 +99,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             self.shuffledCollectionView.reloadData()
             self.gameCollectionView.reloadData()
         }
-        
     }
     
     func restartGame() {
@@ -110,7 +107,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         self.scoreLabel.text = "Score \(score)"
         self.shuffledCollectionView.reloadData()
     }
-    
     
     @objc func increaseScore(n: Int = 1) {
         score += n
@@ -240,19 +236,15 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             let itemCount = collectionView.numberOfItems(inSection: 0)
             destinationIndexPath = IndexPath(row: itemCount, section: 0)
         }
-        
-        
+       
         coordinator.session.loadObjects(ofClass: UIImage.self) { (NSItemProviderReadingItems) in
             if let imagesDropped = NSItemProviderReadingItems as? [UIImage] {
                 if imagesDropped.count > 0 {
                     let newImage = imagesDropped[0]
                     self.gameArray[destinationIndexPath.row] = newImage
-                    //                    self.gameArray.remove(at: destinationIndexPath.row)
-                    //                    self.gameArray.insert(newImage, at: destinationIndexPath.row)
                     collectionView.reloadData()
                     if let removeIndexPath = coordinator.items.first?.dragItem.localObject as? IndexPath  {
-                        self.shuffledArray[removeIndexPath.row] = self.defaultImage     //.remove(at:removeIndexPath.row)
-                        // self.shuffledArray.insert(self.defaultImage, at: removeIndexPath.row)
+                        self.shuffledArray[removeIndexPath.row] = self.defaultImage
                         self.shuffledCollectionView.reloadData()
                         self.increaseScore()
                         self.solvedPuzzle()
