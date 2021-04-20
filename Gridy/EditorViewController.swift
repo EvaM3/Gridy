@@ -23,7 +23,7 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        adjustLabel.numberOfLines = 0
+        //adjustLabel.numberOfLines = 0
         self.navigationController?.isNavigationBarHidden = true
         imageView.image = selectedImage
        

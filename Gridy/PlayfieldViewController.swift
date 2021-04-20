@@ -77,7 +77,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         gameCollectionView.dragDelegate = self
         shuffledCollectionView.dropDelegate = self
         gameCollectionView.dropDelegate = self
-        //  shuffledCollectionView.layoutSubviews()
         self.navigationController?.isNavigationBarHidden = true
         
         
@@ -122,7 +121,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func solvedPuzzle() {
-        if self.gameArray == self.imageArray {
+        if self.shuffledArray == self.imageArray {
             let alert = UIAlertController(title: "You Won!", message: "Congratulations✌️", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             let shareMyText = "My score on Gridy is \(score)"
@@ -148,7 +147,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     @IBAction func restartButtonTapped(_ sender: Any) {
-        
         navigationController?.popToRootViewController(animated: true)
         restartGame()
     }
