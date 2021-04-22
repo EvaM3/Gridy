@@ -186,10 +186,11 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == shuffledCollectionView {
-           return CGSize(width: 58, height: 58)
-//            let collectionViewWidth : CGFloat = shuffledCollectionView.frame.width - (itemsPerRow)
-//            let widthPerItem : CGFloat = collectionViewWidth / CGFloat(itemsPerRow)
-//            return CGSize(width: widthPerItem, height: widthPerItem)
+            let columnCount:Int = gameArray.count / 3 + 1
+            // return CGSize(width: 58, height: 58)
+            let collectionViewWidth : CGFloat = shuffledCollectionView.frame.width - CGFloat((columnCount))
+            let widthPerItem : CGFloat = collectionViewWidth / CGFloat(columnCount)
+            return CGSize(width: widthPerItem, height: widthPerItem)
         } else {
             let collectionViewWidth : CGFloat = collectionView.frame.width - (itemsPerRow)
             let widthPerItem : CGFloat = collectionViewWidth / CGFloat(itemsPerRow)
@@ -207,7 +208,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == shuffledCollectionView {
-            return 0.5
+            return 10
         } else {
             return 0
         }
@@ -215,7 +216,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == shuffledCollectionView {
-            return 3
+            return 10
         } else {
             return 0
         }
@@ -240,48 +241,26 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             let itemCount = collectionView.numberOfItems(inSection: 0)
             destinationIndexPath = IndexPath(row: itemCount, section: 0)
         }
-       
-    coordinator.session.loadObjects(ofClass: UIImage.self) { (NSItemProviderReadingItems) in
-               if let imagesDropped = NSItemProviderReadingItems as? [UIImage] {
-                   if imagesDropped.count > 0 {
-                       let newImage = imagesDropped[0]
-                       self.gameArray[destinationIndexPath.row] = newImage
-                       collectionView.reloadData()
-                       if let removeIndexPath = coordinator.items.first?.dragItem.localObject as? IndexPath  {
-                           self.shuffledArray[removeIndexPath.row] = self.defaultImage
-                           self.shuffledCollectionView.reloadData()
-                           self.increaseScore()
-                           self.solvedPuzzle()
+        
+        coordinator.session.loadObjects(ofClass: UIImage.self) { (NSItemProviderReadingItems) in
+            if let imagesDropped = NSItemProviderReadingItems as? [UIImage] {
+                if imagesDropped.count > 0 {
+                    if let removeIndexPath = coordinator.items.first?.dragItem.localObject as? IndexPath  {  // reading  the sticker info
+                        
+                        self.gameArray[destinationIndexPath.row] = self.shuffledArray[removeIndexPath.row]
+                        collectionView.reloadData()
+                        self.shuffledArray[removeIndexPath.row] = self.defaultImage
+                        self.shuffledCollectionView.reloadData()
+                        self.increaseScore()
+                        self.solvedPuzzle()
                     }
-                    
-
-                 //coordinator.session.loadObjects(ofClass: UIImage.self) { (NSItemProviderReadingItems) in
-                 //    if let imagesDropped = NSItemProviderReadingItems as? [UIImage] {
-                 //        if imagesDropped.count > 0 {
-                 //            if let removeIndexPath = coordinator.items.first?.dragItem.localObject as? IndexPath  {  // reading  the sticker info
-                 //
-                 //                self.gameArray.remove(at: destinationIndexPath.row)
-                 //                self.gameArray.insert(self.shuffledArray[removeIndexPath.row], at: destinationIndexPath.row)
-                 //                collectionView.reloadData()
-                 //                self.shuffledArray.remove(at:removeIndexPath.row)
-                 //                self.shuffledArray.insert(self.defaultImage, at: removeIndexPath.row)
-                 //                self.shuffledCollectionView.reloadData()
-                 //                self.increaseScore()
-                 //                self.solvedPuzzle()
-                 //            }
-                 //
-                 //
-                 //        }
-                 //    }
-                 //
-                 //
-                 //}
                     
                     
                 }
             }
             
         }
+        
     }
 }
 

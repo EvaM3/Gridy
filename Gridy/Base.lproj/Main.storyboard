@@ -400,10 +400,10 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="500" height="431"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="380" id="P2j-58-pXM">
+                                                            <constraint firstAttribute="width" constant="380" id="P2j-58-pXM">
                                                                 <variation key="heightClass=regular-widthClass=regular" constant="500"/>
                                                             </constraint>
-                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="380" id="o6j-WX-x4y">
+                                                            <constraint firstAttribute="height" constant="380" id="o6j-WX-x4y">
                                                                 <variation key="heightClass=regular-widthClass=regular" constant="400"/>
                                                             </constraint>
                                                         </constraints>
