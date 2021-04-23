@@ -200,7 +200,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func  collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if collectionView == shuffledCollectionView {
-            return UIEdgeInsets(top: 0.2, left: 0.2, bottom: 0.2, right: 0.2)
+            return UIEdgeInsets(top: 0.3, left: 0.3, bottom: 0.3, right: 0.3)
         } else {
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
@@ -208,7 +208,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == shuffledCollectionView {
-            return 10
+            return 1
         } else {
             return 0
         }
@@ -216,7 +216,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == shuffledCollectionView {
-            return 10
+            return 1
         } else {
             return 0
         }
