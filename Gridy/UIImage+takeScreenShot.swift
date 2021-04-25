@@ -11,11 +11,8 @@ import UIKit
 extension UIView {
     
     func takeScreenshot() -> UIImage {
-        
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0.0)
-        
         self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
-        
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
@@ -24,9 +21,7 @@ extension UIView {
         } else {
             return UIImage()
         }
-        
     }
-    
     
     
 }

@@ -21,7 +21,7 @@
 		08716C00252E933800ECDEF9 /* UIImage+splitImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08716BFF252E933800ECDEF9 /* UIImage+splitImage.swift */; };
 		08743C39246F6216004932DE /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08743C38246F6216004932DE /* EditorViewController.swift */; };
 		08743C3B246F6620004932DE /* PlayfieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08743C3A246F6620004932DE /* PlayfieldViewController.swift */; };
-		08D91729256D232700404FFC /* UIImage+ takeScreenShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D91728256D232700404FFC /* UIImage+ takeScreenShot.swift */; };
+		08D91729256D232700404FFC /* UIImage+takeScreenShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D91728256D232700404FFC /* UIImage+takeScreenShot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +41,7 @@
 		08716BFF252E933800ECDEF9 /* UIImage+splitImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+splitImage.swift"; sourceTree = "<group>"; };
 		08743C38246F6216004932DE /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		08743C3A246F6620004932DE /* PlayfieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayfieldViewController.swift; sourceTree = "<group>"; };
-		08D91728256D232700404FFC /* UIImage+ takeScreenShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ takeScreenShot.swift"; sourceTree = "<group>"; };
+		08D91728256D232700404FFC /* UIImage+takeScreenShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+takeScreenShot.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,7 @@
 				0897D1C92492EC5D00DEC0C0 /* Fonts */,
 				082F00372458F1E30014C0CB /* AppDelegate.swift */,
 				08716BFD252E923D00ECDEF9 /* UIImage+cropImage.swift */,
-				08D91728256D232700404FFC /* UIImage+ takeScreenShot.swift */,
+				08D91728256D232700404FFC /* UIImage+takeScreenShot.swift */,
 				08716BFF252E933800ECDEF9 /* UIImage+splitImage.swift */,
 				08121F0324EDA957001BA6B1 /* BlurCutOut.swift */,
 				082F00392458F1E30014C0CB /* SceneDelegate.swift */,
@@ -184,7 +184,7 @@
 				08716BFE252E923D00ECDEF9 /* UIImage+cropImage.swift in Sources */,
 				08743C39246F6216004932DE /* EditorViewController.swift in Sources */,
 				0823544C24B06A3B00F99604 /* RoundedButton.swift in Sources */,
-				08D91729256D232700404FFC /* UIImage+ takeScreenShot.swift in Sources */,
+				08D91729256D232700404FFC /* UIImage+takeScreenShot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
