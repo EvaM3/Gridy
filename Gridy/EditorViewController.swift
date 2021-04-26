@@ -9,7 +9,6 @@
 import UIKit
 
 
-
 class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var backButton: UIButton!
@@ -23,10 +22,8 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //adjustLabel.numberOfLines = 0
         self.navigationController?.isNavigationBarHidden = true
         imageView.image = selectedImage
-       
         blurCutOut.isUserInteractionEnabled = true
         blurCutOut.isMultipleTouchEnabled = true
         
@@ -42,6 +39,7 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         gestureRecognizer.delegate = self
         blurCutOut.addGestureRecognizer(gestureRecognizer)
     }
+    
     override func viewDidLayoutSubviews() {
         mask(self.blurEffectView, maskView: self.blurCutOut)
         self.blurCutOut.setNeedsDisplay()
@@ -51,11 +49,13 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         self.imageView.transform = self.imageView.transform.rotated(by: recognizer.rotation)
         recognizer.rotation = 0
     }
+    
     @objc func pinchRecognized(pinch: UIPinchGestureRecognizer) {
         self.imageView.transform = self.imageView.transform.scaledBy(x: pinch.scale, y: pinch.scale)
         pinch.scale = 1
     }
-    @ objc  func handlePan(_ gestureRecognizer: UIPanGestureRecognizer) {
+    
+    @objc  func handlePan(_ gestureRecognizer: UIPanGestureRecognizer) {
         if gestureRecognizer.state == .began || gestureRecognizer.state == .changed {
             let translation = gestureRecognizer.translation(in: imageView.superview)
             imageView.center = CGPoint(x: imageView.center.x + translation.x, y: imageView.center.y + translation.y)
@@ -65,8 +65,8 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     
     @IBAction func backButtonTapped(_ sender: Any) {
         _ = navigationController?.popViewController(animated: true)
-        
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PlayfieldSegue" {
             if let destinationVC = segue.destination as? PlayfieldViewController {
@@ -74,10 +74,10 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
             }
         }
     }
+    
     @IBAction func startButtonTapped(_ sender: Any) {
         let newPoints = blurCutOut.convert(blurCutOut.frame.origin, to: view)
         let size  = CGRect(x: blurCutOut.frame.origin.x, y: newPoints.y, width: blurCutOut.bounds.width, height: blurCutOut.bounds.height)
-       
         let screenshot = self.view.takeScreenshot()
         let croppedImage =  screenshot.cropImage(toRect: size)
         originalImage = croppedImage ?? UIImage()

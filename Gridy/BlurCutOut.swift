@@ -12,6 +12,7 @@ import UIKit
 class BlurCutOut: UIView {
     
     override func draw(_ rect: CGRect) {
+        
         let path = UIBezierPath()
         let sliceCount = 4
         

@@ -44,7 +44,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         gameArray = Array(repeating: defaultImage, count: 16)
         shuffledArray = imageArray.shuffled()
         
-        
         self.navigationController?.isNavigationBarHidden = true
         shuffledCollectionView.isScrollEnabled = false
         shuffledCollectionView.isUserInteractionEnabled = true
@@ -124,31 +123,31 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         }
         return 0
     }
-   
-   @objc func showHintImage() {
-       hintImage.image = originalImage
-       hintImage.contentMode = .scaleToFill
-       hintImage.frame = gameCollectionView.frame
-       self.view.addSubview(hintImage)
-       self.view.bringSubviewToFront(hintImage)
-       gameTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(removeHintImage), userInfo: nil, repeats: false)
-       UIView.animate(withDuration: 1.0,
-                      delay: 0.0,
-                      usingSpringWithDamping: 0.3,
-                      initialSpringVelocity: 1,
-                      options: UIView.AnimationOptions.curveEaseInOut,
-                      animations: ({
-                       self.hintImage.frame = CGRect(x: 0, y: 0, width: self.hintImage.frame.width, height: self.hintImage.frame.height)
-                       self.hintImage.center = self.view.center
-                      }), completion: nil)
-   }
-   
-   @objc func removeHintImage() {
-       self.view.sendSubviewToBack(hintImage)
-       self.hintImage.removeFromSuperview()
-       self.gameCollectionView.isHidden = false
-   }
-   
+    
+    @objc func showHintImage() {
+        hintImage.image = originalImage
+        hintImage.contentMode = .scaleToFill
+        hintImage.frame = gameCollectionView.frame
+        self.view.addSubview(hintImage)
+        self.view.bringSubviewToFront(hintImage)
+        gameTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(removeHintImage), userInfo: nil, repeats: false)
+        UIView.animate(withDuration: 1.0,
+                       delay: 0.0,
+                       usingSpringWithDamping: 0.3,
+                       initialSpringVelocity: 1,
+                       options: UIView.AnimationOptions.curveEaseInOut,
+                       animations: ({
+                        self.hintImage.frame = CGRect(x: 0, y: 0, width: self.hintImage.frame.width, height: self.hintImage.frame.height)
+                        self.hintImage.center = self.view.center
+                       }), completion: nil)
+    }
+    
+    @objc func removeHintImage() {
+        self.view.sendSubviewToBack(hintImage)
+        self.hintImage.removeFromSuperview()
+        self.gameCollectionView.isHidden = false
+    }
+    
     @IBAction func restartButtonTapped(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
         restartGame()
@@ -252,8 +251,8 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
                         self.shuffledCollectionView.reloadData()
                         self.increaseScore()
                         self.solvedPuzzle()
+                        
                     }
-                    
                     
                 }
             }
