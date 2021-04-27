@@ -70,6 +70,7 @@ class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UI
         pickerController.sourceType = .photoLibrary
         present(pickerController, animated: true, completion: nil)
     }
+    
     // image capturing is done
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.originalImage] as? UIImage {
