@@ -526,7 +526,7 @@
                                 <variation key="heightClass=compact" axis="horizontal" distribution="equalSpacing" spacing="5"/>
                                 <variation key="heightClass=regular-widthClass=regular" spacing="60">
                                     <mask key="constraints">
-                                        <exclude reference="dOD-k9-brr"/>
+                                        <include reference="dOD-k9-brr"/>
                                     </mask>
                                 </variation>
                             </stackView>
@@ -541,9 +541,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="L1n-SC-48c" firstAttribute="trailing" secondItem="n6x-DZ-6fa" secondAttribute="trailing" constant="-8" id="7mn-PW-rkI"/>
-                            <constraint firstItem="dtx-pt-Vtw" firstAttribute="bottom" secondItem="HXF-lw-y0I" secondAttribute="bottom" constant="8" id="92c-63-N6k">
-                                <variation key="heightClass=regular-widthClass=regular" constant="10"/>
-                            </constraint>
+                            <constraint firstItem="dtx-pt-Vtw" firstAttribute="bottom" secondItem="HXF-lw-y0I" secondAttribute="bottom" constant="8" id="92c-63-N6k"/>
                             <constraint firstItem="dtx-pt-Vtw" firstAttribute="top" secondItem="HXF-lw-y0I" secondAttribute="top" constant="8" id="GGB-oj-Ylr">
                                 <variation key="heightClass=regular-widthClass=regular" constant="5"/>
                             </constraint>
