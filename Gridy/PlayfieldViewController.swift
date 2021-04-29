@@ -253,12 +253,9 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
                         self.solvedPuzzle()
                         
                     }
-                    
                 }
             }
-            
         }
-        
     }
 }
 
