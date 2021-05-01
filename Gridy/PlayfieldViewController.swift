@@ -43,6 +43,10 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         scoreLabel.text = "Score: \(score)"
         gameArray = Array(repeating: defaultImage, count: 16)
         shuffledArray = imageArray.shuffled()
+        shuffledCollectionView.layer.borderWidth = 0.3
+        shuffledCollectionView.layer.borderColor = UIColor.black.cgColor
+        gameCollectionView.layer.borderWidth = 0.3
+        gameCollectionView.layer.borderColor = UIColor.black.cgColor
         
         self.navigationController?.isNavigationBarHidden = true
         shuffledCollectionView.isScrollEnabled = false
@@ -160,24 +164,19 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = UICollectionViewCell()
+        var cell = UICollectionViewCell() // should be the class
         let imageView = UIImageView()
         if collectionView == shuffledCollectionView {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayfieldCell", for: indexPath)
-            imageView.image = shuffledArray[indexPath.row]
-            shuffledCollectionView.layer.borderWidth = 0.3
-            shuffledCollectionView.layer.borderColor = UIColor.black.cgColor
-            cell.layer.borderWidth = 0.2
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayfieldCell", for: indexPath) // need the class
+            imageView.image = shuffledArray[indexPath.row]  // cell.imageview.image =      same for gamecollection
             cell.layer.borderColor = UIColor.darkGray.cgColor
         }
         if collectionView == gameCollectionView {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCell", for: indexPath)
             imageView.image = gameArray[indexPath.row]
-            gameCollectionView.layer.borderWidth = 0.3
-            gameCollectionView.layer.borderColor = UIColor.black.cgColor
-            cell.layer.borderWidth = 0.2
             cell.layer.borderColor = UIColor.black.cgColor
         }
+        cell.layer.borderWidth = 0.2
         imageView.frame = cell.contentView.frame
         cell.addSubview(imageView)
         return cell
