@@ -105,7 +105,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         self.shuffledCollectionView.reloadData()
     }
     
-    @objc func increaseScore(n: Int = 1) {
+     func increaseScore(n: Int = 1) {
         score += n
         scoreLabel.text = "Score: \(score)"
     }
@@ -164,21 +164,16 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = UICollectionViewCell() // should be the class
-        let imageView = UIImageView()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCollectionViewCell
         if collectionView == shuffledCollectionView {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayfieldCell", for: indexPath) // need the class
-            imageView.image = shuffledArray[indexPath.row]  // cell.imageview.image =      same for gamecollection
+            cell.imageView.image = shuffledArray[indexPath.row]
             cell.layer.borderColor = UIColor.darkGray.cgColor
         }
         if collectionView == gameCollectionView {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCell", for: indexPath)
-            imageView.image = gameArray[indexPath.row]
+            cell.imageView.image = gameArray[indexPath.row]
             cell.layer.borderColor = UIColor.black.cgColor
         }
         cell.layer.borderWidth = 0.2
-        imageView.frame = cell.contentView.frame
-        cell.addSubview(imageView)
         return cell
     }
     

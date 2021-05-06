@@ -22,6 +22,7 @@
 		08743C39246F6216004932DE /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08743C38246F6216004932DE /* EditorViewController.swift */; };
 		08743C3B246F6620004932DE /* PlayfieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08743C3A246F6620004932DE /* PlayfieldViewController.swift */; };
 		08D91729256D232700404FFC /* UIImage+takeScreenShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D91728256D232700404FFC /* UIImage+takeScreenShot.swift */; };
+		A083E3AD264470DC00AD11D9 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A083E3AC264470DC00AD11D9 /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		08743C38246F6216004932DE /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		08743C3A246F6620004932DE /* PlayfieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayfieldViewController.swift; sourceTree = "<group>"; };
 		08D91728256D232700404FFC /* UIImage+takeScreenShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+takeScreenShot.swift"; sourceTree = "<group>"; };
+		A083E3AC264470DC00AD11D9 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				082F003B2458F1E30014C0CB /* IntroViewController.swift */,
 				0823544B24B06A3B00F99604 /* RoundedButton.swift */,
 				082F003D2458F1E30014C0CB /* Main.storyboard */,
+				A083E3AC264470DC00AD11D9 /* ImageCollectionViewCell.swift */,
 				08743C3A246F6620004932DE /* PlayfieldViewController.swift */,
 				08743C38246F6216004932DE /* EditorViewController.swift */,
 				084A4B8F25E5D95B00185457 /* glitter.wav */,
@@ -176,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				082F003C2458F1E30014C0CB /* IntroViewController.swift in Sources */,
+				A083E3AD264470DC00AD11D9 /* ImageCollectionViewCell.swift in Sources */,
 				08121F0424EDA957001BA6B1 /* BlurCutOut.swift in Sources */,
 				082F00382458F1E30014C0CB /* AppDelegate.swift in Sources */,
 				082F003A2458F1E30014C0CB /* SceneDelegate.swift in Sources */,
