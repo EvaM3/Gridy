@@ -91,6 +91,13 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         }
     }
     
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        var shuffleLayout = shuffledCollectionView.self
+        shuffledCollectionView.layoutIfNeeded()
+        super.willTransition(to: newCollection, with: coordinator)
+        shuffleLayout?.collectionViewLayout.invalidateLayout()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         DispatchQueue.main.async {
             self.shuffledCollectionView.reloadData()
