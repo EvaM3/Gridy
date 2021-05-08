@@ -91,11 +91,13 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         }
     }
     
-    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-        var shuffleLayout = shuffledCollectionView.self
-        shuffledCollectionView.layoutIfNeeded()
-        super.willTransition(to: newCollection, with: coordinator)
-        shuffleLayout?.collectionViewLayout.invalidateLayout()
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        let shuffleLayout = shuffledCollectionView.collectionViewLayout
+        shuffleLayout.invalidateLayout()
+        shuffledCollectionView.setNeedsDisplay()
+        coordinator.animate(alongsideTransition: nil) { _ in
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -112,7 +114,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         self.shuffledCollectionView.reloadData()
     }
     
-     func increaseScore(n: Int = 1) {
+    func increaseScore(n: Int = 1) {
         score += n
         scoreLabel.text = "Score: \(score)"
     }
