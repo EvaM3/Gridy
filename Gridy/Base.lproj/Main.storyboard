@@ -54,7 +54,7 @@
                                                     </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="1l0-JF-6mu" firstAttribute="top" secondItem="1Lp-Fv-vsq" secondAttribute="top" id="q2P-2n-eeE"/>
+                                                    <constraint firstItem="1l0-JF-6mu" firstAttribute="top" relation="lessThanOrEqual" secondItem="1Lp-Fv-vsq" secondAttribute="top" id="q2P-2n-eeE"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -64,13 +64,13 @@
                                         <rect key="frame" x="0.0" y="353.66666666666674" width="350" height="345.33333333333326"/>
                                         <subviews>
                                             <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="-120" translatesAutoresizingMaskIntoConstraints="NO" id="2lx-f3-sBu" userLabel="Picking Stack View">
-                                                <rect key="frame" x="120" y="0.0" width="110" height="115"/>
+                                                <rect key="frame" x="125" y="0.0" width="100" height="115"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNd-Qz-5dS" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="110" height="117.33333333333333"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="117.33333333333333"/>
                                                         <color key="backgroundColor" name="sand"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="dWd-ou-yMc"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="dWd-ou-yMc"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
@@ -83,7 +83,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gridy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2i-SH-gFO">
-                                                        <rect key="frame" x="13" y="-2.6666666666666856" width="84.333333333333329" height="117.66666666666667"/>
+                                                        <rect key="frame" x="8" y="-2.6666666666666856" width="84.333333333333329" height="117.66666666666667"/>
                                                         <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
