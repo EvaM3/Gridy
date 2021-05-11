@@ -70,7 +70,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="183" height="183"/>
                                                         <color key="backgroundColor" name="sand"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="dWd-ou-yMc"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="dWd-ou-yMc"/>
                                                             <constraint firstAttribute="width" secondItem="BNd-Qz-5dS" secondAttribute="height" multiplier="1:1" id="zbS-Kc-5Wh"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -99,7 +99,7 @@
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- OR load your own-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8P4-QR-0WX">
                                                 <rect key="frame" x="400" y="211" width="184.5" height="210.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="heightClass=regular-widthClass=regular">
@@ -242,7 +242,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="ZXk-s2-sPm"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <color key="tintColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="xmark" catalog="system">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -252,7 +252,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adjust the puzzle image: zoom, rotate, reposition" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Y6-FS-rw8">
-                                                <rect key="frame" x="21" y="40" width="1003" height="102"/>
+                                                <rect key="frame" x="40" y="40" width="984" height="102"/>
                                                 <fontDescription key="fontDescription" name=".SFNS-Regular" family=".SF NS" pointSize="14"/>
                                                 <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -262,6 +262,7 @@
                                         <constraints>
                                             <constraint firstItem="2Y6-FS-rw8" firstAttribute="leading" secondItem="Pqu-UR-cpx" secondAttribute="leading" constant="21" id="buu-hF-tcL">
                                                 <variation key="heightClass=compact" constant="50"/>
+                                                <variation key="heightClass=regular-widthClass=regular" constant="40"/>
                                             </constraint>
                                         </constraints>
                                         <variation key="heightClass=compact" axis="horizontal" distribution="fillProportionally" spacing="40"/>
