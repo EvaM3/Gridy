@@ -64,10 +64,10 @@
                                         <rect key="frame" x="0.0" y="640.5" width="984" height="632.5"/>
                                         <subviews>
                                             <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="-120" translatesAutoresizingMaskIntoConstraints="NO" id="2lx-f3-sBu" userLabel="Picking Stack View">
-                                                <rect key="frame" x="402" y="0.0" width="180" height="211"/>
+                                                <rect key="frame" x="400.5" y="0.0" width="183" height="211"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNd-Qz-5dS" customClass="RoundedButton" customModule="Gridy" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="180" height="180.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="183"/>
                                                         <color key="backgroundColor" name="sand"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="dWd-ou-yMc"/>
@@ -84,23 +84,26 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gridy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2i-SH-gFO">
-                                                        <rect key="frame" x="48" y="30.5" width="84.5" height="180.5"/>
+                                                        <rect key="frame" x="41" y="28" width="101.5" height="183"/>
                                                         <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="42"/>
+                                                        </variation>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" name="sand"/>
                                                 <variation key="heightClass=compact" spacing="-110"/>
-                                                <variation key="heightClass=regular-widthClass=regular" spacing="-150"/>
+                                                <variation key="heightClass=regular-widthClass=regular" spacing="-155"/>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- OR load your own-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8P4-QR-0WX">
-                                                <rect key="frame" x="370.5" y="211" width="243" height="210.5"/>
+                                                <rect key="frame" x="400" y="211" width="184.5" height="210.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 </variation>
                                             </label>
                                             <stackView opaque="NO" contentMode="bottom" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="zt0-MY-5BC" userLabel="CameraAndLibraryStack View">
@@ -182,6 +185,7 @@
                                         </variation>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <variation key="heightClass=compact" axis="horizontal"/>
                             </stackView>
                         </subviews>
@@ -617,6 +621,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
