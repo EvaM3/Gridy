@@ -32,7 +32,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="984" height="632.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Gridy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ycI-5O-AuH">
-                                                <rect key="frame" x="296.5" y="0.0" width="391" height="376.5"/>
+                                                <rect key="frame" x="279" y="0.0" width="426.5" height="376.5"/>
                                                 <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="168"/>
                                                 <color key="textColor" name="lightgreen"/>
                                                 <nil key="highlightedColor"/>
@@ -84,7 +84,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gridy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2i-SH-gFO">
-                                                        <rect key="frame" x="45" y="28" width="93" height="183"/>
+                                                        <rect key="frame" x="41" y="28" width="101.5" height="183"/>
                                                         <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -406,7 +406,7 @@
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n6x-DZ-6fa">
                                                         <rect key="frame" x="0.0" y="0.0" width="604" height="682"/>
-                                                        <color key="backgroundColor" red="0.95294117649999999" green="0.91372549020000005" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yOe-RM-16O">
                                                             <size key="itemSize" width="50" height="50"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
