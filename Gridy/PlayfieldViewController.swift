@@ -95,8 +95,10 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         super.viewWillTransition(to: size, with: coordinator)
         let shuffleLayout = shuffledCollectionView.collectionViewLayout
         shuffleLayout.invalidateLayout()
-        shuffledCollectionView.setNeedsDisplay()
+       
         coordinator.animate(alongsideTransition: nil) { _ in
+            self.shuffledCollectionView.setNeedsDisplay()
+            // put setneedsdisplay here.
         }
     }
     
@@ -247,7 +249,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             if let imagesDropped = NSItemProviderReadingItems as? [UIImage] {
                 if imagesDropped.count > 0 {
                     if let removeIndexPath = coordinator.items.first?.dragItem.localObject as? IndexPath  {  // reading  the sticker info
-                        
+               // do an if, do not swap
                         self.gameArray[destinationIndexPath.row] = self.shuffledArray[removeIndexPath.row]
                         collectionView.reloadData()
                         self.shuffledArray[removeIndexPath.row] = self.defaultImage
