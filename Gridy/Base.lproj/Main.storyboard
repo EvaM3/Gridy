@@ -90,7 +90,6 @@
                                                         </variation>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" name="sand"/>
                                                 <variation key="heightClass=compact" spacing="-110"/>
                                                 <variation key="heightClass=regular-widthClass=regular" spacing="-155"/>
                                             </stackView>

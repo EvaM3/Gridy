@@ -95,7 +95,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         super.viewWillTransition(to: size, with: coordinator)
         let shuffleLayout = shuffledCollectionView.collectionViewLayout
         shuffleLayout.invalidateLayout()
-       
+        
         coordinator.animate(alongsideTransition: nil) { _ in
             self.shuffledCollectionView.setNeedsDisplay()
             // put setneedsdisplay here.
@@ -236,20 +236,30 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         return [dragItem]
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
-        let destinationIndexPath: IndexPath
+        var destinationIndexPath: IndexPath
         if let indexPath = coordinator.destinationIndexPath {
             destinationIndexPath = indexPath
         } else {
             let itemCount = collectionView.numberOfItems(inSection: 0)
             destinationIndexPath = IndexPath(row: itemCount, section: 0)
         }
+       
+
+        
         
         coordinator.session.loadObjects(ofClass: UIImage.self) { (NSItemProviderReadingItems) in
             if let imagesDropped = NSItemProviderReadingItems as? [UIImage] {
                 if imagesDropped.count > 0 {
                     if let removeIndexPath = coordinator.items.first?.dragItem.localObject as? IndexPath  {  // reading  the sticker info
-               // do an if, do not swap
+                        
+//                        if self.gameArray.contains(self.originalImage) {
+//                            return UICollectionViewDropProposal(
+//                                operation: .cancel, intent: .unspecified
+//                            )
+//                        }
+                        
                         self.gameArray[destinationIndexPath.row] = self.shuffledArray[removeIndexPath.row]
                         collectionView.reloadData()
                         self.shuffledArray[removeIndexPath.row] = self.defaultImage
@@ -264,7 +274,21 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     }
 }
 
+//                        if self.gameArray.contains(self.defaultImage) {
+//                            self.gameCollectionView.moveItem(at: destinationIndexPath, to: UIDragItem)
+//
+//                        }
+//
 
+//
+//        func collectionView(_ collectionView: UICollectionView, canHandle session: UIDropSession) -> Bool {
+//            if gameArray == originalImage {return false}    // do an if, do not swap
+//            return true
+//        }
+//
 
-
-
+//if self.gameArray.contains(self.originalImage) {
+//  return UICollectionViewDropProposal(
+//    operation: .cancel, intent: .unspecified
+//)
+//                }
