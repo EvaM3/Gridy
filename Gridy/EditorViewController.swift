@@ -45,6 +45,15 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         self.blurCutOut.setNeedsDisplay()
     }
 
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        coordinator.animate(alongsideTransition: nil) { _ in
+            self.blurCutOut.invalidateIntrinsicContentSize()
+            self.blurCutOut.setNeedsDisplay()
+        }
+    }
+    
     @objc func handleRotate(recognizer : UIRotationGestureRecognizer) {
         self.imageView.transform = self.imageView.transform.rotated(by: recognizer.rotation)
         recognizer.rotation = 0
