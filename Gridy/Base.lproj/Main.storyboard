@@ -32,7 +32,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="984" height="632.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Gridy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ycI-5O-AuH">
-                                                <rect key="frame" x="279" y="0.0" width="426.5" height="391.5"/>
+                                                <rect key="frame" x="296.5" y="0.0" width="391" height="391.5"/>
                                                 <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="162"/>
                                                 <color key="textColor" name="lightgreen"/>
                                                 <nil key="highlightedColor"/>
@@ -81,7 +81,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gridy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2i-SH-gFO">
-                                                        <rect key="frame" x="39.5" y="25.5" width="101.5" height="180"/>
+                                                        <rect key="frame" x="43.5" y="25.5" width="93" height="180"/>
                                                         <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="39"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
