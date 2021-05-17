@@ -77,17 +77,22 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func solvedPuzzle() {
         if self.gameArray == self.imageArray {
-            let alert = UIAlertController(title: "You Won!", message: "Congratulations✌️", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let alert = UIAlertController(title: "You Won! Congratulations✌️", message: "Share your score!", preferredStyle: .actionSheet)
+            let actionOne = UIAlertAction(title: "Share on Facebook", style: .default) { (action) in
+                print("SUCCESS!")
+            }
+            alert.addAction(actionOne)
+            self.present(alert, animated: true, completion: nil)
             let shareMyText = "My score on Gridy is \(score)"
             let activityVc = UIActivityViewController(activityItems: [shareMyText], applicationActivities: nil)
-            present(activityVc, animated: true, completion: nil)
             if let popOver = activityVc.popoverPresentationController {
                 popOver.sourceView = view
                 popOver.sourceView?.center = view.center
             }
-            alert.addAction(okAction)
+         //   alert.addAction(shareMyText)
+           // alert.addAction(okAction)
             self.present(alert,animated: true, completion: nil)
+            present(activityVc, animated: true, completion: nil)
         }
     }
     
