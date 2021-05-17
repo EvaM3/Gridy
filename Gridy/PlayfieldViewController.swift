@@ -191,7 +191,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == shuffledCollectionView {
-            let columnCount:Int = gameArray.count / 3 + 1
+            let columnCount:Int = gameArray.count / 3 + 3
             let collectionViewWidth : CGFloat = shuffledCollectionView.frame.width - CGFloat((columnCount))
             let widthPerItem : CGFloat = collectionViewWidth / CGFloat(columnCount)
             return CGSize(width: widthPerItem, height: widthPerItem)
