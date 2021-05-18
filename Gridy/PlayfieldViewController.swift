@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Social
 
 
 class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDragDelegate, UICollectionViewDropDelegate {
@@ -77,22 +78,29 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func solvedPuzzle() {
         if self.gameArray == self.imageArray {
-            let alert = UIAlertController(title: "You Won! Congratulations✌️", message: "Share your score!", preferredStyle: .actionSheet)
-            let actionOne = UIAlertAction(title: "Share on Facebook", style: .default) { (action) in
-                print("SUCCESS!")
+            let shareMyImage = self.imageArray
+            let shareMyText = "My score on Gridy is \(score)"
+            let alert = UIAlertController(title: "You Won! Congratulations✌️", message: "Share your score! \(shareMyText)", preferredStyle: .actionSheet)
+            let actionOne = UIAlertAction(title: "Share on your social sites!", style: .default) { (action) in
+                let activityVc = UIActivityViewController(activityItems: [shareMyText, shareMyImage] , applicationActivities: nil)
+                if let popOver = activityVc.popoverPresentationController {
+                    popOver.sourceView = self.view
+                    popOver.sourceView?.center = self.view.center
+                    
+                }
+                
+                self.present(alert,animated: true, completion: nil)
+                self.present(activityVc, animated: true, completion: nil)
             }
             alert.addAction(actionOne)
             self.present(alert, animated: true, completion: nil)
-            let shareMyText = "My score on Gridy is \(score)"
-            let activityVc = UIActivityViewController(activityItems: [shareMyText], applicationActivities: nil)
-            if let popOver = activityVc.popoverPresentationController {
-                popOver.sourceView = view
-                popOver.sourceView?.center = view.center
-            }
+            
+        
+          
+            
          //   alert.addAction(shareMyText)
-           // alert.addAction(okAction)
-            self.present(alert,animated: true, completion: nil)
-            present(activityVc, animated: true, completion: nil)
+        
+         
         }
     }
     
