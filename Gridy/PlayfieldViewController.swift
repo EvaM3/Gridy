@@ -59,6 +59,8 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         shuffledCollectionView.dropDelegate = self
         gameCollectionView.dropDelegate = self
         self.navigationController?.isNavigationBarHidden = true
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        
         
         
         do {
