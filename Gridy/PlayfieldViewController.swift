@@ -255,11 +255,12 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         guard session.items.count == 1 else {
             return UICollectionViewDropProposal(operation: .cancel)
         }
-        if collectionView.hasActiveDrag {
+        if shuffledCollectionView.hasActiveDrag {
             return UICollectionViewDropProposal(operation: .move)
-        } else {
+        } else if gameCollectionView.hasActiveDrag {
             return UICollectionViewDropProposal(operation: .move)
         }
+        return UICollectionViewDropProposal(operation: .move)
     }
     
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
@@ -272,7 +273,9 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         }
 
         
-        
+//        if shuffledArray[destinationIndexPath.row] == self.defaultImage {
+//            return
+//        }
         
 //        if gameArray[destinationIndexPath.row] != self.defaultImage {
 //            return
