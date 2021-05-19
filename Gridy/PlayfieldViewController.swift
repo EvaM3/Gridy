@@ -88,9 +88,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
                 if let popOver = activityVc.popoverPresentationController {
                     popOver.sourceView = self.view
                     popOver.sourceView?.center = self.view.center
-                    
                 }
-                
                 self.present(alert,animated: true, completion: nil)
                 self.present(activityVc, animated: true, completion: nil)
             }
@@ -206,10 +204,11 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == shuffledCollectionView {
-            let columnCount:Int = gameArray.count / 3 + 3
+            let columnCount:Int = gameArray.count / 3 + Int(3.5)
             let collectionViewWidth : CGFloat = shuffledCollectionView.frame.width - CGFloat((columnCount))
             let widthPerItem : CGFloat = collectionViewWidth / CGFloat(columnCount)
             return CGSize(width: widthPerItem, height: widthPerItem)
+        
         } else {
             let collectionViewWidth : CGFloat = collectionView.frame.width - (itemsPerRow)
             let widthPerItem : CGFloat = collectionViewWidth / CGFloat(itemsPerRow)
@@ -219,7 +218,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func  collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if collectionView == shuffledCollectionView {
-            return UIEdgeInsets(top: 0.3, left: 0.3, bottom: 0.3, right: 0.3)
+            return UIEdgeInsets(top: 0.4, left: 0.4, bottom: 0.4, right: 0.4)
         } else {
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
