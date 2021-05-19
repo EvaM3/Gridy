@@ -251,6 +251,16 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         return [dragItem]
     }
     
+    func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
+        guard session.items.count == 1 else {
+            return UICollectionViewDropProposal(operation: .cancel)
+        }
+        if collectionView.hasActiveDrag {
+            return UICollectionViewDropProposal(operation: .move)
+        } else {
+            return UICollectionViewDropProposal(operation: .move)
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
         var destinationIndexPath: IndexPath
@@ -260,10 +270,16 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             let itemCount = collectionView.numberOfItems(inSection: 0)
             destinationIndexPath = IndexPath(row: itemCount, section: 0)
         }
-        if gameArray[destinationIndexPath.row] != self.defaultImage {
-            return
-        }
 
+        
+        
+        
+//        if gameArray[destinationIndexPath.row] != self.defaultImage {
+//            return
+//        }
+//
+        
+        
         coordinator.session.loadObjects(ofClass: UIImage.self) { (NSItemProviderReadingItems) in
             if let imagesDropped = NSItemProviderReadingItems as? [UIImage] {
                 if imagesDropped.count > 0 {
