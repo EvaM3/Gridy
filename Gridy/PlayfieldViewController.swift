@@ -289,6 +289,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
                     if let removeIndexPath = coordinator.items.first?.dragItem.localObject as? IndexPath  {  // reading  the sticker info
 
                         self.gameArray[destinationIndexPath.row] = self.shuffledArray[removeIndexPath.row]
+                        self.shuffledArray[destinationIndexPath.row] = self.gameArray[removeIndexPath.row]  // for swiping back
                         collectionView.reloadData()
                         self.shuffledArray[removeIndexPath.row] = self.defaultImage
                         self.shuffledCollectionView.reloadData()
