@@ -54,6 +54,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         shuffledCollectionView.isUserInteractionEnabled = true
         shuffledCollectionView.dragInteractionEnabled = true
         gameCollectionView.dragInteractionEnabled = true
+        gameCollectionView.isUserInteractionEnabled = true
         shuffledCollectionView.dragDelegate = self
         gameCollectionView.dragDelegate = self
         shuffledCollectionView.dropDelegate = self
@@ -95,12 +96,12 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             alert.addAction(actionOne)
             self.present(alert, animated: true, completion: nil)
             
-        
-          
             
-         //   alert.addAction(shareMyText)
-        
-         
+            
+            
+            //   alert.addAction(shareMyText)
+            
+            
         }
     }
     
@@ -208,7 +209,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             let collectionViewWidth : CGFloat = shuffledCollectionView.frame.width - CGFloat((columnCount))
             let widthPerItem : CGFloat = collectionViewWidth / CGFloat(columnCount)
             return CGSize(width: widthPerItem, height: widthPerItem)
-        
+            
         } else {
             let collectionViewWidth : CGFloat = collectionView.frame.width - (itemsPerRow)
             let widthPerItem : CGFloat = collectionViewWidth / CGFloat(itemsPerRow)
@@ -252,17 +253,29 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
-        guard session.items.count == 1 else {
-            return UICollectionViewDropProposal(operation: .cancel)
+        guard let destinationIndexPath = destinationIndexPath else {
+            return UICollectionViewDropProposal(operation: .move)
         }
-        if shuffledCollectionView.hasActiveDrag {
-            return UICollectionViewDropProposal(operation: .move)
-        } else if gameCollectionView.hasActiveDrag {
-            return UICollectionViewDropProposal(operation: .move)
+        if collectionView == shuffledCollectionView {
+            if shuffledArray[destinationIndexPath.row] != self.defaultImage {
+                return UICollectionViewDropProposal(operation: .cancel)
+            }
+        } else {
+            if gameArray[destinationIndexPath.row] != self.defaultImage {
+                
+                return UICollectionViewDropProposal(operation: .cancel)
+            }
         }
         return UICollectionViewDropProposal(operation: .move)
     }
-    
+//    func swapImages(firstImage: UIImage, secondImage: UIImage) {
+//        var thirdImage: UIImage
+//        var thirdImage = firstImage
+//         firstImage = secondImage
+//        let secondImage = thirdImage
+//
+//    }
+//
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
         var destinationIndexPath: IndexPath
         if let indexPath = coordinator.destinationIndexPath {
@@ -271,27 +284,16 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             let itemCount = collectionView.numberOfItems(inSection: 0)
             destinationIndexPath = IndexPath(row: itemCount, section: 0)
         }
-
-        
-//        if shuffledArray[destinationIndexPath.row] == self.defaultImage {
-//            return
-//        }
-        
-//        if gameArray[destinationIndexPath.row] != self.defaultImage {
-//            return
-//        }
-//
-        
-        
+      
+       
         coordinator.session.loadObjects(ofClass: UIImage.self) { (NSItemProviderReadingItems) in
             if let imagesDropped = NSItemProviderReadingItems as? [UIImage] {
                 if imagesDropped.count > 0 {
                     if let removeIndexPath = coordinator.items.first?.dragItem.localObject as? IndexPath  {  // reading  the sticker info
-
+                        
                         self.gameArray[destinationIndexPath.row] = self.shuffledArray[removeIndexPath.row]
-                        self.shuffledArray[destinationIndexPath.row] = self.gameArray[removeIndexPath.row]  // for swiping back
                         collectionView.reloadData()
-                        self.shuffledArray[removeIndexPath.row] = self.defaultImage
+                        self.shuffledArray[removeIndexPath.row] = self.defaultImage  // can remove later
                         self.shuffledCollectionView.reloadData()
                         self.increaseScore()
                         self.solvedPuzzle()
