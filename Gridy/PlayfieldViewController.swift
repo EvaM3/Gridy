@@ -81,8 +81,12 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     func swapArrays(_ imageA: inout UIImage,_ imageB: inout UIImage) {
         var imageA = shuffledArray[0]
         var imageB = gameArray[0]
-        imageA = imageB
+        var imageC = imageA
         imageB = imageA
+        imageA = imageB
+        
+        print(imageA,imageB)
+        
     }
     
     func solvedPuzzle() {
@@ -255,17 +259,26 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         } else {
             swapArrays(&gameArray[indexPath.row], &shuffledArray[indexPath.row])
         }
+        
+        // let swapItemA = swapArrays(&gameArray[indexPath.row], &shuffledArray[indexPath.row])
 //        if shuffledArray[indexPath.row] == defaultImage {
 //            return [UIDragItem]()
 //        }
+       
+        
+        let gameItem = self.gameArray[indexPath.row]
+        let gameItemProvider = NSItemProvider(object: gameItem)
+        let gameDragItem = UIDragItem(itemProvider: gameItemProvider)
+        gameDragItem.localObject = indexPath
+        // return [gameDragItem]
+        
         let item = self.shuffledArray[indexPath.row]
         let itemProvider = NSItemProvider(object: item)
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = indexPath
         return [dragItem]
     }
-    
-   
+ 
     func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
         guard let destinationIndexPath = destinationIndexPath else {
             return UICollectionViewDropProposal(operation: .move)
@@ -293,7 +306,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             destinationIndexPath = IndexPath(row: itemCount, section: 0)
         }
         
-        coordinator.session.loadObjects(ofClass: UIImage.self) { (NSItemProviderReadingItems) in
+        coordinator.session.loadObjects(ofClass: UIImage.self) { (NSItemProviderReadingItems) in 
             if let imagesDropped = NSItemProviderReadingItems as? [UIImage] {
                 if imagesDropped.count > 0 {
                     if let removeIndexPath = coordinator.items.first?.dragItem.localObject as? IndexPath  {  // reading  the sticker info
