@@ -258,7 +258,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             swapArrays(&shuffledArray[indexPath.row], &gameArray[indexPath.row])
         } else {
             swapArrays(&gameArray[indexPath.row], &shuffledArray[indexPath.row])
-        }
+        } // which element you are dragging
         
         // let swapItemA = swapArrays(&gameArray[indexPath.row], &shuffledArray[indexPath.row])
 //        if shuffledArray[indexPath.row] == defaultImage {
@@ -266,10 +266,10 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
 //        }
        
         
-        let gameItem = self.gameArray[indexPath.row]
-        let gameItemProvider = NSItemProvider(object: gameItem)
-        let gameDragItem = UIDragItem(itemProvider: gameItemProvider)
-        gameDragItem.localObject = indexPath
+//        let gameItem = self.gameArray[indexPath.row]
+//        let gameItemProvider = NSItemProvider(object: gameItem)
+//        let gameDragItem = UIDragItem(itemProvider: gameItemProvider)
+//        gameDragItem.localObject = indexPath
         // return [gameDragItem]
         
         let item = self.shuffledArray[indexPath.row]
