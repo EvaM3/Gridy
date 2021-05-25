@@ -255,28 +255,17 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         if collectionView == shuffledCollectionView {
-            swapArrays(&shuffledArray[indexPath.row], &gameArray[indexPath.row])
+            let item = self.shuffledArray[indexPath.row]
+            let itemProvider = NSItemProvider(object: item)
+            let dragItem = UIDragItem(itemProvider: itemProvider)
+            dragItem.localObject = indexPath
+            return [dragItem]
         } else {
-            swapArrays(&gameArray[indexPath.row], &shuffledArray[indexPath.row])
+            let gameItem = self.gameArray[indexPath.row]
+            let provider = NSItemProvider(object: gameItem)
+            let gameDragItem = UIDragItem(itemProvider: provider)
+            return [gameDragItem]
         } // which element you are dragging
-        
-        // let swapItemA = swapArrays(&gameArray[indexPath.row], &shuffledArray[indexPath.row])
-//        if shuffledArray[indexPath.row] == defaultImage {
-//            return [UIDragItem]()
-//        }
-       
-        
-//        let gameItem = self.gameArray[indexPath.row]
-//        let gameItemProvider = NSItemProvider(object: gameItem)
-//        let gameDragItem = UIDragItem(itemProvider: gameItemProvider)
-//        gameDragItem.localObject = indexPath
-        // return [gameDragItem]
-        
-        let item = self.shuffledArray[indexPath.row]
-        let itemProvider = NSItemProvider(object: item)
-        let dragItem = UIDragItem(itemProvider: itemProvider)
-        dragItem.localObject = indexPath
-        return [dragItem]
     }
  
     func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
