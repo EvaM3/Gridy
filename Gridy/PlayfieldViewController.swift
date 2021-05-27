@@ -261,7 +261,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             dragItem.localObject = indexPath
             return [dragItem]
         } else {
-            let gameItem = self.gameArray[indexPath.row]
+            let gameItem = self.shuffledArray[indexPath.row]
             let provider = NSItemProvider(object: gameItem)
             let gameDragItem = UIDragItem(itemProvider: provider)
             return [gameDragItem]
