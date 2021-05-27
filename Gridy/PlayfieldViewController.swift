@@ -254,18 +254,19 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        let item: UIImage
         if collectionView == shuffledCollectionView {
-            let item = self.shuffledArray[indexPath.row]
-            let itemProvider = NSItemProvider(object: item)
-            let dragItem = UIDragItem(itemProvider: itemProvider)
-            dragItem.localObject = indexPath
-            return [dragItem]
+            item = self.shuffledArray[indexPath.row]
         } else {
-            let gameItem = self.shuffledArray[indexPath.row]
-            let provider = NSItemProvider(object: gameItem)
-            let gameDragItem = UIDragItem(itemProvider: provider)
-            return [gameDragItem]
-        } // which element you are dragging
+            item = self.gameArray[indexPath.row]
+        }
+        if item == defaultImage {
+            return [UIDragItem]()
+        }
+        let itemProvider = NSItemProvider(object: item)
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        dragItem.localObject = indexPath
+        return [dragItem]
     }
  
     func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
@@ -299,11 +300,10 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             if let imagesDropped = NSItemProviderReadingItems as? [UIImage] {
                 if imagesDropped.count > 0 {
                     if let removeIndexPath = coordinator.items.first?.dragItem.localObject as? IndexPath  {  // reading  the sticker info
-                        
-                        self.gameArray[destinationIndexPath.row] = self.shuffledArray[removeIndexPath.row]
-                        collectionView.reloadData()
+                        self.gameArray[destinationIndexPath.row] = self.shuffledArray[removeIndexPath.row] // call sending function
+                        collectionView.reloadData() // gone from here
                         self.shuffledArray[removeIndexPath.row] = self.defaultImage  // can remove later
-                        self.shuffledCollectionView.reloadData()
+                        self.shuffledCollectionView.reloadData()  //gone, down with it
                         self.increaseScore()
                         self.solvedPuzzle()
                         
@@ -311,6 +311,10 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
                 }
             }
         }
+    }
+    func sendingImages(receiver: UICollectionView, senderIndexPath: IndexPath, receiverIndexPath: IndexPath) {
+        var sentImage: UIImage
+        
     }
 }
 
