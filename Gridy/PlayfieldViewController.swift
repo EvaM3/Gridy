@@ -300,10 +300,12 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             if let imagesDropped = NSItemProviderReadingItems as? [UIImage] {
                 if imagesDropped.count > 0 {
                     if let removeIndexPath = coordinator.items.first?.dragItem.localObject as? IndexPath  {  // reading  the sticker info
+                        self.sendingImages(receiver: self.shuffledCollectionView, senderIndexPath: removeIndexPath, receiverIndexPath: destinationIndexPath)
                         self.gameArray[destinationIndexPath.row] = self.shuffledArray[removeIndexPath.row] // call sending function
-                        collectionView.reloadData() // gone from here
-                        self.shuffledArray[removeIndexPath.row] = self.defaultImage  // can remove later
-                        self.shuffledCollectionView.reloadData()  //gone, down with it
+                        self.shuffledCollectionView.reloadData()
+                         collectionView.reloadData() // gone from here
+                       // self.shuffledArray[removeIndexPath.row] = self.defaultImage  // can remove later
+                      
                         self.increaseScore()
                         self.solvedPuzzle()
                         
@@ -314,7 +316,11 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     func sendingImages(receiver: UICollectionView, senderIndexPath: IndexPath, receiverIndexPath: IndexPath) {
         var sentImage: UIImage
-        
+        if receiver == shuffledCollectionView {
+            sentImage = self.gameArray[senderIndexPath.row]
+        } else {
+            sentImage = self.shuffledArray[receiverIndexPath.row]
+        }
     }
 }
 
