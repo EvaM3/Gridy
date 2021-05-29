@@ -77,7 +77,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         tapGesture.numberOfTapsRequired = 2
         shuffledCollectionView.addGestureRecognizer(tapGesture)
     }
-   
+    
     func swapArrays(_ imageA: inout UIImage,_ imageB: inout UIImage) {
         var imageA = shuffledArray[0]
         var imageB = gameArray[0]
@@ -145,7 +145,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         score += n
         scoreLabel.text = "Score: \(score)"
     }
-   
+    
     
     
     @objc private func didDoubleTap(_gesture: UITapGestureRecognizer) {
@@ -268,7 +268,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         dragItem.localObject = indexPath
         return [dragItem]
     }
- 
+    
     func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
         guard let destinationIndexPath = destinationIndexPath else {
             return UICollectionViewDropProposal(operation: .move)
@@ -285,8 +285,8 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         }
         return UICollectionViewDropProposal(operation: .move)
     }
-
-
+    
+    
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
         var destinationIndexPath: IndexPath
         if let indexPath = coordinator.destinationIndexPath {
@@ -300,12 +300,7 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             if let imagesDropped = NSItemProviderReadingItems as? [UIImage] {
                 if imagesDropped.count > 0 {
                     if let removeIndexPath = coordinator.items.first?.dragItem.localObject as? IndexPath  {  // reading  the sticker info
-                        self.sendingImages(receiver: self.shuffledCollectionView, senderIndexPath: removeIndexPath, receiverIndexPath: destinationIndexPath)
-                        self.gameArray[destinationIndexPath.row] = self.shuffledArray[removeIndexPath.row] // call sending function
-                        self.shuffledCollectionView.reloadData()
-                         collectionView.reloadData() // gone from here
-                       // self.shuffledArray[removeIndexPath.row] = self.defaultImage  // can remove later
-                      
+                        self.sendingImages(receiver: collectionView, senderIndexPath: removeIndexPath, receiverIndexPath: destinationIndexPath)
                         self.increaseScore()
                         self.solvedPuzzle()
                         
@@ -315,12 +310,14 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         }
     }
     func sendingImages(receiver: UICollectionView, senderIndexPath: IndexPath, receiverIndexPath: IndexPath) {
-        var sentImage: UIImage
         if receiver == shuffledCollectionView {
-            sentImage = self.gameArray[senderIndexPath.row]
+            gameArray[senderIndexPath.row] = shuffledArray[receiverIndexPath.row]
+            gameArray[senderIndexPath.row] = defaultImage
         } else {
-            sentImage = self.shuffledArray[receiverIndexPath.row]
+            // sentImage = self.shuffledArray[receiverIndexPath.row]
         }
+        self.shuffledCollectionView.reloadData()
+        self.gameCollectionView.reloadData()
     }
 }
 
