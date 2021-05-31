@@ -78,16 +78,16 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         shuffledCollectionView.addGestureRecognizer(tapGesture)
     }
     
-    func swapArrays(_ imageA: inout UIImage,_ imageB: inout UIImage) {
-        var imageA = shuffledArray[0]
-        var imageB = gameArray[0]
-        var imageC = imageA
-        imageB = imageA
-        imageA = imageB
-        
-        print(imageA,imageB)
-        
-    }
+//    func swapArrays(_ imageA: inout UIImage,_ imageB: inout UIImage) {
+//        var imageA = shuffledArray[0]
+//        var imageB = gameArray[0]
+//        var imageC = imageA
+//        imageB = imageA
+//        imageA = imageB
+//
+//        print(imageA,imageB)
+//
+//    }
     
     func solvedPuzzle() {
         if self.gameArray == self.imageArray {
@@ -314,7 +314,8 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             gameArray[senderIndexPath.row] = shuffledArray[receiverIndexPath.row]
             gameArray[senderIndexPath.row] = defaultImage
         } else {
-            // sentImage = self.shuffledArray[receiverIndexPath.row]
+            shuffledArray[senderIndexPath.row] = gameArray[receiverIndexPath.row]
+            shuffledArray[senderIndexPath.row] = originalImage
         }
         self.shuffledCollectionView.reloadData()
         self.gameCollectionView.reloadData()
