@@ -93,7 +93,10 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
         if self.gameArray == self.imageArray {
             let shareMyImage = self.imageArray
             let shareMyText = "My score on Gridy is \(score)"
-            let alert = UIAlertController(title: "You Won! Congratulations✌️", message: "Share your score! \(shareMyText)", preferredStyle: .actionSheet)
+            let alert = UIAlertController(title: "You Won! Congratulations✌️", message: "Do you want to share your score? \(shareMyText)", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+            
             let actionOne = UIAlertAction(title: "Share on your social sites!", style: .default) { (action) in
                 let activityVc = UIActivityViewController(activityItems: [shareMyText, shareMyImage] , applicationActivities: nil)
                 if let popOver = activityVc.popoverPresentationController {
@@ -105,9 +108,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             }
             alert.addAction(actionOne)
             self.present(alert, animated: true, completion: nil)
-            
-            
-            
             
             //   alert.addAction(shareMyText)
             
@@ -314,8 +314,8 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             gameArray[senderIndexPath.row] = shuffledArray[receiverIndexPath.row]
             gameArray[senderIndexPath.row] = defaultImage
         } else {
-            shuffledArray[senderIndexPath.row] = gameArray[receiverIndexPath.row]
-            shuffledArray[senderIndexPath.row] = originalImage
+            shuffledArray[receiverIndexPath.row] = gameArray[senderIndexPath.row]
+            shuffledArray[senderIndexPath.row] = shuffledArray[0]
         }
         self.shuffledCollectionView.reloadData()
         self.gameCollectionView.reloadData()
