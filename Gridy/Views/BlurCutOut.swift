@@ -10,6 +10,8 @@ import UIKit
 
 class BlurCutOut: UIView {
     
+    /// Overrides the defaults draw from the UIView to draw a grid
+    /// - Parameter rect: The original draw function rectangle
     override func draw(_ rect: CGRect) {
         let path = UIBezierPath()
         let sliceCount = 4

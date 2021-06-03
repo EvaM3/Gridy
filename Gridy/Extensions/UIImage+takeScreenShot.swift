@@ -10,6 +10,8 @@ import UIKit
 
 extension UIView {
     
+    /// Taking the screenshot from the UIView
+    /// - Returns: Returns a UIImage
     func takeScreenshot() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0.0)
         self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
@@ -22,7 +24,5 @@ extension UIView {
             return UIImage()
         }
     }
-    
-    
 }
 

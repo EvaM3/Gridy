@@ -76,17 +76,12 @@
 		082F00362458F1E30014C0CB /* Gridy */ = {
 			isa = PBXGroup;
 			children = (
+				A088EF122669651D00DBC77A /* Views */,
+				A088EF11266962FC00DBC77A /* Extensions */,
 				0897D1C92492EC5D00DEC0C0 /* Fonts */,
 				082F00372458F1E30014C0CB /* AppDelegate.swift */,
-				08716BFD252E923D00ECDEF9 /* UIImage+cropImage.swift */,
-				08D91728256D232700404FFC /* UIImage+takeScreenShot.swift */,
-				08716BFF252E933800ECDEF9 /* UIImage+splitImage.swift */,
-				08121F0324EDA957001BA6B1 /* BlurCutOut.swift */,
 				082F00392458F1E30014C0CB /* SceneDelegate.swift */,
 				082F003B2458F1E30014C0CB /* IntroViewController.swift */,
-				0823544B24B06A3B00F99604 /* RoundedButton.swift */,
-				082F003D2458F1E30014C0CB /* Main.storyboard */,
-				A083E3AC264470DC00AD11D9 /* ImageCollectionViewCell.swift */,
 				08743C3A246F6620004932DE /* PlayfieldViewController.swift */,
 				08743C38246F6216004932DE /* EditorViewController.swift */,
 				084A4B8F25E5D95B00185457 /* glitter.wav */,
@@ -103,6 +98,27 @@
 				080785AA24B99DAA00EF9CBD /* timeburnernormal.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A088EF11266962FC00DBC77A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				08716BFD252E923D00ECDEF9 /* UIImage+cropImage.swift */,
+				08716BFF252E933800ECDEF9 /* UIImage+splitImage.swift */,
+				08D91728256D232700404FFC /* UIImage+takeScreenShot.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A088EF122669651D00DBC77A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0823544B24B06A3B00F99604 /* RoundedButton.swift */,
+				08121F0324EDA957001BA6B1 /* BlurCutOut.swift */,
+				082F003D2458F1E30014C0CB /* Main.storyboard */,
+				A083E3AC264470DC00AD11D9 /* ImageCollectionViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

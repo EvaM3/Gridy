@@ -10,6 +10,7 @@
 
 import UIKit
 
+/// Makes the shape for the custom button
 class RoundedButton : UIButton {
   required init?(coder aDecoder: NSCoder) {
       super.init(coder: aDecoder)
