@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+/// Contains the gesture recognizers, the mask for the UIVIew.  It has two buttons: one for getting back to the introVC, the other (start) is having the chosen grid from the picture. And there is the prepare function for the segue.
 class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var backButton: UIButton!
@@ -44,7 +44,7 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         mask(self.blurEffectView, maskView: self.blurCutOut)
         self.blurCutOut.setNeedsDisplay()
     }
-
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
@@ -52,6 +52,16 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
             self.blurCutOut.invalidateIntrinsicContentSize()
             self.blurCutOut.setNeedsDisplay()
         }
+    }
+    func mask(_ viewToMask: UIView, maskView: UIView) {
+        let maskLayer = CAShapeLayer()
+        let mutablePath = CGMutablePath()
+        let maskRect = maskView.convert(maskView.bounds, to: viewToMask)
+        mutablePath.addRect(viewToMask.bounds)
+        mutablePath.addRect(maskRect)
+        maskLayer.path = mutablePath
+        maskLayer.fillRule = .evenOdd
+        viewToMask.layer.mask = maskLayer
     }
     
     @objc func handleRotate(recognizer : UIRotationGestureRecognizer) {
@@ -94,16 +104,7 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     }
 }
 
-func mask(_ viewToMask: UIView, maskView: UIView) {
-    let maskLayer = CAShapeLayer()
-    let mutablePath = CGMutablePath()
-    let maskRect = maskView.convert(maskView.bounds, to: viewToMask)
-    mutablePath.addRect(viewToMask.bounds)
-    mutablePath.addRect(maskRect)
-    maskLayer.path = mutablePath
-    maskLayer.fillRule = .evenOdd
-    viewToMask.layer.mask = maskLayer
-}
+
 
 
 

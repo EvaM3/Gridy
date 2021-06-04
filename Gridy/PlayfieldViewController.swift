@@ -11,6 +11,7 @@ import AVFoundation
 import Social
 
 
+/// This View Controller has the collection view functions for sizing,for the indexpath for the visible cells, and spacing.It has the function for the drag session and an extension for the CollectionViewDropDelegate.Contains the variables for the arrays of images,  the sound for the audio player. Has the tapGesture Recognizer, the function for the solved puzzle with the alert controller. Moreover contains the functions for restarting, increasing the score, showing the original image for a couple of seconds in the (hint) eye button. And an extra function for starting the game over as well.
 class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDragDelegate {
     
     @IBOutlet var shuffledCollectionView: UICollectionView!

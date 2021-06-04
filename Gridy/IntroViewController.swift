@@ -8,9 +8,8 @@
 
 import UIKit
 
-
+/// The IntroViewController is responsible for having the PickerController, with that the system interfaces for the camera(making pictures) ,using the photo library. And it does contain the saved images, and the code for the (prepare) segue function.
 class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
     @objc var selectedImage = UIImage()
     var pickerController = UIImagePickerController()
     let pickedImages: [UIImage] = [UIImage(named: "tiger")!,UIImage(named: "stonehenge")!,UIImage(named: "books")!,UIImage(named:"church")!,UIImage(named: "machu-picchu")!]
@@ -70,13 +69,12 @@ class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UI
         pickerController.sourceType = .photoLibrary
         present(pickerController, animated: true, completion: nil)
     }
-    
-    // image capturing is done
+   
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.originalImage] as? UIImage {
             self.selectedImage = selectedImage
             pickerController.dismiss(animated: true, completion: nil)
-            performSegue(withIdentifier: "showEditorView", sender: nil)
+            performSegue(withIdentifier: "showEditorView", sender: nil)  // image capturing is done
         } else {
             pickerController.dismiss(animated: true, completion: nil)
         }
