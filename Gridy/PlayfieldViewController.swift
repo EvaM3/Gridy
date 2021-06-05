@@ -87,7 +87,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             let alert = UIAlertController(title: "You Won! Congratulations✌️", message: "Do you want to share your score? \(shareMyText)", preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
-            
             let actionOne = UIAlertAction(title: "Share on your social sites!", style: .default) { (action) in
                 let activityVc = UIActivityViewController(activityItems: [shareMyText, shareMyImage] , applicationActivities: nil)
                 if let popOver = activityVc.popoverPresentationController {
@@ -99,8 +98,6 @@ class PlayfieldViewController: UIViewController, UICollectionViewDelegate, UICol
             }
             alert.addAction(actionOne)
             self.present(alert, animated: true, completion: nil)
-            
-            
         }
     }
     

@@ -19,7 +19,8 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
     
     var selectedImage : UIImage?
     var originalImage = UIImage()
-    
+   
+    // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
@@ -53,17 +54,16 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
             self.blurCutOut.setNeedsDisplay()
         }
     }
-    func mask(_ viewToMask: UIView, maskView: UIView) {
-        let maskLayer = CAShapeLayer()
-        let mutablePath = CGMutablePath()
-        let maskRect = maskView.convert(maskView.bounds, to: viewToMask)
-        mutablePath.addRect(viewToMask.bounds)
-        mutablePath.addRect(maskRect)
-        maskLayer.path = mutablePath
-        maskLayer.fillRule = .evenOdd
-        viewToMask.layer.mask = maskLayer
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PlayfieldSegue" {
+            if let destinationVC = segue.destination as? PlayfieldViewController {
+                destinationVC.originalImage = self.originalImage
+            }
+        }
     }
     
+    // MARK: - Gesture Recognizers
     @objc func handleRotate(recognizer : UIRotationGestureRecognizer) {
         self.imageView.transform = self.imageView.transform.rotated(by: recognizer.rotation)
         recognizer.rotation = 0
@@ -82,18 +82,11 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         }
     }
     
+    // MARK: - IBActions
     @IBAction func backButtonTapped(_ sender: Any) {
         _ = navigationController?.popViewController(animated: true)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PlayfieldSegue" {
-            if let destinationVC = segue.destination as? PlayfieldViewController {
-                destinationVC.originalImage = self.originalImage
-            }
-        }
-    }
-    
+ 
     @IBAction func startButtonTapped(_ sender: Any) {
         let newPoints = blurCutOut.convert(blurCutOut.frame.origin, to: view)
         let size  = CGRect(x: blurCutOut.frame.origin.x, y: newPoints.y, width: blurCutOut.bounds.width, height: blurCutOut.bounds.height)
@@ -101,6 +94,18 @@ class EditorViewController: UIViewController, UIGestureRecognizerDelegate, UINav
         let croppedImage =  screenshot.cropImage(toRect: size)
         originalImage = croppedImage ?? UIImage()
         self.performSegue(withIdentifier: "PlayfieldSegue", sender: nil)
+    }
+    
+    // MARK: - Helper function
+    func mask(_ viewToMask: UIView, maskView: UIView) {
+        let maskLayer = CAShapeLayer()
+        let mutablePath = CGMutablePath()
+        let maskRect = maskView.convert(maskView.bounds, to: viewToMask)
+        mutablePath.addRect(viewToMask.bounds)
+        mutablePath.addRect(maskRect)
+        maskLayer.path = mutablePath
+        maskLayer.fillRule = .evenOdd
+        viewToMask.layer.mask = maskLayer
     }
 }
 

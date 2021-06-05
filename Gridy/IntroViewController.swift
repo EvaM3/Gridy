@@ -16,10 +16,18 @@ class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBOutlet var libraryButton: UIButton!
     
+    // MARK: - ViewControlller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         pickerController.delegate = self
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showEditorView" {
+            if let destinationVC = segue.destination as? EditorViewController {
+                destinationVC.selectedImage = self.selectedImage
+            }
+        }
     }
     
     @IBAction func save(_ sender: Any) {
@@ -35,14 +43,6 @@ class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UI
             let ac = UIAlertController(title: "Saved!", message: "Your image has been saved to your photos!", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showEditorView" {
-            if let destinationVC = segue.destination as? EditorViewController {
-                destinationVC.selectedImage = self.selectedImage
-            }
         }
     }
     

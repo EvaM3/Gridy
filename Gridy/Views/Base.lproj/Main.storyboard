@@ -32,7 +32,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="371.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Gridy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ycI-5O-AuH">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="260.66666666666669"/>
+                                                <rect key="frame" x="8.3333333333333428" y="0.0" width="357.66666666666663" height="260.66666666666669"/>
                                                 <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="162"/>
                                                 <color key="textColor" name="lightgreen"/>
                                                 <nil key="highlightedColor"/>
@@ -81,7 +81,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gridy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2i-SH-gFO">
-                                                        <rect key="frame" x="15" y="-6" width="94" height="124.33333333333333"/>
+                                                        <rect key="frame" x="19" y="-6" width="86.333333333333329" height="124.33333333333333"/>
                                                         <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="39"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
