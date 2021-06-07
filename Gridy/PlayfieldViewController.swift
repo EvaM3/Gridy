@@ -132,6 +132,17 @@ class PlayfieldViewController: UIViewController {
         score += n
         scoreLabel.text = "Score: \(score)"
     }
+    func sendingImages(receiver: UICollectionView, senderIndexPath: IndexPath, receiverIndexPath: IndexPath) {   // Enables to swap images from both collectionviews.
+  if receiver == shuffledCollectionView {
+      shuffledArray[receiverIndexPath.row] =  gameArray[senderIndexPath.row]
+      gameArray[senderIndexPath.row] = defaultImage
+  } else {
+      gameArray[receiverIndexPath.row] = shuffledArray[senderIndexPath.row]
+      shuffledArray[senderIndexPath.row] = defaultImage
+  }
+  self.shuffledCollectionView.reloadData()
+  self.gameCollectionView.reloadData()
+}
     
     @objc private func didDoubleTap(_gesture: UITapGestureRecognizer) {       // By double tapping starts the game over, with extra 5 points to the score as punishment
         gameArray = []
@@ -177,20 +188,8 @@ class PlayfieldViewController: UIViewController {
     }
 }
 
-// MARK: - Extensions for layout, delegate and datasource
-extension PlayfieldViewController: UICollectionViewDelegate {
-      func sendingImages(receiver: UICollectionView, senderIndexPath: IndexPath, receiverIndexPath: IndexPath) {   // Enables to swap images from both collectionviews.
-    if receiver == shuffledCollectionView {
-        shuffledArray[receiverIndexPath.row] =  gameArray[senderIndexPath.row]
-        gameArray[senderIndexPath.row] = defaultImage
-    } else {
-        gameArray[receiverIndexPath.row] = shuffledArray[senderIndexPath.row]
-        shuffledArray[senderIndexPath.row] = defaultImage
-    }
-    self.shuffledCollectionView.reloadData()
-    self.gameCollectionView.reloadData()
-  }
-}
+
+// MARK: - Extensions for layout and datasource
 
 extension PlayfieldViewController: UICollectionViewDataSource {
        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {  // Number of items in both collectionview.
@@ -276,6 +275,23 @@ extension PlayfieldViewController: UICollectionViewDragDelegate {   // Defines w
 }
 
 extension PlayfieldViewController: UICollectionViewDropDelegate { // Defines which collectioncell will be dropped.
+    func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
+        guard let destinationIndexPath = destinationIndexPath else {
+            return UICollectionViewDropProposal(operation: .move)
+        }
+        if collectionView == shuffledCollectionView {
+            if shuffledArray[destinationIndexPath.row] != self.defaultImage {
+                return UICollectionViewDropProposal(operation: .cancel)
+            }
+        } else {
+            if gameArray[destinationIndexPath.row] != self.defaultImage {
+                
+                return UICollectionViewDropProposal(operation: .cancel)
+            }
+        }
+        return UICollectionViewDropProposal(operation: .move)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
         var destinationIndexPath: IndexPath
         if let indexPath = coordinator.destinationIndexPath {
@@ -284,7 +300,6 @@ extension PlayfieldViewController: UICollectionViewDropDelegate { // Defines whi
             let itemCount = collectionView.numberOfItems(inSection: 0)
             destinationIndexPath = IndexPath(row: itemCount, section: 0)
         }
-        
         coordinator.session.loadObjects(ofClass: UIImage.self) { (NSItemProviderReadingItems) in
             if let imagesDropped = NSItemProviderReadingItems as? [UIImage] {
                 if imagesDropped.count > 0 {
