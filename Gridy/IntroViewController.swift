@@ -22,6 +22,19 @@ class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.navigationController?.isNavigationBarHidden = true
         pickerController.delegate = self
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showEditorView" {
             if let destinationVC = segue.destination as? EditorViewController {
