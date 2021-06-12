@@ -291,12 +291,8 @@ extension PlayfieldViewController: UICollectionViewDropDelegate { // Defines whi
     }
     
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
-        var destinationIndexPath: IndexPath
-        if let indexPath = coordinator.destinationIndexPath {
-            destinationIndexPath = indexPath
-        } else {
-            let itemCount = collectionView.numberOfItems(inSection: 0)
-            destinationIndexPath = IndexPath(row: itemCount, section: 0)
+        guard let destinationIndexPath = coordinator.destinationIndexPath else {
+            return
         }
         coordinator.session.loadObjects(ofClass: UIImage.self) { (NSItemProviderReadingItems) in
             if let imagesDropped = NSItemProviderReadingItems as? [UIImage] {
