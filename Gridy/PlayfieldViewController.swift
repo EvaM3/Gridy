@@ -68,7 +68,7 @@ class PlayfieldViewController: UIViewController {
         
         
         do {
-            let tunePath = Bundle.main.path(forResource: "glitter", ofType: "wav")!                                          // Adding the sound to the game
+            let tunePath = Bundle.main.path(forResource: "glitter", ofType: "wav")!                                       // Adding the sound to the game
             let tuneUrl = URL(fileURLWithPath: tunePath)
             audioPlayer = try AVAudioPlayer(contentsOf: tuneUrl)
             audioPlayer.prepareToPlay()
@@ -82,7 +82,7 @@ class PlayfieldViewController: UIViewController {
     }
     
     
-    func solvedPuzzle() {                                      // Checking the state of the puzzle, when it's solved, through an alert makes it possible to share on social media
+    func solvedPuzzle() {                    // Checking the state of the puzzle, when it's solved, through an alert makes it possible to share on social media
         if self.gameArray == self.imageArray {
             let shareMyImage = self.imageArray
             let shareMyText = "My score on Gridy is \(score)"
